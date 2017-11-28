@@ -1,0 +1,2506 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: docs/can-guides/upgrade/using-codemods.md
+	@page guides/upgrade/using-codemods
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CanJS - Using Codemods</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+		<link rel="stylesheet" type="text/css" href="../../static/bundles/bit-docs-site/static.css">
+		<link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/docs/images/canjs_favicon.ico">
+		<link rel="apple-touch-icon" sizes="57x57" href="../../../docs/images/canjs_favicon_57x57.png">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="../../../docs/images/canjs_favicon_57x57.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="../../../docs/images/canjs_favicon_72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="../../../docs/images/canjs_favicon_114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="../../../docs/images/canjs_favicon_128x128.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="../../../docs/images/canjs_favicon_144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="../../../docs/images/canjs_favicon_152x152.png">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+	  	<meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
+	
+	
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-2302003-11', 'auto');
+			ga('send', 'pageview');
+		</script>
+	
+</head>
+	<body>
+		<input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+		<label for="nav-trigger">Menu</label>
+	  	<div id="everything">
+  <div id="left" class="column">
+    <div class="top-left">
+      
+          <div class="brand">
+	<div class="logo">
+		<a href="../../../index.html" alt="CanJS"></a>
+		<div class="dropdown project-dropdown">
+			<a href="https://donejs.com/">DoneJS</a>
+			<a href="https://stealjs.com/">StealJS</a>
+			<a href="https://jquerypp.com/">jQuery++</a>
+			<a href="https://funcunit.com/">FuncUnit</a>
+			<a href="https://documentjs.com/">DocumentJS</a>
+		</div>
+	</div>
+	<div class="version">
+		<div class="version-number">
+			3.12.1
+		</div>
+		<div class="dropdown version-dropdown">
+			
+				<a href="https://v2.canjs.com">2.3.33</a>
+			
+		</div>
+	</div>
+</div>
+<div class="search-bar">
+	<div class="search-wrap" style="display:none;">
+		<span class="search-icon"></span>
+		<input
+			type="text"
+			size="6"
+			class="search"
+			placeholder="Search"
+			autocomplete="off"
+			autocorrect="off"
+			autocapitalize="none"
+			spellcheck="false"/>
+			<span class="search-icon-cancel"></span>
+	</div>
+</div>
+
+
+      
+    </div>
+    <div class="bottom">
+      <div class="nav-menu">
+        <div class="social-side-container">
+          <ul class="social-side">
+  <li>
+    <a class="header-mobile github" href="https://github.com/canjs/canjs" target="_blank"><img class="social-icon-small" src="../../../docs/images/github.png">Github</a>
+  </li>
+  <li>
+    <a class="header-mobile twitter" href="https://twitter.com/canjs" target="_blank"><img class="social-icon-small" src="../../../docs/images/twitter.png">Twitter</a>
+  </li>
+</ul>
+<ul class="social-side">
+  <li>
+    <a class="header-mobile" href="https://gitter.im/canjs/canjs" target="_blank">Chat</a>
+  </li>
+  <li>
+    <a class="header-mobile" href="http://forums.donejs.com/c/canjs" target="_blank">Forum</a>
+  </li>
+</ul>
+
+        </div>
+        
+            
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../about.html"
+							title="Learn about CanJS’s mission, technical highlights, who uses CanJS, and our future roadmap.">
+							About
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						parent
+           						expanded">
+						<a class="page"
+							href="../../guides.html"
+							title="Welcome to CanJS! These guides are here to help you develop and improve your relationship with CanJS. After all, picking a JavaScript framework is a commitment.  We want CanJS to be the framework you marry.  This page helps you know how to advance through the different stages of this relationship:">
+							Guides
+						</a>
+						
+	<ul>
+		
+			
+				
+					<li>
+						<span>experiment</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../chat.html"
+							title="This guide will walk you through building a real-time chat application with CanJS’s Core libraries.  It takes about 30 minutes to complete.">
+							Chat Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../todomvc.html"
+							title="This guide will walk you through building a slightly modified version of TodoMVC with CanJS’s Core libraries and can-fixture. It takes about 1 hour to complete.">
+							TodoMVC Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../atm.html"
+							title="This guide will walk you through building and testing an Automated Teller Machine (ATM) application with CanJS’s
+Core libraries.  You’ll learn how to do test driven development (TDD)
+and manage complex state.  It takes about 2 hours to complete.">
+							ATM Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li>
+						<span>getting started</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../setup.html"
+							title="Get started with CanJS by installing it with npm, using a JS&amp;nbsp;Bin, or just adding it to an HTML page with a &lt;script&gt; tag.">
+							Setting up CanJS
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../api.html"
+							title="This page walks through how to use and understand CanJS’s API documentation.">
+							Reading the Docs (API Guide)
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						parent
+           						">
+						<a class="page"
+							href="../recipes.html"
+							title="A listing of small examples that are useful for learning CanJS.">
+							recipes
+						</a>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../recipes/credit-card-advanced.html"
+							title="This guide walks through building a simple credit card payment form with validations. It doesn&#x27;t use
+can-define. Instead it uses Kefir.js streams to make a ViewModel.
+can-kefir is used to make the Kefir streams observable to can-stache.">
+							Credit Card Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../recipes/credit-card-simple.html"
+							title="This guide walks through building a very simple credit card payment form.  It uses Stripe.js v2 API to create a token
+which can be used to create a charge.  It also performs
+simple validation on the payment form values.">
+							Credit Card Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../recipes/cta-bus-map.html"
+							title="This guide walks you through showing Chicago Transit Authority (CTA) bus locations on a Google Map.">
+							CTA Bus Map (Medium)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../recipes/file-navigator-advanced.html"
+							title="This guide walks you through building a file navigation widget.  It takes about 45 minutes to complete.  It was written with
+CanJS 3.10. Check out the file-navigator-simple
+for an easier example that produces similar functionality.">
+							File Navigator Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../recipes/file-navigator-simple.html"
+							title="This guide walks you through building a simple file navigation widget.  It takes about 25 minutes to complete.  It was written with
+CanJS 3.10. Check out the file-navigator-advanced
+for an example that makes AJAX requests for its data and uses can-component.">
+							File Navigator Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../recipes/playlist-editor.html"
+							title="Learn how to use YouTube&#x27;s API to search for videos and make a playlist.  This makes authenticated requests with OAuth2. It uses jQuery++ for
+drag/drop events. It shows using custom attributes and custom events.  This guide takes
+an hour to complete.">
+							Playlist Editor (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../recipes/signup-simple.html"
+							title="This guide walks through building simple signup, login forms and a logout button.">
+							Signup and Login (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../recipes/todomvc-with-steal.html"
+							title="This guide walks through building TodoMVC with StealJS.">
+							TodoMVC with StealJS
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../recipes/weather-report-advanced.html"
+							title="This guides you through extending the Simple Weather Report Guide to remove imperative code and automatically look up the user’s location using the
+browser’s geolocation API.  Both of these will be done with event streams.
+This guide continues where the Simple Weather Report Guide left off.  It takes about 25 minutes to complete.  It was written with CanJS 3.8.">
+							Weather Report Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../recipes/weather-report-simple.html"
+							title="This guide walks you through building a simple weather report widget.  It takes about 25 minutes to complete.  It was written with
+CanJS 3.5.">
+							Weather Report Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li>
+						<span>upgrade</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../migrate-3.html"
+							title="This guide walks you through the step-by-step process to upgrade a 2.x app to CanJS 3.">
+							Migrating to CanJS 3
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="current
+           						
+           						expanded">
+						<a class="page"
+							href="using-codemods.html"
+							title="Learn how to migrate your app to CanJS 3 using can-migrate.">
+							Using Codemods
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../api.html"
+							title="Welcome to the CanJS API documentation! Learn about all the packages that make-up CanJS and how they work together to help you build amazing applications!">
+							API Docs
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../community.html"
+							title="Get involved with one of the most inviting communities on the internet!">
+							Community
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../contribute.html"
+							title="Learn how to contribute to CanJS!">
+							Contributing
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+        
+      </div>
+      <div class="search-results-container">
+	<div class="search-results-wrap"></div>
+</div>
+
+    </div>
+  </div>
+  <div id="right" class="column">
+    <div class="top-right">
+      <div class="top-right-top">
+	<ul class="top-right-bitovi">
+	  	<li class="dropdown">
+	    	<a href="https://www.bitovi.com" class="bitovi icon-bits">Bitovi</a>
+	    	<ul class="dropdown-menu">
+	      		<li><a href="https://www.bitovi.com/">Bitovi.com</a></li>
+	      		<li><a href="https://www.bitovi.com/blog">Blog</a></li>
+	      		<li><a href="https://www.bitovi.com/design">Design</a></li>
+	      		<li><a href="https://www.bitovi.com/development">Development</a></li>
+	      		<li><a href="https://www.bitovi.com/training">Training</a></li>
+	      		<li><a href="https://www.bitovi.com/open-source">Open Source</a></li>
+	      		<li><a href="https://www.bitovi.com/about">About</a></li>
+	      		<li><a href="https://www.bitovi.com/contact">Contact Us</a></li>
+	    	</ul>
+	  	</li>
+	</ul>
+	<div class="brand">
+		<div class="logo">
+			<a href="../../../index.html" alt="CanJS"></a>
+		</div>
+	</div>
+	<ul class="top-right-links">
+  <li>
+    <a href="https://gitter.im/canjs/canjs">Chat</a>
+  </li>
+  <li>
+    <a href="http://forums.donejs.com/c/canjs">Forum</a>
+  </li>
+  <li>
+    <a class="github-button nav-social" href="https://github.com/canjs/canjs" data-count-href="/canjs/canjs/stargazers" data-show-count="true">Star</a>
+  </li>
+  <li>
+    <a href="https://twitter.com/canjs" class="twitter-follow-button nav-social" data-show-count="true" data-show-screen-name="false">Follow @canjs</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </li>
+</ul>
+</div>
+<div class="breadcrumb">
+	
+		<li><a href="../../../index.html">CanJS</a></li>
+		<li> / </li>
+	
+		<li><a href="../../guides.html">Guides</a></li>
+		<li> / </li>
+	
+	
+	<li><a href="using-codemods.html">Using Codemods</a></li>
+	
+	<li class="breadcrumb-dropdown-separator"> / </li>
+	<li class="breadcrumb-dropdown">
+		<a> On this page</a>
+		<ul class="on-this-page"></ul>
+	</li>
+	<div class="nav-toggle" title="Back to top"></div>
+</div>
+
+
+    </div>
+    <div class="bottom">
+      <article>
+  <section class="title">
+	<div class="page-type">
+		<h1>Using Codemods</h1>
+			<ul class="title-social">
+				
+				
+				<li>
+					<a class="button-link" href="//github.com/canjs/canjs/edit/master/docs/can-guides/upgrade/using-codemods.md">Edit on GitHub</a>
+				</li>
+				
+			</ul>
+	</div>
+	<div class="clear-both"></div>
+	
+  
+	<section class="description">
+    <p>Learn how to migrate your app to CanJS 3 using <a href="https://www.npmjs.com/package/can-migrate">can-migrate</a>.</p>
+
+</section>
+
+  
+	
+</section>
+<section class="on-this-page-table">
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <section class="body">
+    <h2>Overview</h2>
+<p>A codemod is a transformation script that parses the <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">AST</a>
+of source code in order to do a code-aware find-and-replace refactor across
+multiple files. <a href="https://www.npmjs.com/package/can-migrate">can-migrate</a>
+is a CLI utility for running codemods that can help migrate your app to CanJS 3.</p>
+<p>For example, the following CanJS 2.3 code:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+import &quot;can/map/define/define&quot;;
+
+export default can.Map.extend({
+  define: {}
+});
+</code></pre>
+<p>…can be transformed to this:</p>
+<pre><code class="language-js">import CanMap from &quot;can-map&quot;;
+import can from &quot;can&quot;;
+import &quot;can-map-define&quot;;
+
+export default CanMap.extend({
+  define: {}
+});
+</code></pre>
+<p><span line-highlight='1,3,5'></span>
+Using this CLI will get you about 85% of the way to having your codebase
+migrated; it’s not a complete solution for a seamless migration, but it will get
+you significantly closer than doing the migration by hand.</p>
+<h2>Install</h2>
+<p>Install <code>can-migrate</code> from npm:</p>
+<pre><code class="language-shell">npm install -g can-migrate
+</code></pre>
+<p>This will make the <code>can-migrate</code> command available globally.</p>
+<h2>Usage</h2>
+<p>The CLI provides the following options:</p>
+<pre><code>can-migrate [&lt;files&gt; OPTIONS...]
+
+Updates files according to the CanJS 3 migration paths (minimal, modern, latest &amp; greatest)
+
+Options
+--apply     -a    Apply transforms (instead of a dry run)
+--force           Apply transforms regardless of git status
+--silent    -s    Silence output
+--config    -c    Path to custom config file
+--transform -t    Specify a transform
+</code></pre>
+<h3>Example</h3>
+<p>Runs all the default <code>can-migrate</code> transforms on the files that match the <code>**/*.js</code> glob:</p>
+<pre><code class="language-bash">can-migrate --apply **/*.js
+</code></pre>
+<p>Runs the <code>can-component-rename</code> transform on the files that match the <code>**/*.js</code> glob:</p>
+<pre><code class="language-bash">can-migrate --apply **/*.js --transform can-component-rename/can-component-rename.js
+</code></pre>
+<p>You can find a <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms">complete list of transforms on GitHub</a>.</p>
+<h2>Recommended Migration Process</h2>
+<p>Use the following steps as a guide for using this tool:</p>
+<ol>
+<li><p>Make a new branch for the migration:</p>
+<pre><code class="language-shell">git checkout -b migration
+</code></pre></li>
+<li><p>Ensure all tests are passing and your git state is clean.
+As with any migration, if your code is not tested, the amount of time it takes for a successful migration is exponentially greater.</p></li>
+<li><p>Run the transforms on each <a href="https://www.bitovi.com/blog/modlet-workflows">modlet</a> or standalone testable component:</p>
+<pre><code class="language-bash">can-migrate [&lt;modlet/*.js&gt;] --apply
+</code></pre>
+<p>Alternatively, you can run one transform at a time for a more incremental approach:</p>
+<pre><code class="language-bash">can-migrate [&lt;modlet/*.js&gt;] --transforms &lt;transform path&gt; --apply
+</code></pre></li>
+<li><p>Install the <a href="../../api.html#ThecanPackage" title="Welcome to the CanJS API documentation! Learn about all the packages that make-up CanJS and how they work together to help you build amazing applications!">can-* modules</a> used in that modlet or component. Here are the modules in the <a href="../../can-core.html" title="The best, most hardened and generally useful libraries in CanJS.">Core</a> collection:</p>
+<pre><code class="language-shell">npm i can-component --save
+npm i can-compute --save
+npm i can-connect --save
+npm i can-define --save
+npm i can-route --save
+npm i can-route-pushstate --save
+npm i can-set --save
+npm i can-stache --save
+npm i can-stache-bindings --save
+</code></pre></li>
+<li><p>Run the tests again and fix the bugs as they come up.
+Review <a href="../../migrate-3.html" title="This guide walks you through the step-by-step process to upgrade a 2.x app to CanJS 3.">Migrating to CanJS 3</a> to understand what changes to expect</p></li>
+<li><p>Commit the module once all tests are passing again.</p></li>
+<li><p>Repeat 2-6 until all modlet or components are migrated and tests are passing.</p></li>
+</ol>
+<p><strong>Note:</strong> If you are using <a href="https://stealjs.com/">StealJS</a>, ensure you are running StealJS 0.16 or greater.</p>
+<h2>Introduction to the Transform Scripts</h2>
+<p>Read this section to understand how the transforms (also called codemods) are organized,
+the different types of transformations that are included with <code>can-migrate</code>,
+and what to expect from each one.</p>
+<p>There are 3 main types of transforms included in the <code>can-migrate</code> tool:
+replace, import, and require. There are also three module-specific transforms
+that handle more complex transformations: <code>can-component-rename</code>, <code>can-data</code>,
+and <code>can-extend</code>.</p>
+<p>Each can-module that has a transform script has a folder in the
+<a href="https://github.com/canjs/can-migrate/tree/master/src/transforms">src/transforms directory</a>.
+Most of these folders have the following structure:</p>
+<p><code>can-moduleName/</code></p>
+<ul>
+<li><code>import.js</code></li>
+<li><code>replace.js</code></li>
+<li><code>require.js</code></li>
+</ul>
+<p>You can run a specific transform by passing <code>can-moduleName/replace.js</code> or you can pass the entire <code>can-moduleName/</code> directory to the CLI tool with the <code>--transform</code> flag.</p>
+<p>Run all the transforms in the directory:</p>
+<pre><code class="language-bash">can-migrate */*.js --apply --transform can-moduleName/
+</code></pre>
+<p>Run a specific transform script:</p>
+<pre><code class="language-bash">can-migrate */*.js --apply --transform can-moduleName/replace.js
+</code></pre>
+<h3>“Import” Transforms</h3>
+<p>These transforms change the way a module is imported if it using the <code>import</code> syntax.</p>
+<p>For example, it will transform any of the following:</p>
+<pre><code class="language-js">import Component from &quot;can/component/&quot;;
+import Component from &quot;can/component/component&quot;;
+import Component from &quot;can/component/component.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import Component from &quot;can-component&quot;;
+</code></pre>
+<p><span line-highlight='1'></span></p>
+<h3>“Replace” Transforms</h3>
+<p>These transforms replace how a module is imported and used, which may vary by
+module. You can learn how each module is transformed by a particular script in
+the specific transformation section below.</p>
+<p>For example, it can transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.addClass(el, &quot;myClass&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import className from &quot;can-util/dom/class-name/class-name&quot;;
+import can from &quot;can&quot;;
+className.addClass.call(el, &quot;myClass&quot;);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>“Require” Transforms</h3>
+<p>These transforms handle the cases where a module is loaded using <code>require</code>.</p>
+<p>For example, it will transform any of the following:</p>
+<pre><code class="language-js">const Component = require(&quot;can/component/&quot;);
+const Component = require(&quot;can/component/component&quot;);
+const Component = require(&quot;can/component/component.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const Component = require(&quot;can-component&quot;);
+</code></pre>
+<p><span line-highlight='1'></span></p>
+<h3>Custom Transforms</h3>
+<p>While the replace, import, and require transforms handle most cases, there are
+some more specific scripts for <code>can-component-rename</code>, <code>can-data</code>, <code>can-extend</code>.
+Read about them in the section below.</p>
+<h2>Complete List of Transform Scripts</h2>
+<p>This section details all the transformation scripts with examples of before and after.</p>
+<h3>can-stache-bindings/colon-bindings</h3>
+<p>Running <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-stache-bindings">the colon-bindings transform</a>:</p>
+<pre><code class="language-bash">can-migrate -a src/**/*.{js,md,html,stache,component} -t can-stache-bindings/colon-bindings
+</code></pre>
+<p>…will transform this:</p>
+<pre><code class="language-html">&lt;input {^$value}=&quot;H1&quot; {$value}=&quot;H2&quot; {($value)}=&quot;H3&quot; ($value)=&quot;H4&quot;
+  {^value}=&quot;H1&quot; {value}=&quot;H2&quot; {(value)}=&quot;H3&quot; (value)=&quot;H4&quot;&gt;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-html">&lt;input el:value:to=&quot;H1&quot; el:value:from=&quot;H2&quot; el:value:bind=&quot;H3&quot; on:el:value=&quot;H4&quot;
+  vm:value:to=&quot;H1&quot; vm:value:from=&quot;H2&quot; vm:value:bind=&quot;H3&quot; on:vm:value=&quot;H4&quot;&gt;
+</code></pre>
+<p>…or this:</p>
+<pre><code class="language-js">Component.extend({
+  tag: 'my-tag',
+  template: stache(
+    '&lt;input {^$value}=&quot;H1&quot; {$value}=&quot;H2&quot; {($value)}=&quot;H3&quot; ($value)=&quot;H4&quot; ' +
+        '{^value}=&quot;H1&quot; {value}=&quot;H2&quot; {(value)}=&quot;H3&quot; (value)=&quot;H4&quot;&gt;'
+  )
+});
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">Component.extend({
+  tag: 'my-tag',
+  template: stache(
+    '&lt;input el:value:to=&quot;H1&quot; el:value:from=&quot;H2&quot; el:value:bind=&quot;H3&quot; on:el:value=&quot;H4&quot; ' +
+        'vm:value:to=&quot;H1&quot; vm:value:from=&quot;H2&quot; vm:value:bind=&quot;H3&quot; on:vm:value=&quot;H4&quot;&gt;'
+  )
+});
+</code></pre>
+<p><span line-highlight='4,5'></span>
+It will also transform stache bindings inside:</p>
+<ul>
+<li><code>```html</code> and <code>```js</code> blocks in <code>.md</code> files</li>
+<li><code>&lt;view&gt;</code>, <code>&lt;template&gt;</code>, <code>&lt;view-model&gt;</code>, and <code>&lt;script type=&quot;view-model&quot;&gt;</code> blocks in <code>.component</code> files</li>
+<li><code>&lt;script type=&quot;text/stache&quot;&gt;</code> and <code>&lt;script src=&quot;...steal/steal.js&quot;&gt;</code> blocks in <code>.html</code> files</li>
+</ul>
+<p>With the <code>--implicit</code> flag, the transform will intuitively determine whether to bind to the ViewModel or Element without the explicit <code>vm:</code> or <code>el:</code> specifiers. For example, running this:</p>
+<pre><code class="language-bash">can-migrate -a src/**/*.{js,md,html,stache,component} -t can-stache-bindings/colon-bindings --implicit
+</code></pre>
+<p>…will transform this:</p>
+<pre><code class="language-html">&lt;input {^$value}=&quot;H1&quot; {$value}=&quot;H2&quot; {($value)}=&quot;H3&quot; ($value)=&quot;H4&quot;
+  {^value}=&quot;H1&quot; {value}=&quot;H2&quot; {(value)}=&quot;H3&quot; (value)=&quot;H4&quot;&gt;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-html">&lt;input value:to=&quot;H1&quot; value:from=&quot;H2&quot; value:bind=&quot;H3&quot; on:value=&quot;H4&quot;
+  value:to=&quot;H1&quot; value:from=&quot;H2&quot; value:bind=&quot;H3&quot; on:value=&quot;H4&quot;&gt;
+</code></pre>
+<p><span line-highlight='1,2'></span></p>
+<h3>can-component-rename</h3>
+<p>Running <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-component-rename">all of the can-component-rename transforms</a>:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-component-rename/
+</code></pre>
+<p>…will transform this:</p>
+<pre><code class="language-js">Component.extend({
+  tag: &quot;my-tag&quot;,
+  template: &quot;Hi&quot;,
+  events: {
+    removed: function(){}
+  }
+});
+</code></pre>
+<p><span line-highlight='3,5'></span>
+…to this:</p>
+<pre><code class="language-js">Component.extend({
+  tag: &quot;my-tag&quot;,
+  view: &quot;Hi&quot;,
+  events: {
+    &quot;{element} beforeremove&quot;: function(){}
+  }
+});
+</code></pre>
+<p><span line-highlight='3,5'></span>
+…or this:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: &quot;my-tag&quot;,
+  template: &quot;Hi&quot;,
+  events: {
+    removed(){}
+  }
+});
+</code></pre>
+<p><span line-highlight='3,5'></span>
+…to this:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: &quot;my-tag&quot;,
+  view: &quot;Hi&quot;,
+  events: {
+    &quot;{element} beforeremove&quot;(){}
+  }
+});
+</code></pre>
+<p><span line-highlight='3,5'></span>
+…or this:</p>
+<pre><code class="language-js">Component.extend({
+  tag: &quot;my-tag&quot;,
+  events: {
+    &quot;removed&quot;: () =&gt; {}
+  }
+});
+</code></pre>
+<p><span line-highlight='4'></span>
+…to this:</p>
+<pre><code class="language-js">Component.extend({
+  tag: &quot;my-tag&quot;,
+  events: {
+    &quot;{element} beforeremove&quot;: () =&gt; {}
+  }
+});
+</code></pre>
+<p><span line-highlight='4'></span></p>
+<h3>can-data</h3>
+<p>Running <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-data">all of the can-data transforms</a>:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-data/
+</code></pre>
+<p>…will transform this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+
+can.data(el, &quot;name&quot;, &quot;Luke&quot;);
+can.data(el, &quot;name&quot;);
+</code></pre>
+<p><span line-highlight='3,4'></span>
+…to this:</p>
+<pre><code class="language-js">import domData from &quot;can-util/dom/data/data&quot;;
+import can from &quot;can&quot;;
+
+domData.set.call(el, &quot;name&quot;, &quot;Luke&quot;);
+domData.get.call(el, &quot;name&quot;);
+</code></pre>
+<p><span line-highlight='1,4,5'></span>
+…or this:</p>
+<pre><code class="language-js">const can = require(&quot;can&quot;);
+
+can.data(el, &quot;name&quot;, &quot;Luke&quot;);
+can.data(el, &quot;name&quot;);
+</code></pre>
+<p><span line-highlight='3,4'></span>
+…to this:</p>
+<pre><code class="language-js">const domData = require(&quot;can-util/dom/data/data&quot;);
+const can = require(&quot;can&quot;);
+
+domData.set.call(el, &quot;name&quot;, &quot;Luke&quot;);
+domData.get.call(el, &quot;name&quot;);
+</code></pre>
+<p><span line-highlight='1,4,5'></span></p>
+<h3>can-extend</h3>
+<p>Running <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-extend">all of the can-extend transforms</a>:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-extend/
+</code></pre>
+<p>…will transform this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+
+can.extend(true, {}, {}, {}, {});
+can.extend(false, {}, {});
+can.extend({}, {});
+</code></pre>
+<p><span line-highlight='3-5'></span>
+…to this:</p>
+<pre><code class="language-js">import deepAssign from &quot;can-util/js/deep-assign/deep-assign&quot;;
+import assign from &quot;can-util/js/assign/assign&quot;;
+import can from &quot;can&quot;;
+
+deepAssign({}, {}, {}, {});
+assign({}, {});
+assign({}, {});
+</code></pre>
+<p><span line-highlight='1,2,5,6,7'></span>
+…or this:</p>
+<pre><code class="language-js">const can = require(&quot;can&quot;);
+
+can.extend(true, {}, {}, {}, {});
+can.extend(false, {}, {});
+can.extend({}, {});
+</code></pre>
+<p><span line-highlight='3-5'></span>
+…to this:</p>
+<pre><code class="language-js">const deepAssign = require(&quot;can-util/js/deep-assign/deep-assign&quot;);
+const assign = require(&quot;can-util/js/assign/assign&quot;);
+const can = require(&quot;can&quot;);
+
+deepAssign({}, {}, {}, {});
+assign({}, {});
+assign({}, {});
+</code></pre>
+<p><span line-highlight='1,2,5,6,7'></span></p>
+<h3>can-addClass</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-addClass">all of the can-addClass transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-addClass/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-addClass/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.addClass(el, &quot;myClass&quot;);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import className from &quot;can-util/dom/class-name/class-name&quot;;
+import can from &quot;can&quot;;
+className.addClass.call(el, &quot;myClass&quot;);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-addEvent</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-addEvent">all of the can-addEvent transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-addEvent/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-addEvent/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.addEvent.call(obj, &quot;change&quot;, function() { alert(&quot;object change!&quot;); });
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canEvent from &quot;can-event&quot;;
+import can from &quot;can&quot;;
+canEvent.addEventListener.call(obj, &quot;change&quot;, function() { alert(&quot;object change!&quot;); });
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-ajax</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-ajax">all of the can-ajax transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-ajax/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-ajax/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.ajax();
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import ajax from &quot;can-ajax&quot;;
+import can from &quot;can&quot;;
+ajax();
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-append</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-append">all of the can-append transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-append/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-append/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.append(el, &quot;&lt;p&gt;&lt;/p&gt;&quot;);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import mutate from &quot;can-util/dom/mutate/mutate&quot;;
+import can from &quot;can&quot;;
+mutate.appendChild.call(el, &quot;&lt;p&gt;&lt;/p&gt;&quot;);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-batch</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-batch">all of the can-batch transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-batch/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-batch/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.batch.start();
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canBatch from &quot;can-batch&quot;;
+import can from &quot;can&quot;;
+canBatch.start();
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-buildFragment</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-buildFragment">all of the can-buildFragment transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-buildFragment/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-buildFragment/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.buildFragment(&quot;&lt;div&gt;&lt;input/&gt;&lt;/div&gt;&quot;);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import buildFragment from &quot;can-util/dom/fragment/fragment&quot;;
+import can from &quot;can&quot;;
+buildFragment(&quot;&lt;div&gt;&lt;input/&gt;&lt;/div&gt;&quot;);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-camelize</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-camelize">all of the can-camelize transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-camelize/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-camelize/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.camelize(&quot;str&quot;);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import string from &quot;can-util/js/string/string&quot;;
+import can from &quot;can&quot;;
+string.camelize(&quot;str&quot;);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-capitilize</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-capitilize">all of the can-capitilize transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-capitilize/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-capitilize/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.capitalize(&quot;str&quot;);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import string from &quot;can-util/js/string/string&quot;;
+import can from &quot;can&quot;;
+string.capitalize(&quot;str&quot;);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-component</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-component">all of the can-component transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-component/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-component/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import Component from &quot;can/component/&quot;;
+import Component from &quot;can/component/component&quot;;
+import Component from &quot;can/component/component.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import Component from &quot;can-component&quot;;
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-component/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.Component.extend();
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import Component from &quot;can-component&quot;;
+import can from &quot;can&quot;;
+Component.extend();
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-component/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const Component = require(&quot;can/component/&quot;);
+const Component = require(&quot;can/component/component&quot;);
+const Component = require(&quot;can/component/component.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const Component = require(&quot;can-component&quot;);
+</code></pre>
+<h3>can-compute</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-compute">all of the can-compute transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-compute/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-compute/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import compute from &quot;can/compute/&quot;;
+import compute from &quot;can/compute/compute&quot;;
+import compute from &quot;can/compute/compute.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import compute from &quot;can-compute&quot;;
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-compute/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.compute();
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import compute from &quot;can-compute&quot;;
+import can from &quot;can&quot;;
+compute();
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-compute/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const compute = require(&quot;can/compute/&quot;);
+const compute = require(&quot;can/compute/compute&quot;);
+const compute = require(&quot;can/compute/compute.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const compute = require(&quot;can-compute&quot;);
+</code></pre>
+<h3>can-construct-super</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-construct-super">all of the can-construct-super transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-construct-super/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-construct-super/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import constructSuper from &quot;can/construct/super/&quot;;
+import constructSuper from &quot;can/construct/super/super&quot;;
+import constructSuper from &quot;can/construct/super/super.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import constructSuper from &quot;can-construct-super&quot;;
+</code></pre>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-construct-super/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const constructSuper = require(&quot;can/construct/super/&quot;);
+const constructSuper = require(&quot;can/construct/super/super&quot;);
+const constructSuper = require(&quot;can/construct/super/super.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const constructSuper = require(&quot;can-construct-super&quot;);
+</code></pre>
+<h3>can-construct</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-construct">all of the can-construct transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-construct/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-construct/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import construct from &quot;can/construct/&quot;;
+import construct from &quot;can/construct/construct&quot;;
+import construct from &quot;can/construct/construct.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import Construct from &quot;can-construct&quot;;
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-construct/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.Construct.extend();
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import Construct from &quot;can-construct&quot;;
+import can from &quot;can&quot;;
+Construct.extend();
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-construct/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const construct = require(&quot;can/construct/&quot;);
+const construct = require(&quot;can/construct/construct&quot;);
+const construct = require(&quot;can/construct/construct.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const Construct = require(&quot;can-construct&quot;);
+</code></pre>
+<h3>can-control</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-control">all of the can-control transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-control/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-control/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import Control from &quot;can/control/&quot;;
+import Control from &quot;can/control/control&quot;;
+import Control from &quot;can/control/control.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import Control from &quot;can-control&quot;;
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-control/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.Control( staticProperties, instanceProperties );
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import Control from &quot;can-control&quot;;
+import can from &quot;can&quot;;
+Control( staticProperties, instanceProperties );
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-control/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const Control = require(&quot;can/control/&quot;);
+const Control = require(&quot;can/control/control&quot;);
+const Control = require(&quot;can/control/control.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const Control = require(&quot;can-control&quot;);
+</code></pre>
+<h3>can-deparam</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-deparam">all of the can-deparam transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-deparam/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-deparam/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.deparam(&quot;#foo[]=bar&amp;foo[]=baz&quot;);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import deparam from &quot;can-deparam&quot;;
+import can from &quot;can&quot;;
+deparam(&quot;#foo[]=bar&amp;foo[]=baz&quot;);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-dispatch</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-dispatch">all of the can-dispatch transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-dispatch/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-dispatch/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.dispatch( obj, event, args );
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canEvent from &quot;can-event&quot;;
+import can from &quot;can&quot;;
+canEvent( obj, event, args );
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-each</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-each">all of the can-each transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-each/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-each/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.each();
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import each from &quot;can-each&quot;;
+import can from &quot;can&quot;;
+each();
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-esc</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-esc">all of the can-esc transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-esc/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-esc/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.esc(&quot;&lt;div&gt;&amp;nbsp&lt;/div&gt;&quot;);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import string from &quot;can-util/js/string/string&quot;;
+import can from &quot;can&quot;;
+string.esc(&quot;&lt;div&gt;&amp;nbsp&lt;/div&gt;&quot;);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-event</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-event">all of the can-event transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-event/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-event/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import event from &quot;can/event/&quot;;
+import event from &quot;can/event/event&quot;;
+import event from &quot;can/event/event.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import canEvent from &quot;can-event&quot;;
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-event/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.event.dispatch.call(obj, &quot;change&quot;);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canEvent from &quot;can-event&quot;;
+import can from &quot;can&quot;;
+canEvent.dispatch.call(obj, &quot;change&quot;);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-event/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const event = require(&quot;can/event/&quot;);
+const event = require(&quot;can/event/event&quot;);
+const event = require(&quot;can/event/event.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const canEvent = require(&quot;can-event&quot;);
+</code></pre>
+<h3>can-fixture</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-fixture">all of the can-fixture transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-fixture/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-fixture/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import fixture from &quot;can/util/fixture/&quot;;
+import fixture from &quot;can/util/fixture/fixture&quot;;
+import fixture from &quot;can/util/fixture/fixture.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import fixture from &quot;can-fixture&quot;;
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-fixture/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.fixture( &quot;/foobar.json&quot;, function(){});
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import fixture from &quot;can-fixture&quot;;
+import can from &quot;can&quot;;
+fixture( &quot;/foobar.json&quot;, function(){});
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-fixture/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const fixture = require(&quot;can/util/fixture/&quot;);
+const fixture = require(&quot;can/util/fixture/fixture&quot;);
+const fixture = require(&quot;can/util/fixture/fixture.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const fixture = require(&quot;can-fixture&quot;);
+</code></pre>
+<h3>can-frag</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-frag">all of the can-frag transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-frag/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-frag/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.frag();
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import frag from &quot;can-frag&quot;;
+import can from &quot;can&quot;;
+frag();
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-getObject</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-getObject">all of the can-getObject transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-getObject/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-getObject/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.getObject(name, roots);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import string from &quot;can-util/js/string/string&quot;;
+import can from &quot;can&quot;;
+string.getObject(name, roots);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-hyphenate</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-hyphenate">all of the can-hyphenate transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-hyphenate/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-hyphenate/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.hyphenate(&quot;str&quot;);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import string from &quot;can-util/js/string/string&quot;;
+import can from &quot;can&quot;;
+string.hyphenate(&quot;str&quot;);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-isArray</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-isArray">all of the can-isArray transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-isArray/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-isArray/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.isArray([1,2,3]);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import isArrayLike from &quot;can-util/js/is-array-like/is-array-like&quot;;
+import can from &quot;can&quot;;
+isArrayLike([1,2,3]);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-isDeferred</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-isDeferred">all of the can-isDeferred transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-isDeferred/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-isDeferred/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.isDeferred(obj);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import isPromiseLike from &quot;can-util/js/is-promise-like/is-promise-like&quot;;
+import can from &quot;can&quot;;
+isPromiseLike(obj);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-isEmptyObject</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-isEmptyObject">all of the can-isEmptyObject transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-isEmptyObject/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-isEmptyObject/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.isEmptyObject(obj);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import isEmptyObject from &quot;can-util/js/is-empty-object/is-empty-object&quot;;
+import can from &quot;can&quot;;
+isEmptyObject(obj);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-isFunction</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-isFunction">all of the can-isFunction transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-isFunction/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-isFunction/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.isFunction(func);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import isFunction from &quot;can-util/js/is-function/is-function&quot;;
+import can from &quot;can&quot;;
+isFunction(func);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-list</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-list">all of the can-list transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-list/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-list/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import List from &quot;can/list/&quot;;
+import List from &quot;can/list/list&quot;;
+import List from &quot;can/list/list.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import CanList from &quot;can-list&quot;;
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-list/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+var people = new can.List([&quot;Alex&quot;, &quot;Bill&quot;]);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import CanList from &quot;can-list&quot;;
+import can from &quot;can&quot;;
+var people = new CanList([&quot;Alex&quot;, &quot;Bill&quot;]);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-list/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const List = require(&quot;can/list/&quot;);
+const List = require(&quot;can/list/list&quot;);
+const List = require(&quot;can/list/list.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const CanList = require(&quot;can-list&quot;);
+</code></pre>
+<h3>can-listenTo</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-listenTo">all of the can-listenTo transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-listenTo/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-listenTo/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.listenTo.call(obj, other, event, handler);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canEvent from &quot;can-event&quot;;
+import can from &quot;can&quot;;
+canEvent.call(obj, other, event, handler);
+</code></pre>
+<p><span line-highlight='1,3,5'></span></p>
+<h3>can-makeArray</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-makeArray">all of the can-makeArray transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-makeArray/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-makeArray/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.makeArray({0: &quot;a&quot;, length: 1});
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import makeArray from &quot;can-util/js/make-array/make-array&quot;;
+import can from &quot;can&quot;;
+makeArray({0: &quot;a&quot;, length: 1});
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-map-backup</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-map-backup">all of the can-map-backup transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-map-backup/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-map-backup/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import mapBackup from &quot;can/map/backup/&quot;;
+import mapBackup from &quot;can/map/backup/backup&quot;;
+import mapBackup from &quot;can/map/backup/backup.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import mapBackup from &quot;can-map-backup&quot;;
+</code></pre>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-map-backup/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const mapBackup = require(&quot;can/map/backup/&quot;);
+const mapBackup = require(&quot;can/map/backup/backup&quot;);
+const mapBackup = require(&quot;can/map/backup/backup.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const mapBackup = require(&quot;can-map-backup&quot;);
+</code></pre>
+<h3>can-map-define</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-map-define">all of the can-map-define transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-map-define/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-map-define/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import mapDefine from &quot;can/map/define/&quot;;
+import mapDefine from &quot;can/map/define/define&quot;;
+import mapDefine from &quot;can/map/define/define.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import mapDefine from &quot;can-map-define&quot;;
+</code></pre>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-map-define/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const mapDefine = require(&quot;can/map/define/&quot;);
+const mapDefine = require(&quot;can/map/define/define&quot;);
+const mapDefine = require(&quot;can/map/define/define.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const mapDefine = require(&quot;can-map-define&quot;);
+</code></pre>
+<h3>can-map</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-map">all of the can-map transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-map/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-map/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import map from &quot;can/map/&quot;;
+import map from &quot;can/map/map&quot;;
+import map from &quot;can/map/map.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import CanMap from &quot;can-map&quot;;
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-map/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+const map = new can.Map(aName);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import CanMap from &quot;can-map&quot;;
+import can from &quot;can&quot;;
+const map = new CanMap(aName);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-map/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const map = require(&quot;can/map/&quot;);
+const map = require(&quot;can/map/map&quot;);
+const map = require(&quot;can/map/map.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const CanMap = require(&quot;can-map&quot;);
+</code></pre>
+<h3>can-model</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-model">all of the can-model transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-model/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-model/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import model from &quot;can/model/&quot;;
+import model from &quot;can/model/model&quot;;
+import model from &quot;can/model/model.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import Model from &quot;can-model&quot;;
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-model/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.Model(name, staticProperties, instanceProperties);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import Model from &quot;can-model&quot;;
+import can from &quot;can&quot;;
+Model(name, staticProperties, instanceProperties);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-model/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const model = require(&quot;can/model/&quot;);
+const model = require(&quot;can/model/model&quot;);
+const model = require(&quot;can/model/model.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const Model = require(&quot;can-model&quot;);
+</code></pre>
+<h3>can-mustache</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-mustache">all of the can-mustache transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-mustache/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-mustache/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.mustache( id, template );
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import mustache from &quot;can-mustache&quot;;
+import can from &quot;can&quot;;
+mustache( id, template );
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-one</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-one">all of the can-one transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-one/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-one/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.event.dispatch.call(obj, &quot;change&quot;);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canEvent from &quot;can-event&quot;;
+import can from &quot;can&quot;;
+canEvent.dispatch.call(obj, &quot;change&quot;);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-param</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-param">all of the can-param transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-param/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-param/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.param({foo: &quot;bar&quot;});
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import param from &quot;can-param&quot;;
+import can from &quot;can&quot;;
+param({foo: &quot;bar&quot;});
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-remove</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-remove">all of the can-remove transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-remove/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-remove/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.remove.call(el, child);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import mutate from &quot;can-util/dom/mutate/mutate&quot;;
+import can from &quot;can&quot;;
+mutate.removeChild.call.call(el, child);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-removeEvent</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-removeEvent">all of the can-removeEvent transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-removeEvent/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-removeEvent/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.event.removeEvent.call(el, &quot;click&quot;, function() {});
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canEvent from &quot;can-event&quot;;
+import can from &quot;can&quot;;
+canEvent.removeEvent.call(el, &quot;click&quot;, function() {});
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-route-pushstate</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-route-pushstate">all of the can-route-pushstate transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-route-pushstate/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-route-pushstate/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import routePushState from &quot;can/route/pushstate/&quot;;
+import routePushState from &quot;can/route/pushstate/pushstate&quot;;
+import routePushState from &quot;can/route/pushstate/pushstate.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import routePushState from &quot;can-route-pushstate&quot;;
+</code></pre>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-route-pushstate/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const routePushState = require(&quot;can/route/pushstate/&quot;);
+const routePushState = require(&quot;can/route/pushstate/pushstate&quot;);
+const routePushState = require(&quot;can/route/pushstate/pushstate.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const routePushState = require(&quot;can-route-pushstate&quot;);
+</code></pre>
+<h3>can-route</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-route">all of the can-route transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-route/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-route/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import route from &quot;can/route/&quot;;
+import route from &quot;can/route/route&quot;;
+import route from &quot;can/route/route.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import route from &quot;can-route&quot;;
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-route/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.route(&quot;{page}&quot;, {page: &quot;homepage&quot;});
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import route from &quot;can-route&quot;;
+import can from &quot;can&quot;;
+route(&quot;{page}&quot;, {page: &quot;homepage&quot;});
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-route/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const route = require(&quot;can/route/&quot;);
+const route = require(&quot;can/route/route&quot;);
+const route = require(&quot;can/route/route.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const route = require(&quot;can-route&quot;);
+</code></pre>
+<h3>can-stache</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-stache">all of the can-stache transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-stache/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-stache/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import stache from &quot;can/view/stache/&quot;;
+import stache from &quot;can/view/stache/stache&quot;;
+import stache from &quot;can/view/stache/stache.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import stache from &quot;can-stache&quot;;
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-stache/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.stache(template);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import stache from &quot;can-stache&quot;;
+import can from &quot;can&quot;;
+stache(template);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-stache/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const stache = require(&quot;can/view/stache/&quot;);
+const stache = require(&quot;can/view/stache/stache&quot;);
+const stache = require(&quot;can/view/stache/stache.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const stache = require(&quot;can-stache&quot;);
+</code></pre>
+<h3>can-stopListening</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-stopListening">all of the can-stopListening transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-stopListening/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-stopListening/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.event.stopListening.call(obj, other, event, handler);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canEvent from &quot;can-event&quot;;
+import can from &quot;can&quot;;
+canEvent.stopListening.call(obj, other, event, handler);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-sub</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-sub">all of the can-sub transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-sub/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-sub/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.sub(str, data, remove);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import string from &quot;can-util/js/string/string&quot;;
+import can from &quot;can&quot;;
+string.sub(str, data, remove);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-underscore</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-underscore">all of the can-underscore transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-underscore/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-underscore/replace.js
+</code></pre>
+<p><span line-highlight='2'></span>
+…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.underscore(&quot;str&quot;);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import string from &quot;can-util/js/string/string&quot;;
+import can from &quot;can&quot;;
+string.underscore(&quot;str&quot;);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-view-attr</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-view-attr">all of the can-view-attr transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-attr/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-attr/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.view.attr(attributeName, attrHandler(el, attrData));
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canViewCallbacks from &quot;can-view-callbacks&quot;;
+import can from &quot;can&quot;;
+canViewCallbacks.attr(attributeName, attrHandler(el, attrData));
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-view-autorender</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-view-autorender">all of the can-view-autorender transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-autorender/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-autorender/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import autorender from &quot;can/view/autorender/&quot;;
+import autorender from &quot;can/view/autorender/autorender&quot;;
+import autorender from &quot;can/view/autorender/autorender.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import canAutorender from &quot;can-view-autorender&quot;;
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-autorender/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.autorender(success, error);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canAutorender from &quot;can-view-autorender&quot;;
+import can from &quot;can&quot;;
+canAutorender(success, error);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-autorender/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const autorender = require(&quot;can/view/autorender/&quot;);
+const autorender = require(&quot;can/view/autorender/autorender&quot;);
+const autorender = require(&quot;can/view/autorender/autorender.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const canAutorender = require(&quot;can-view-autorender&quot;);
+</code></pre>
+<h3>can-view-callbacks</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-view-callbacks">all of the can-view-callbacks transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-callbacks/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-callbacks/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import viewCallbacks from &quot;can/view/callbacks/&quot;;
+import viewCallbacks from &quot;can/view/callbacks/callbacks&quot;;
+import viewCallbacks from &quot;can/view/callbacks/callbacks.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import canViewCallbacks from &quot;can-view-callbacks&quot;;
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-callbacks/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.view.callbacks();
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canViewCallbacks from &quot;can-view-callbacks&quot;;
+import can from &quot;can&quot;;
+canViewCallbacks();
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-callbacks/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const viewCallbacks = require(&quot;can/view/callbacks/&quot;);
+const viewCallbacks = require(&quot;can/view/callbacks/callbacks&quot;);
+const viewCallbacks = require(&quot;can/view/callbacks/callbacks.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const canViewCallbacks = require(&quot;can-view-callbacks&quot;);
+</code></pre>
+<h3>can-view-href</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-view-href">all of the can-view-href transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-href/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-href/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import viewHref from &quot;can/view/href/&quot;;
+import viewHref from &quot;can/view/href/href&quot;;
+import viewHref from &quot;can/view/href/href.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import canViewHref from &quot;can-view-href&quot;;
+</code></pre>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-href/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const viewHref = require(&quot;can/view/href/&quot;);
+const viewHref = require(&quot;can/view/href/href&quot;);
+const viewHref = require(&quot;can/view/href/href.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const canViewHref = require(&quot;can-view-href&quot;);
+</code></pre>
+<h3>can-view-import</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-view-import">all of the can-view-import transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-import/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-import/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import viewImport from &quot;can/view/import/&quot;;
+import viewImport from &quot;can/view/import/import&quot;;
+import viewImport from &quot;can/view/import/import.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import canViewImport from &quot;can-view-import&quot;;
+</code></pre>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-import/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const viewImport = require(&quot;can/view/import/&quot;);
+const viewImport = require(&quot;can/view/import/import&quot;);
+const viewImport = require(&quot;can/view/import/import.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const canViewImport = require(&quot;can-view-import&quot;);
+</code></pre>
+<h3>can-view-live</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-view-live">all of the can-view-live transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-live/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-live/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.view.live.text(textNode, text);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canViewLive from &quot;can-view-live&quot;;
+import can from &quot;can&quot;;
+canViewLive.text(textNode, text);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-live/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import viewLive from &quot;can/view/live/&quot;;
+import viewLive from &quot;can/view/live/live&quot;;
+import viewLive from &quot;can/view/live/live.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import canViewLive from &quot;can-view-live&quot;;
+</code></pre>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-live/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const viewLive = require(&quot;can/view/live/&quot;);
+const viewLive = require(&quot;can/view/live/live&quot;);
+const viewLive = require(&quot;can/view/live/live.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const canViewLive = require(&quot;can-view-live&quot;);
+</code></pre>
+<h3>can-view-parser</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-view-parser">all of the can-view-parser transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-parser/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-parser/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import viewParser from &quot;can/view/parser/&quot;;
+import viewParser from &quot;can/view/parser/parser&quot;;
+import viewParser from &quot;can/view/parser/parser.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import canViewParser from &quot;can-view-parser&quot;;
+</code></pre>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-parser/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const viewParser = require(&quot;can/view/parser/&quot;);
+const viewParser = require(&quot;can/view/parser/parser&quot;);
+const viewParser = require(&quot;can/view/parser/parser.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const canViewParser = require(&quot;can-view-parser&quot;);
+</code></pre>
+<h3>can-view-scope</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-view-scope">all of the can-view-scope transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-scope/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-scope/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+const scope = new can.view.Scope(data);
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canViewScope from &quot;can-view-scope&quot;;
+import can from &quot;can&quot;;
+const scope = new canViewScope(data);
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-scope/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import viewScope from &quot;can/view/scope/&quot;;
+import viewScope from &quot;can/view/scope/scope&quot;;
+import viewScope from &quot;can/view/scope/scope.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import canViewScope from &quot;can-view-scope&quot;;
+</code></pre>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-scope/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const viewScope = require(&quot;can/view/scope/&quot;);
+const viewScope = require(&quot;can/view/scope/scope&quot;);
+const viewScope = require(&quot;can/view/scope/scope.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const canViewScope = require(&quot;can-view-scope&quot;);
+</code></pre>
+<h3>can-view-tag</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-view-tag">all of the can-view-tag transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-tag/
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-tag/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.view.tag(tagName, tagHandler(el, tagData));
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canViewCallbacks from &quot;can-view-callbacks&quot;;
+import can from &quot;can&quot;;
+canViewCallbacks.tag(tagName, tagHandler(el, tagData));
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h3>can-view-target</h3>
+<p>To run <a href="https://github.com/canjs/can-migrate/tree/master/src/transforms/can-view-target">all of the can-view-target transforms</a> listed below:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-target/
+</code></pre>
+<h4>import</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-target/import.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">import viewTarget from &quot;can/view/target/&quot;;
+import viewTarget from &quot;can/view/target/target&quot;;
+import viewTarget from &quot;can/view/target/target.js&quot;;
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">import canViewTarget from &quot;can-view-target&quot;;
+</code></pre>
+<h4>replace</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-target/replace.js
+</code></pre>
+<p>…will transform code like this:</p>
+<pre><code class="language-js">import can from &quot;can&quot;;
+can.view.target();
+</code></pre>
+<p><span line-highlight='2'></span>
+…to this:</p>
+<pre><code class="language-js">import canViewTarget from &quot;can-view-target&quot;;
+import can from &quot;can&quot;;
+canViewTarget();
+</code></pre>
+<p><span line-highlight='1,3'></span></p>
+<h4>require</h4>
+<p>Running this transform:</p>
+<pre><code class="language-bash">can-migrate -a **/*.js -t can-view-target/require.js
+</code></pre>
+<p>…will transform any of the following:</p>
+<pre><code class="language-js">const viewTarget = require(&quot;can/view/target/&quot;);
+const viewTarget = require(&quot;can/view/target/target&quot;);
+const viewTarget = require(&quot;can/view/target/target.js&quot;);
+</code></pre>
+<p>…to this:</p>
+<pre><code class="language-js">const canViewTarget = require(&quot;can-view-target&quot;);
+</code></pre>
+
+</section>
+
+  
+
+
+<script type="text/javascript">
+  window.docObject = {"src":{"path":"docs/can-guides/upgrade/using-codemods.md"},"description":"Learn how to migrate your app to CanJS 3 using [can-migrate](https://www.npmjs.com/package/can-migrate). \n","name":"guides/upgrade/using-codemods","title":"Using Codemods","type":"page","parent":"guides/upgrade","order":1,"comment":" ","pathToRoot":"../../.."};
+</script>
+</article>
+      
+        <footer><p>CanJS is part of <a href="https://donejs.com" target="_blank">DoneJS</a>. Created and maintained by the core <a href="https://donejs.com/About.html#team" target="_blank">DoneJS team</a> and <a href="https://www.bitovi.com" target="_blank">Bitovi</a>. <strong>Currently 3.12.1.</strong></p>
+</footer>
+      
+    </div>
+  </div>
+</div>
+<survey-ad>
+  <button aria-label="Close" class="close" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <a href="https://donejs.com/survey.html" target="_blank">
+    Help us improve CanJS by taking our community survey
+  </a>
+</survey-ad>
+
+
+		
+			<script>
+				steal = {
+				  	instantiated: {
+				    	"bundles/bit-docs-site/static.css!$css" : null
+				  	}
+			  	};
+			</script>
+			<script type='text/javascript' data-main="bit-docs-site/static" src="../../static/steal.production.js"></script>
+		
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<!-- root-level elements with attributes necessary for the app -->
+		<div path-prefix="../.."></div>
+
+	</body>
+</html>

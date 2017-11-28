@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: docs/can-guides/commitment/recipes/credit-card-simple/credit-card-simple.md
+	@page guides/recipes/credit-card-simple
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CanJS - Credit Card Guide (Simple)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+		<link rel="stylesheet" type="text/css" href="../../static/bundles/bit-docs-site/static.css">
+		<link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/docs/images/canjs_favicon.ico">
+		<link rel="apple-touch-icon" sizes="57x57" href="../../../docs/images/canjs_favicon_57x57.png">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="../../../docs/images/canjs_favicon_57x57.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="../../../docs/images/canjs_favicon_72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="../../../docs/images/canjs_favicon_114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="../../../docs/images/canjs_favicon_128x128.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="../../../docs/images/canjs_favicon_144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="../../../docs/images/canjs_favicon_152x152.png">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+	  	<meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
+	
+	
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-2302003-11', 'auto');
+			ga('send', 'pageview');
+		</script>
+	
+</head>
+	<body>
+		<input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+		<label for="nav-trigger">Menu</label>
+	  	<div id="everything">
+  <div id="left" class="column">
+    <div class="top-left">
+      
+          <div class="brand">
+	<div class="logo">
+		<a href="../../../index.html" alt="CanJS"></a>
+		<div class="dropdown project-dropdown">
+			<a href="https://donejs.com/">DoneJS</a>
+			<a href="https://stealjs.com/">StealJS</a>
+			<a href="https://jquerypp.com/">jQuery++</a>
+			<a href="https://funcunit.com/">FuncUnit</a>
+			<a href="https://documentjs.com/">DocumentJS</a>
+		</div>
+	</div>
+	<div class="version">
+		<div class="version-number">
+			3.12.1
+		</div>
+		<div class="dropdown version-dropdown">
+			
+				<a href="https://v2.canjs.com">2.3.33</a>
+			
+		</div>
+	</div>
+</div>
+<div class="search-bar">
+	<div class="search-wrap" style="display:none;">
+		<span class="search-icon"></span>
+		<input
+			type="text"
+			size="6"
+			class="search"
+			placeholder="Search"
+			autocomplete="off"
+			autocorrect="off"
+			autocapitalize="none"
+			spellcheck="false"/>
+			<span class="search-icon-cancel"></span>
+	</div>
+</div>
+
+
+      
+    </div>
+    <div class="bottom">
+      <div class="nav-menu">
+        <div class="social-side-container">
+          <ul class="social-side">
+  <li>
+    <a class="header-mobile github" href="https://github.com/canjs/canjs" target="_blank"><img class="social-icon-small" src="../../../docs/images/github.png">Github</a>
+  </li>
+  <li>
+    <a class="header-mobile twitter" href="https://twitter.com/canjs" target="_blank"><img class="social-icon-small" src="../../../docs/images/twitter.png">Twitter</a>
+  </li>
+</ul>
+<ul class="social-side">
+  <li>
+    <a class="header-mobile" href="https://gitter.im/canjs/canjs" target="_blank">Chat</a>
+  </li>
+  <li>
+    <a class="header-mobile" href="http://forums.donejs.com/c/canjs" target="_blank">Forum</a>
+  </li>
+</ul>
+
+        </div>
+        
+            
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../about.html"
+							title="Learn about CanJS’s mission, technical highlights, who uses CanJS, and our future roadmap.">
+							About
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						parent
+           						expanded">
+						<a class="page"
+							href="../../guides.html"
+							title="Welcome to CanJS! These guides are here to help you develop and improve your relationship with CanJS. After all, picking a JavaScript framework is a commitment.  We want CanJS to be the framework you marry.  This page helps you know how to advance through the different stages of this relationship:">
+							Guides
+						</a>
+						
+	<ul>
+		
+			
+				
+					<li>
+						<span>experiment</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../chat.html"
+							title="This guide will walk you through building a real-time chat application with CanJS’s Core libraries.  It takes about 30 minutes to complete.">
+							Chat Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../todomvc.html"
+							title="This guide will walk you through building a slightly modified version of TodoMVC with CanJS’s Core libraries and can-fixture. It takes about 1 hour to complete.">
+							TodoMVC Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../atm.html"
+							title="This guide will walk you through building and testing an Automated Teller Machine (ATM) application with CanJS’s
+Core libraries.  You’ll learn how to do test driven development (TDD)
+and manage complex state.  It takes about 2 hours to complete.">
+							ATM Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li>
+						<span>getting started</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../setup.html"
+							title="Get started with CanJS by installing it with npm, using a JS&amp;nbsp;Bin, or just adding it to an HTML page with a &lt;script&gt; tag.">
+							Setting up CanJS
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../api.html"
+							title="This page walks through how to use and understand CanJS’s API documentation.">
+							Reading the Docs (API Guide)
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						parent
+           						expanded">
+						<a class="page"
+							href="../recipes.html"
+							title="A listing of small examples that are useful for learning CanJS.">
+							recipes
+						</a>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="credit-card-advanced.html"
+							title="This guide walks through building a simple credit card payment form with validations. It doesn&#x27;t use
+can-define. Instead it uses Kefir.js streams to make a ViewModel.
+can-kefir is used to make the Kefir streams observable to can-stache.">
+							Credit Card Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="current
+           						
+           						expanded">
+						<a class="page"
+							href="credit-card-simple.html"
+							title="This guide walks through building a very simple credit card payment form.  It uses Stripe.js v2 API to create a token
+which can be used to create a charge.  It also performs
+simple validation on the payment form values.">
+							Credit Card Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="cta-bus-map.html"
+							title="This guide walks you through showing Chicago Transit Authority (CTA) bus locations on a Google Map.">
+							CTA Bus Map (Medium)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="file-navigator-advanced.html"
+							title="This guide walks you through building a file navigation widget.  It takes about 45 minutes to complete.  It was written with
+CanJS 3.10. Check out the file-navigator-simple
+for an easier example that produces similar functionality.">
+							File Navigator Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="file-navigator-simple.html"
+							title="This guide walks you through building a simple file navigation widget.  It takes about 25 minutes to complete.  It was written with
+CanJS 3.10. Check out the file-navigator-advanced
+for an example that makes AJAX requests for its data and uses can-component.">
+							File Navigator Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="playlist-editor.html"
+							title="Learn how to use YouTube&#x27;s API to search for videos and make a playlist.  This makes authenticated requests with OAuth2. It uses jQuery++ for
+drag/drop events. It shows using custom attributes and custom events.  This guide takes
+an hour to complete.">
+							Playlist Editor (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="signup-simple.html"
+							title="This guide walks through building simple signup, login forms and a logout button.">
+							Signup and Login (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="todomvc-with-steal.html"
+							title="This guide walks through building TodoMVC with StealJS.">
+							TodoMVC with StealJS
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="weather-report-advanced.html"
+							title="This guides you through extending the Simple Weather Report Guide to remove imperative code and automatically look up the user’s location using the
+browser’s geolocation API.  Both of these will be done with event streams.
+This guide continues where the Simple Weather Report Guide left off.  It takes about 25 minutes to complete.  It was written with CanJS 3.8.">
+							Weather Report Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="weather-report-simple.html"
+							title="This guide walks you through building a simple weather report widget.  It takes about 25 minutes to complete.  It was written with
+CanJS 3.5.">
+							Weather Report Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li>
+						<span>upgrade</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../migrate-3.html"
+							title="This guide walks you through the step-by-step process to upgrade a 2.x app to CanJS 3.">
+							Migrating to CanJS 3
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../upgrade/using-codemods.html"
+							title="Learn how to migrate your app to CanJS 3 using can-migrate.">
+							Using Codemods
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../api.html"
+							title="Welcome to the CanJS API documentation! Learn about all the packages that make-up CanJS and how they work together to help you build amazing applications!">
+							API Docs
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../community.html"
+							title="Get involved with one of the most inviting communities on the internet!">
+							Community
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../contribute.html"
+							title="Learn how to contribute to CanJS!">
+							Contributing
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+        
+      </div>
+      <div class="search-results-container">
+	<div class="search-results-wrap"></div>
+</div>
+
+    </div>
+  </div>
+  <div id="right" class="column">
+    <div class="top-right">
+      <div class="top-right-top">
+	<ul class="top-right-bitovi">
+	  	<li class="dropdown">
+	    	<a href="https://www.bitovi.com" class="bitovi icon-bits">Bitovi</a>
+	    	<ul class="dropdown-menu">
+	      		<li><a href="https://www.bitovi.com/">Bitovi.com</a></li>
+	      		<li><a href="https://www.bitovi.com/blog">Blog</a></li>
+	      		<li><a href="https://www.bitovi.com/design">Design</a></li>
+	      		<li><a href="https://www.bitovi.com/development">Development</a></li>
+	      		<li><a href="https://www.bitovi.com/training">Training</a></li>
+	      		<li><a href="https://www.bitovi.com/open-source">Open Source</a></li>
+	      		<li><a href="https://www.bitovi.com/about">About</a></li>
+	      		<li><a href="https://www.bitovi.com/contact">Contact Us</a></li>
+	    	</ul>
+	  	</li>
+	</ul>
+	<div class="brand">
+		<div class="logo">
+			<a href="../../../index.html" alt="CanJS"></a>
+		</div>
+	</div>
+	<ul class="top-right-links">
+  <li>
+    <a href="https://gitter.im/canjs/canjs">Chat</a>
+  </li>
+  <li>
+    <a href="http://forums.donejs.com/c/canjs">Forum</a>
+  </li>
+  <li>
+    <a class="github-button nav-social" href="https://github.com/canjs/canjs" data-count-href="/canjs/canjs/stargazers" data-show-count="true">Star</a>
+  </li>
+  <li>
+    <a href="https://twitter.com/canjs" class="twitter-follow-button nav-social" data-show-count="true" data-show-screen-name="false">Follow @canjs</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </li>
+</ul>
+</div>
+<div class="breadcrumb">
+	
+		<li><a href="../../../index.html">CanJS</a></li>
+		<li> / </li>
+	
+		<li><a href="../../guides.html">Guides</a></li>
+		<li> / </li>
+	
+		<li><a href="../recipes.html">recipes</a></li>
+		<li> / </li>
+	
+	
+	<li><a href="credit-card-simple.html">Credit Card Guide (Simple)</a></li>
+	
+	<li class="breadcrumb-dropdown-separator"> / </li>
+	<li class="breadcrumb-dropdown">
+		<a> On this page</a>
+		<ul class="on-this-page"></ul>
+	</li>
+	<div class="nav-toggle" title="Back to top"></div>
+</div>
+
+
+    </div>
+    <div class="bottom">
+      <article>
+  <section class="title">
+	<div class="page-type">
+		<h1>Credit Card Guide (Simple)</h1>
+			<ul class="title-social">
+				
+				
+				<li>
+					<a class="button-link" href="//github.com/canjs/canjs/edit/master/docs/can-guides/commitment/recipes/credit-card-simple/credit-card-simple.md">Edit on GitHub</a>
+				</li>
+				
+			</ul>
+	</div>
+	<div class="clear-both"></div>
+	
+  
+	<section class="description">
+    <p>This guide walks through building a very simple credit card payment form.  It uses <a href="https://stripe.com/docs/stripe.js/v2">Stripe.js v2 API</a> to create a token
+which can be used to create a charge.  It also performs
+simple validation on the payment form values.</p>
+
+</section>
+
+  
+	
+</section>
+<section class="on-this-page-table">
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <section class="body">
+    <p>In this guide you will learn how to:</p>
+<ul>
+<li>Set up a basic CanJS application.</li>
+<li>Collect form data and post it to a service
+endpoint when the form is submitted.</li>
+<li>Do basic validation.</li>
+</ul>
+<p>The final widget looks like:</p>
+<p><a class="jsbin-embed" href="https://jsbin.com/konemoc/1/embed?output">JS Bin on jsbin.com</a></p>
+<p>To use the widget:</p>
+<ol>
+<li><strong>Enter</strong> a <em>Card Number</em>, <em>Expiration Date</em>, and <em>CVC</em>.</li>
+<li><strong>Click</strong> on the form so those inputs lose focus.  The
+<em>Pay</em> button should become enabled.</li>
+<li><strong>Click</strong> the <em>Pay</em> button to get a token from Stripe which
+could be used to create a credit card payment.</li>
+<li><strong>Change</strong> the inputs to invalid values.  An error message should appear,
+the invalid inputs should be highlighted red, and the <em>Pay</em>
+button should become disabled.</li>
+</ol>
+<p><strong>START THIS TUTORIAL BY CLONING THE FOLLOWING JS Bin</strong>:</p>
+<p><a class="jsbin-embed" href="https://jsbin.com/gafibor/3/embed?output">JS Bin on jsbin.com</a></p>
+<p>This JS Bin has initial prototype HTML and CSS which is useful for
+getting the application to look right.</p>
+<p>The following sections are broken down into:</p>
+<ul>
+<li><strong>The problem</strong> — A description of what the section is trying to accomplish.</li>
+<li><strong>What you need to know</strong> — Information about CanJS that is useful for solving the problem.</li>
+<li><strong>The solution</strong> — The solution to the problem.</li>
+</ul>
+<h2>Setup</h2>
+<h3>The problem</h3>
+<p>Let’s create a <code>payment-view</code> template and render it with
+a ViewModel called <code>PaymentVM</code>, which will have
+an <code>amount</code> property that defaults to <code>9.99</code>.  When complete, we
+should be able update the displayed “pay amount” by writing the
+following in the console:</p>
+<pre><code class="language-js">viewModel.amount = 1000;
+</code></pre>
+<h3>What you need to know</h3>
+<ul>
+<li><p>To use Stripe, you must call <a href="https://stripe.com/docs/stripe.js/v2#setting-publishable-key">Stripe.setPublishableKey</a>.</p></li>
+<li><p>A basic CanJS setup uses instances of a ViewModel to manage the
+behavior of a View.  A ViewModel type is defined, an instance of it
+is created and passed to a View as follows:</p>
+<pre><code class="language-js">// Define the ViewModel type
+var MyViewModel = can.DefineMap.extend(&quot;MyViewModel&quot;,{
+ ...      
+})
+// Create an instance of the ViewModel
+var viewModel = new MyViewModel();
+// Get a View
+var view = can.stache.from(&quot;my-view&quot;);
+// Render the View with the ViewModel instance
+var frag = view(viewModel);
+document.body.appendChild(frag);
+</code></pre></li>
+<li><p>CanJS uses <a href="../../can-stache.html" title="Live binding Mustache and Handlebars-compatible templates.">can-stache</a> to render data in a template
+and keep it live.  Templates can be authored in <code>&lt;script&gt;</code> tags like:</p>
+<pre><code class="language-html">&lt;script type=&quot;text/stache&quot; id=&quot;app-view&quot;&gt;
+  TEMPLATE CONTENT
+&lt;/script&gt;
+</code></pre>
+<p>A <a href="../../can-stache.html" title="Live binding Mustache and Handlebars-compatible templates.">can-stache</a> template uses
+<a href="../../can-stache.tags.escaped.html" title="Insert the value of the expression into the output of the template.">{{key}}</a> magic tags to insert data into
+the HTML output like:</p>
+<pre><code class="language-html">&lt;script type=&quot;text/stache&quot; id=&quot;app-view&quot;&gt;
+  {{something.name}}
+&lt;/script&gt;
+</code></pre></li>
+<li><p>Load a template from a <code>&lt;script&gt;</code> tag with <a href="../../can-stache.from.html" title="Return a template loaded from an element.">can.stache.from</a> like:</p>
+<pre><code class="language-js">var template = can.stache.from(SCRIPT_ID);
+</code></pre></li>
+<li><p>Render the template with data into a documentFragment like:</p>
+<pre><code class="language-js">var frag = template({
+  something: {name: &quot;Derek Brunson&quot;}
+});
+</code></pre></li>
+<li><p>Insert a fragment into the page with:</p>
+<pre><code class="language-js">document.body.appendChild(frag);
+</code></pre></li>
+<li><p><a href="../../can-define/map/map.extend.html" title="Define a custom map type.">DefineMap.extend</a> allows you to define a property with a default value like:</p>
+<pre><code class="language-js">ProductVM = can.DefineMap.extend(&quot;ProductVM&quot;,{
+  age: {value: 34}
+})
+</code></pre>
+<p>This lets you create instances of that type, get and set those properties and listen to changes like:</p>
+<pre><code class="language-js">var productVM = new ProductVM({});
+
+productVM.age //-&gt; 34
+
+productVM.on(&quot;age&quot;, function(ev, newAge){
+  console.log(&quot;age changed to &quot;, newAge);
+});
+
+productVM.age = 35 //-&gt; logs &quot;person age changed to 35&quot;
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Credit Card Form&quot;&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script type='text/stache' id=&quot;payment-view&quot;&gt;
+  &lt;form&gt;
+
+    &lt;input type='text' name='number' placeholder='Card Number'/&gt;
+
+    &lt;input type='text' name='expiry' placeholder='MM-YY'/&gt;
+
+    &lt;input type='text' name='cvc' placeholder='CVC'/&gt;
+
+    &lt;button&gt;Pay ${{amount}}&lt;/button&gt;
+
+  &lt;/form&gt;
+&lt;/script&gt;
+
+&lt;script src=&quot;https://unpkg.com/can/dist/global/can.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://js.stripe.com/v2/&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<p><span line-highlight='10,19,22'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">Stripe.setPublishableKey('pk_test_zCC2JrO3KSMeh7BB5x9OUe2U');
+
+var PaymentVM = can.DefineMap.extend({
+  amount: {value: 9.99}
+});
+
+var viewModel = new PaymentVM();
+
+var paymentView = can.stache.from(&quot;payment-view&quot;);
+var frag = paymentView( viewModel );
+document.body.appendChild( frag );
+
+</code></pre>
+<h2>Read form values</h2>
+<h3>The problem</h3>
+<p>Let’s send the form values to the ViewModel so we
+can process and validate them.  In this step, we’ll
+send the form values to the ViewModel and print out
+the values to make sure the ViewModel has them correctly.</p>
+<p>Print out the exported values like:</p>
+<pre><code class="language-html">&lt;p&gt;{{userCardNumber}}, {{userExpiry}}, {{userCVC}}&lt;/p&gt;
+</code></pre>
+<h3>What you need to know</h3>
+<ul>
+<li><p>Use <a href="../../can-stache-bindings.twoWay.html" title="Two-way bind a value in the viewModel or the element to the parent scope.">value:bind</a> to setup a two-way binding<br />
+in <code>can-stache</code>.  For example, the following keeps <code>email</code> on the ViewModel and the input's <code>value</code> in sync:</p>
+<pre><code class="language-html">&lt;input value:bind=&quot;email&quot;/&gt;
+</code></pre></li>
+<li><p><a href="../../can-define/map/map.extend.html" title="Define a custom map type.">DefineMap.extend</a> allows you to define a property by defining its type like so:</p>
+<pre><code class="language-js">Person = can.DefineMap.extend(&quot;Person&quot;,{
+  name: &quot;string&quot;,
+  age: &quot;number&quot;
+})
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;script type='text/stache' id=&quot;payment-view&quot;&gt;
+  &lt;form&gt;
+
+    &lt;input type='text' name='number' placeholder='Card Number'
+      value:bind=&quot;userCardNumber&quot;/&gt;
+
+    &lt;input type='text' name='expiry' placeholder='MM-YY'
+      value:bind=&quot;userExpiry&quot;/&gt;
+
+    &lt;input type='text' name='cvc' placeholder='CVC'
+      value:bind=&quot;userCVC&quot;/&gt;
+
+    &lt;button&gt;Pay ${{amount}}&lt;/button&gt;
+
+    &lt;p&gt;{{userCardNumber}}, {{userExpiry}}, {{userCVC}}&lt;/p&gt;
+  &lt;/form&gt;
+&lt;/script&gt;
+
+</code></pre>
+<p><span line-highlight='4-11,15,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">Stripe.setPublishableKey('pk_test_zCC2JrO3KSMeh7BB5x9OUe2U');
+
+var PaymentVM = can.DefineMap.extend({
+  amount: {value: 9.99},
+
+  userCardNumber: &quot;string&quot;,
+
+  userExpiry: &quot;string&quot;,
+
+  userCVC: &quot;string&quot;
+});
+
+var viewModel = new PaymentVM();
+
+var paymentView = can.stache.from(&quot;payment-view&quot;);
+var frag = paymentView( viewModel );
+document.body.appendChild( frag );
+
+</code></pre>
+<p><span line-highlight='6-10,only'></span></p>
+<h2>Format form values</h2>
+<h3>The problem</h3>
+<p>Our data needs to be cleaned up before we pass it to the server.
+We need to create the following properties, with associated behaviors:</p>
+<ul>
+<li><code>cardNumber</code> - The user's card number as a string without hyphens (<code>-</code>).</li>
+<li><code>expiryMonth</code> - A number for the month entered.</li>
+<li><code>expiryYear</code> - A number for the year entered.</li>
+<li><code>cvc</code> - A number for the cvc entered.</li>
+</ul>
+<p>So that we can print out the values like:</p>
+<pre><code class="language-html">&lt;p&gt;{{cardNumber}}, {{expiryMonth}}-{{expiryYear}}, {{cvc}}&lt;/p&gt;
+</code></pre>
+<h3>What you need to know</h3>
+<ul>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get">ES5 Getter Syntax</a> can
+be used to define a <code>DefineMap</code> property that changes when another property changes.  For example,
+the following defines a <code>firstName</code> property that always has the
+first word of the <code>fullName</code> property:</p>
+<pre><code class="language-js">DefineMap.extend({
+  fullName: &quot;string&quot;,
+  get firstName(){
+    return this.fullName.split(&quot; &quot;)[0];
+  }
+});
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;script type='text/stache' id=&quot;payment-view&quot;&gt;
+  &lt;form&gt;
+
+    &lt;input type='text' name='number' placeholder='Card Number'
+      value:bind=&quot;userCardNumber&quot;/&gt;
+
+    &lt;input type='text' name='expiry' placeholder='MM-YY'
+      value:bind=&quot;userExpiry&quot;/&gt;
+
+    &lt;input type='text' name='cvc' placeholder='CVC'
+      value:bind=&quot;userCVC&quot;/&gt;
+
+    &lt;button&gt;Pay ${{amount}}&lt;/button&gt;
+
+    &lt;p&gt;{{userCardNumber}}, {{userExpiry}}, {{userCVC}}&lt;/p&gt;
+    &lt;p&gt;{{cardNumber}}, {{expiryMonth}}-{{expiryYear}}, {{cvc}}&lt;/p&gt;
+  &lt;/form&gt;
+&lt;/script&gt;
+
+</code></pre>
+<p><span line-highlight='16,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">Stripe.setPublishableKey('pk_test_zCC2JrO3KSMeh7BB5x9OUe2U');
+
+var PaymentVM = can.DefineMap.extend({
+  amount: {value: 9.99},
+
+  userCardNumber: &quot;string&quot;,
+  get cardNumber(){
+    return this.userCardNumber ? this.userCardNumber.replace(/-/g,&quot;&quot;): null;
+  },
+
+  userExpiry: &quot;string&quot;,
+  get expiryParts() {
+    if(this.userExpiry) {
+      return this.userExpiry.split(&quot;-&quot;).map(function(p){
+        return parseInt(p,10);
+      });
+    }
+  },
+  get expiryMonth() {
+    return this.expiryParts &amp;&amp; this.expiryParts[0];
+  },
+  get expiryYear() {
+    return this.expiryParts &amp;&amp; this.expiryParts[1];
+  },
+
+  userCVC: &quot;string&quot;,
+  get cvc(){
+    return this.userCVC ?
+      parseInt(this.userCVC,10) : null;
+  }
+});
+
+var viewModel = new PaymentVM();
+
+var paymentView = can.stache.from(&quot;payment-view&quot;);
+var frag = paymentView( viewModel );
+document.body.appendChild( frag );
+
+</code></pre>
+<p><span line-highlight='7-9,12-24,27-30,only'></span></p>
+<h2>Validate individual form values</h2>
+<h3>The problem</h3>
+<p>We need to add <code>class='is-error'</code> when a form value has a value that
+is not valid according to Stripe’s validators. To do that, we need to
+create the following properties that will return an error message for
+their respective form property:</p>
+<ul>
+<li><code>cardError</code> - “Invalid card number (ex: 4242-4242-4242).”</li>
+<li><code>expiryError</code> - “Invalid expiration date (ex: 01-22).”</li>
+<li><code>cvcError</code> - “Invalid CVC (ex: 123).”</li>
+</ul>
+<h3>What you need to know</h3>
+<ul>
+<li><p>Stripe has <a href="https://stripe.com/docs/stripe.js/v2#card-validation-helpers">validation methods</a>:</p>
+<ul>
+<li><code>Stripe.card.validateCardNumber(number)</code></li>
+<li><code>Stripe.card.validateExpiry(month, year)</code></li>
+<li><code>Stripe.card.validateCVC(cvc)</code></li>
+</ul></li>
+<li><p>Use <a href="../../can-stache.helpers.if.html" title="can-stache.helpers.if">{{#if(value)}}</a> to do <code>if/else</code> branching in <code>can-stache</code>.</p>
+<pre><code class="language-html">{{#if(error)}}class='is-error'{{/if}}
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;script type='text/stache' id=&quot;payment-view&quot;&gt;
+  &lt;form&gt;
+
+    &lt;input type='text' name='number' placeholder='Card Number'
+      {{#if(cardError)}}class='is-error'{{/if}}
+      value:bind=&quot;userCardNumber&quot;/&gt;
+
+    &lt;input type='text' name='expiry' placeholder='MM-YY'
+      {{#if(expiryError)}}class='is-error'{{/if}}
+      value:bind=&quot;userExpiry&quot;/&gt;
+
+    &lt;input type='text' name='cvc' placeholder='CVC'
+      {{#if(cvcError)}}class='is-error'{{/if}}
+      value:bind=&quot;userCVC&quot;/&gt;
+
+    &lt;button&gt;Pay ${{amount}}&lt;/button&gt;
+
+    &lt;p&gt;{{userCardNumber}}, {{userExpiry}}, {{userCVC}}&lt;/p&gt;
+    &lt;p&gt;{{cardNumber}}, {{expiryMonth}}-{{expiryYear}}, {{cvc}}&lt;/p&gt;
+  &lt;/form&gt;
+&lt;/script&gt;
+
+</code></pre>
+<p><span line-highlight='5,9,13,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">Stripe.setPublishableKey('pk_test_zCC2JrO3KSMeh7BB5x9OUe2U');
+
+var PaymentVM = can.DefineMap.extend({
+  amount: {value: 9.99},
+
+  userCardNumber: &quot;string&quot;,
+  get cardNumber(){
+    return this.userCardNumber ? this.userCardNumber.replace(/-/g,&quot;&quot;): null;
+  },
+  get cardError() {
+    if( this.cardNumber &amp;&amp; !Stripe.card.validateCardNumber(this.cardNumber) ) {
+      return &quot;Invalid card number (ex: 4242-4242-4242).&quot;;
+    }
+  },
+
+  userExpiry: &quot;string&quot;,
+  get expiryParts() {
+    if(this.userExpiry) {
+      return this.userExpiry.split(&quot;-&quot;).map(function(p){
+        return parseInt(p,10);
+      });
+    }
+  },
+  get expiryMonth() {
+    return this.expiryParts &amp;&amp; this.expiryParts[0];
+  },
+  get expiryYear() {
+    return this.expiryParts &amp;&amp; this.expiryParts[1];
+  },
+  get expiryError() {
+    if( (this.expiryMonth || this.expiryYear) &amp;&amp;
+       !Stripe.card.validateExpiry(this.expiryMonth, this.expiryYear) ) {
+      return &quot;Invalid expiration date (ex: 01-22).&quot;;
+    }
+  },
+
+  userCVC: &quot;string&quot;,
+  get cvc(){
+    return this.userCVC ?
+      parseInt(this.userCVC,10) : null;
+  },
+  get cvcError() {
+    if(this.cvc &amp;&amp; !Stripe.card.validateCVC(this.cvc)) {
+      return &quot;Invalid CVC (ex: 123).&quot;;
+    }
+  }
+});
+
+var viewModel = new PaymentVM();
+
+var paymentView = can.stache.from(&quot;payment-view&quot;);
+var frag = paymentView( viewModel );
+document.body.appendChild( frag );
+
+</code></pre>
+<p><span line-highlight='10-14,30-35,42-46,only'></span></p>
+<h2>Get payment token from Stripe</h2>
+<h3>The problem</h3>
+<p>When the user submits the form, we need to call stripe to get
+a token that we may use to charge the credit card.
+When we get a token, we will simply alert it to the user like:</p>
+<pre><code class="language-js">alert(&quot;Token: &quot;+response.id);
+</code></pre>
+<p>After submitting the form, you should see an alert like:</p>
+<p><img src="../../../docs/can-guides/commitment/recipes/credit-card-simple/token-alert.png" alt="Alert" /></p>
+<h3>What you need to know</h3>
+<ul>
+<li><p>Use <a href="../../can-stache-bindings.event.html" title="Respond to events on elements or component ViewModels.">on:event</a> to listen to an event on an element and call a method in <code>can-stache</code>.  For example, the following calls <code>doSomething()</code> when the <code>&lt;div&gt;</code> is clicked:</p>
+<pre><code class="language-html">&lt;div on:click=&quot;doSomething(%event)&quot;&gt; ... &lt;/div&gt;
+</code></pre>
+<p>Notice that it also passed the event object with <code>%event</code>.</p></li>
+<li><p>To prevent a form from submitting, call <code>event.preventDefault()</code>.</p></li>
+<li><p><a href="https://stripe.com/docs/stripe.js/v2#card-createToken">Stripe.card.createToken</a> can be used to get a token that can be used to charge a card:</p>
+<pre><code class="language-js">Stripe.card.createToken({
+  number: this.cardNumber,
+  cvc: this.cvc,
+  exp_month: this.expiryMonth,
+  exp_year: this.expiryYear
+}, stripeResponseHandler(status, response) )
+</code></pre>
+<ul>
+<li><code>stripeResponseHandler</code> gets called back with either:
+<ul>
+<li>success: a status of <code>200</code> and a response with an <code>id</code> that is the token.</li>
+<li>failure: a status other than <code>200</code> and a response with an <code>error.message</code> value detailing what went wrong.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;script type='text/stache' id=&quot;payment-view&quot;&gt;
+  &lt;form on:submit=&quot;pay(%event)&quot;&gt;
+
+    &lt;input type='text' name='number' placeholder='Card Number'
+      {{#if(cardError)}}class='is-error'{{/if}}
+      value:bind=&quot;userCardNumber&quot;/&gt;
+
+    &lt;input type='text' name='expiry' placeholder='MM-YY'
+      {{#if(expiryError)}}class='is-error'{{/if}}
+      value:bind=&quot;userExpiry&quot;/&gt;
+
+    &lt;input type='text' name='cvc' placeholder='CVC'
+      {{#if(cvcError)}}class='is-error'{{/if}}
+      value:bind=&quot;userCVC&quot;/&gt;
+
+    &lt;button&gt;Pay ${{amount}}&lt;/button&gt;
+    
+    &lt;p&gt;{{userCardNumber}}, {{userExpiry}}, {{userCVC}}&lt;/p&gt;
+    &lt;p&gt;{{cardNumber}}, {{expiryMonth}}-{{expiryYear}}, {{cvc}}&lt;/p&gt;
+
+  &lt;/form&gt;
+&lt;/script&gt;
+
+</code></pre>
+<p><span line-highlight='2,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">Stripe.setPublishableKey('pk_test_zCC2JrO3KSMeh7BB5x9OUe2U');
+
+var PaymentVM = can.DefineMap.extend({
+  amount: {value: 9.99},
+
+  userCardNumber: &quot;string&quot;,
+  get cardNumber(){
+    return this.userCardNumber ? this.userCardNumber.replace(/-/g,&quot;&quot;): null;
+  },
+  get cardError() {
+    if( this.cardNumber &amp;&amp; !Stripe.card.validateCardNumber(this.cardNumber) ) {
+      return &quot;Invalid card number (ex: 4242-4242-4242).&quot;;
+    }
+  },
+
+  userExpiry: &quot;string&quot;,
+  get expiryParts() {
+    if(this.userExpiry) {
+      return this.userExpiry.split(&quot;-&quot;).map(function(p){
+        return parseInt(p,10);
+      });
+    }
+  },
+  get expiryMonth() {
+    return this.expiryParts &amp;&amp; this.expiryParts[0];
+  },
+  get expiryYear() {
+    return this.expiryParts &amp;&amp; this.expiryParts[1];
+  },
+  get expiryError() {
+    if( (this.expiryMonth || this.expiryYear) &amp;&amp;
+       !Stripe.card.validateExpiry(this.expiryMonth, this.expiryYear) ) {
+      return &quot;Invalid expiration date (ex: 01-22).&quot;;
+    }
+  },
+
+  userCVC: &quot;string&quot;,
+  get cvc(){
+    return this.userCVC ?
+      parseInt(this.userCVC,10) : null;
+  },
+  get cvcError() {
+    if(this.cvc &amp;&amp; !Stripe.card.validateCVC(this.cvc)) {
+      return &quot;Invalid CVC (ex: 123).&quot;;
+    }
+  },
+
+  pay: function(event){
+    event.preventDefault();
+
+    Stripe.card.createToken({
+      number: this.cardNumber,
+      cvc: this.cvc,
+      exp_month: this.expiryMonth,
+      exp_year: this.expiryYear
+    }, function(status, response){
+      if(status === 200) {
+        alert(&quot;Token: &quot;+response.id);
+        // stripe.charges.create({
+        //   amount: this.amount,
+        //   currency: &quot;usd&quot;,
+        //   description: &quot;Example charge&quot;,
+        //   source: response.id,
+        // })
+      } else {
+        alert(&quot;Error: &quot;+response.error.message);
+      }
+    });
+  }
+});
+
+var viewModel = new PaymentVM();
+
+var paymentView = can.stache.from(&quot;payment-view&quot;);
+var frag = paymentView( viewModel );
+document.body.appendChild( frag );
+
+</code></pre>
+<p><span line-highlight='48-69,only'></span></p>
+<h2>Validate the form</h2>
+<h3>The problem</h3>
+<p>We need to show a warning message when information
+is entered incorrectly and disable the form until
+they have entered it correctly.</p>
+<p>To do that, we’ll add the following properties to the ViewModel:</p>
+<ul>
+<li><code>isCardValid</code> - returns true if the card is valid</li>
+<li><code>isCardInvalid</code> - returns true if the card is invalid</li>
+<li><code>errorMessage</code> - returns the error for the first form value that
+has an error.</li>
+</ul>
+<h3>What you need to know</h3>
+<ul>
+<li><p>Use <a href="../../can-stache-bindings.toChild.html" title="One-way bind a value in the parent scope to the ViewModel or element.">{$disabled}</a> to make an input disabled, like:</p>
+<pre><code class="language-html">&lt;button disabled:from=&quot;isCardInvalid&quot;&gt;...
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;script type='text/stache' id=&quot;payment-view&quot;&gt;
+  &lt;form on:submit=&quot;pay(%event)&quot;&gt;
+
+    {{#if(errorMessage)}}
+       &lt;div class=&quot;message&quot;&gt;{{errorMessage}}&lt;/div&gt;
+    {{/if}}
+
+    &lt;input type='text' name='number' placeholder='Card Number'
+      {{#if(cardError)}}class='is-error'{{/if}}
+      value:bind=&quot;userCardNumber&quot;/&gt;
+
+    &lt;input type='text' name='expiry' placeholder='MM-YY'
+      {{#if(expiryError)}}class='is-error'{{/if}}
+      value:bind=&quot;userExpiry&quot;/&gt;
+
+    &lt;input type='text' name='cvc' placeholder='CVC'
+      {{#if(cvcError)}}class='is-error'{{/if}}
+      value:bind=&quot;userCVC&quot;/&gt;
+
+    &lt;button disabled:from=&quot;isCardInvalid&quot;&gt;Pay ${{amount}}&lt;/button&gt;
+
+  &lt;/form&gt;
+&lt;/script&gt;
+
+</code></pre>
+<p><span line-highlight='4-6,20,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">Stripe.setPublishableKey('pk_test_zCC2JrO3KSMeh7BB5x9OUe2U');
+
+var PaymentVM = can.DefineMap.extend({
+  amount: {value: 9.99},
+
+  userCardNumber: &quot;string&quot;,
+  get cardNumber(){
+    return this.userCardNumber ? this.userCardNumber.replace(/-/g,&quot;&quot;): null;
+  },
+  get cardError() {
+    if( this.cardNumber &amp;&amp; !Stripe.card.validateCardNumber(this.cardNumber) ) {
+      return &quot;Invalid card number (ex: 4242-4242-4242).&quot;;
+    }
+  },
+
+  userExpiry: &quot;string&quot;,
+  get expiryParts() {
+    if(this.userExpiry) {
+      return this.userExpiry.split(&quot;-&quot;).map(function(p){
+        return parseInt(p,10);
+      });
+    }
+  },
+  get expiryMonth() {
+    return this.expiryParts &amp;&amp; this.expiryParts[0];
+  },
+  get expiryYear() {
+    return this.expiryParts &amp;&amp; this.expiryParts[1];
+  },
+  get expiryError() {
+    if( (this.expiryMonth || this.expiryYear) &amp;&amp;
+       !Stripe.card.validateExpiry(this.expiryMonth, this.expiryYear) ) {
+      return &quot;Invalid expiration date (ex: 01-22).&quot;;
+    }
+  },
+
+  userCVC: &quot;string&quot;,
+  get cvc(){
+    return this.userCVC ?
+      parseInt(this.userCVC,10) : null;
+  },
+  get cvcError() {
+    if(this.cvc &amp;&amp; !Stripe.card.validateCVC(this.cvc)) {
+      return &quot;Invalid CVC (ex: 123).&quot;;
+    }
+  },
+
+  pay: function(event){
+    event.preventDefault();
+
+    Stripe.card.createToken({
+      number: this.cardNumber,
+      cvc: this.cvc,
+      exp_month: this.expiryMonth,
+      exp_year: this.expiryYear
+    }, function(status, response){
+      if(status === 200) {
+        alert(&quot;Token: &quot;+response.id);
+        // stripe.charges.create({
+        //   amount: this.amount,
+        //   currency: &quot;usd&quot;,
+        //   description: &quot;Example charge&quot;,
+        //   source: response.id,
+        // })
+      } else {
+        alert(&quot;Error: &quot;+response.error.message);
+      }
+    });
+  },
+
+  get isCardValid(){
+    return Stripe.card.validateCardNumber(this.cardNumber) &amp;&amp;
+      Stripe.card.validateExpiry(this.expiryMonth, this.expiryYear) &amp;&amp;
+      Stripe.card.validateCVC(this.cvc);
+  },
+  get isCardInvalid(){
+    return !this.isCardValid;
+  },
+  get errorMessage(){
+    return this.cardError || this.expiryError || this.cvcError;
+  }
+});
+
+var viewModel = new PaymentVM();
+
+var paymentView = can.stache.from(&quot;payment-view&quot;);
+var frag = paymentView( viewModel );
+document.body.appendChild( frag );
+
+</code></pre>
+<p><span line-highlight='71-81,only'></span></p>
+<script src="https://static.jsbin.com/js/embed.min.js?4.0.4"></script>
+
+</section>
+
+  
+
+
+<script type="text/javascript">
+  window.docObject = {"src":{"path":"docs/can-guides/commitment/recipes/credit-card-simple/credit-card-simple.md"},"description":"This guide walks through building a very simple credit card payment form.  It uses [Stripe.js v2 API](https://stripe.com/docs/stripe.js/v2) to create a token\nwhich can be used to create a charge.  It also performs\nsimple validation on the payment form values.\n\n\n","name":"guides/recipes/credit-card-simple","title":"Credit Card Guide (Simple)","type":"page","parent":"guides/recipes","comment":" ","pathToRoot":"../../.."};
+</script>
+</article>
+      
+        <footer><p>CanJS is part of <a href="https://donejs.com" target="_blank">DoneJS</a>. Created and maintained by the core <a href="https://donejs.com/About.html#team" target="_blank">DoneJS team</a> and <a href="https://www.bitovi.com" target="_blank">Bitovi</a>. <strong>Currently 3.12.1.</strong></p>
+</footer>
+      
+    </div>
+  </div>
+</div>
+<survey-ad>
+  <button aria-label="Close" class="close" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <a href="https://donejs.com/survey.html" target="_blank">
+    Help us improve CanJS by taking our community survey
+  </a>
+</survey-ad>
+
+
+		
+			<script>
+				steal = {
+				  	instantiated: {
+				    	"bundles/bit-docs-site/static.css!$css" : null
+				  	}
+			  	};
+			</script>
+			<script type='text/javascript' data-main="bit-docs-site/static" src="../../static/steal.production.js"></script>
+		
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<!-- root-level elements with attributes necessary for the app -->
+		<div path-prefix="../.."></div>
+
+	</body>
+</html>

@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: docs/can-guides/commitment/recipes/cta-bus-map/cta-bus-map.md
+	@page guides/recipes/cta-bus-map
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CanJS - CTA Bus Map (Medium)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+		<link rel="stylesheet" type="text/css" href="../../static/bundles/bit-docs-site/static.css">
+		<link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/docs/images/canjs_favicon.ico">
+		<link rel="apple-touch-icon" sizes="57x57" href="../../../docs/images/canjs_favicon_57x57.png">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="../../../docs/images/canjs_favicon_57x57.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="../../../docs/images/canjs_favicon_72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="../../../docs/images/canjs_favicon_114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="../../../docs/images/canjs_favicon_128x128.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="../../../docs/images/canjs_favicon_144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="../../../docs/images/canjs_favicon_152x152.png">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+	  	<meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
+	
+	
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-2302003-11', 'auto');
+			ga('send', 'pageview');
+		</script>
+	
+</head>
+	<body>
+		<input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+		<label for="nav-trigger">Menu</label>
+	  	<div id="everything">
+  <div id="left" class="column">
+    <div class="top-left">
+      
+          <div class="brand">
+	<div class="logo">
+		<a href="../../../index.html" alt="CanJS"></a>
+		<div class="dropdown project-dropdown">
+			<a href="https://donejs.com/">DoneJS</a>
+			<a href="https://stealjs.com/">StealJS</a>
+			<a href="https://jquerypp.com/">jQuery++</a>
+			<a href="https://funcunit.com/">FuncUnit</a>
+			<a href="https://documentjs.com/">DocumentJS</a>
+		</div>
+	</div>
+	<div class="version">
+		<div class="version-number">
+			3.12.1
+		</div>
+		<div class="dropdown version-dropdown">
+			
+				<a href="https://v2.canjs.com">2.3.33</a>
+			
+		</div>
+	</div>
+</div>
+<div class="search-bar">
+	<div class="search-wrap" style="display:none;">
+		<span class="search-icon"></span>
+		<input
+			type="text"
+			size="6"
+			class="search"
+			placeholder="Search"
+			autocomplete="off"
+			autocorrect="off"
+			autocapitalize="none"
+			spellcheck="false"/>
+			<span class="search-icon-cancel"></span>
+	</div>
+</div>
+
+
+      
+    </div>
+    <div class="bottom">
+      <div class="nav-menu">
+        <div class="social-side-container">
+          <ul class="social-side">
+  <li>
+    <a class="header-mobile github" href="https://github.com/canjs/canjs" target="_blank"><img class="social-icon-small" src="../../../docs/images/github.png">Github</a>
+  </li>
+  <li>
+    <a class="header-mobile twitter" href="https://twitter.com/canjs" target="_blank"><img class="social-icon-small" src="../../../docs/images/twitter.png">Twitter</a>
+  </li>
+</ul>
+<ul class="social-side">
+  <li>
+    <a class="header-mobile" href="https://gitter.im/canjs/canjs" target="_blank">Chat</a>
+  </li>
+  <li>
+    <a class="header-mobile" href="http://forums.donejs.com/c/canjs" target="_blank">Forum</a>
+  </li>
+</ul>
+
+        </div>
+        
+            
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../about.html"
+							title="Learn about CanJS’s mission, technical highlights, who uses CanJS, and our future roadmap.">
+							About
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						parent
+           						expanded">
+						<a class="page"
+							href="../../guides.html"
+							title="Welcome to CanJS! These guides are here to help you develop and improve your relationship with CanJS. After all, picking a JavaScript framework is a commitment.  We want CanJS to be the framework you marry.  This page helps you know how to advance through the different stages of this relationship:">
+							Guides
+						</a>
+						
+	<ul>
+		
+			
+				
+					<li>
+						<span>experiment</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../chat.html"
+							title="This guide will walk you through building a real-time chat application with CanJS’s Core libraries.  It takes about 30 minutes to complete.">
+							Chat Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../todomvc.html"
+							title="This guide will walk you through building a slightly modified version of TodoMVC with CanJS’s Core libraries and can-fixture. It takes about 1 hour to complete.">
+							TodoMVC Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../atm.html"
+							title="This guide will walk you through building and testing an Automated Teller Machine (ATM) application with CanJS’s
+Core libraries.  You’ll learn how to do test driven development (TDD)
+and manage complex state.  It takes about 2 hours to complete.">
+							ATM Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li>
+						<span>getting started</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../setup.html"
+							title="Get started with CanJS by installing it with npm, using a JS&amp;nbsp;Bin, or just adding it to an HTML page with a &lt;script&gt; tag.">
+							Setting up CanJS
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../api.html"
+							title="This page walks through how to use and understand CanJS’s API documentation.">
+							Reading the Docs (API Guide)
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						parent
+           						expanded">
+						<a class="page"
+							href="../recipes.html"
+							title="A listing of small examples that are useful for learning CanJS.">
+							recipes
+						</a>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="credit-card-advanced.html"
+							title="This guide walks through building a simple credit card payment form with validations. It doesn&#x27;t use
+can-define. Instead it uses Kefir.js streams to make a ViewModel.
+can-kefir is used to make the Kefir streams observable to can-stache.">
+							Credit Card Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="credit-card-simple.html"
+							title="This guide walks through building a very simple credit card payment form.  It uses Stripe.js v2 API to create a token
+which can be used to create a charge.  It also performs
+simple validation on the payment form values.">
+							Credit Card Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="current
+           						
+           						expanded">
+						<a class="page"
+							href="cta-bus-map.html"
+							title="This guide walks you through showing Chicago Transit Authority (CTA) bus locations on a Google Map.">
+							CTA Bus Map (Medium)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="file-navigator-advanced.html"
+							title="This guide walks you through building a file navigation widget.  It takes about 45 minutes to complete.  It was written with
+CanJS 3.10. Check out the file-navigator-simple
+for an easier example that produces similar functionality.">
+							File Navigator Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="file-navigator-simple.html"
+							title="This guide walks you through building a simple file navigation widget.  It takes about 25 minutes to complete.  It was written with
+CanJS 3.10. Check out the file-navigator-advanced
+for an example that makes AJAX requests for its data and uses can-component.">
+							File Navigator Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="playlist-editor.html"
+							title="Learn how to use YouTube&#x27;s API to search for videos and make a playlist.  This makes authenticated requests with OAuth2. It uses jQuery++ for
+drag/drop events. It shows using custom attributes and custom events.  This guide takes
+an hour to complete.">
+							Playlist Editor (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="signup-simple.html"
+							title="This guide walks through building simple signup, login forms and a logout button.">
+							Signup and Login (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="todomvc-with-steal.html"
+							title="This guide walks through building TodoMVC with StealJS.">
+							TodoMVC with StealJS
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="weather-report-advanced.html"
+							title="This guides you through extending the Simple Weather Report Guide to remove imperative code and automatically look up the user’s location using the
+browser’s geolocation API.  Both of these will be done with event streams.
+This guide continues where the Simple Weather Report Guide left off.  It takes about 25 minutes to complete.  It was written with CanJS 3.8.">
+							Weather Report Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="weather-report-simple.html"
+							title="This guide walks you through building a simple weather report widget.  It takes about 25 minutes to complete.  It was written with
+CanJS 3.5.">
+							Weather Report Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li>
+						<span>upgrade</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../migrate-3.html"
+							title="This guide walks you through the step-by-step process to upgrade a 2.x app to CanJS 3.">
+							Migrating to CanJS 3
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../upgrade/using-codemods.html"
+							title="Learn how to migrate your app to CanJS 3 using can-migrate.">
+							Using Codemods
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../api.html"
+							title="Welcome to the CanJS API documentation! Learn about all the packages that make-up CanJS and how they work together to help you build amazing applications!">
+							API Docs
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../community.html"
+							title="Get involved with one of the most inviting communities on the internet!">
+							Community
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../contribute.html"
+							title="Learn how to contribute to CanJS!">
+							Contributing
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+        
+      </div>
+      <div class="search-results-container">
+	<div class="search-results-wrap"></div>
+</div>
+
+    </div>
+  </div>
+  <div id="right" class="column">
+    <div class="top-right">
+      <div class="top-right-top">
+	<ul class="top-right-bitovi">
+	  	<li class="dropdown">
+	    	<a href="https://www.bitovi.com" class="bitovi icon-bits">Bitovi</a>
+	    	<ul class="dropdown-menu">
+	      		<li><a href="https://www.bitovi.com/">Bitovi.com</a></li>
+	      		<li><a href="https://www.bitovi.com/blog">Blog</a></li>
+	      		<li><a href="https://www.bitovi.com/design">Design</a></li>
+	      		<li><a href="https://www.bitovi.com/development">Development</a></li>
+	      		<li><a href="https://www.bitovi.com/training">Training</a></li>
+	      		<li><a href="https://www.bitovi.com/open-source">Open Source</a></li>
+	      		<li><a href="https://www.bitovi.com/about">About</a></li>
+	      		<li><a href="https://www.bitovi.com/contact">Contact Us</a></li>
+	    	</ul>
+	  	</li>
+	</ul>
+	<div class="brand">
+		<div class="logo">
+			<a href="../../../index.html" alt="CanJS"></a>
+		</div>
+	</div>
+	<ul class="top-right-links">
+  <li>
+    <a href="https://gitter.im/canjs/canjs">Chat</a>
+  </li>
+  <li>
+    <a href="http://forums.donejs.com/c/canjs">Forum</a>
+  </li>
+  <li>
+    <a class="github-button nav-social" href="https://github.com/canjs/canjs" data-count-href="/canjs/canjs/stargazers" data-show-count="true">Star</a>
+  </li>
+  <li>
+    <a href="https://twitter.com/canjs" class="twitter-follow-button nav-social" data-show-count="true" data-show-screen-name="false">Follow @canjs</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </li>
+</ul>
+</div>
+<div class="breadcrumb">
+	
+		<li><a href="../../../index.html">CanJS</a></li>
+		<li> / </li>
+	
+		<li><a href="../../guides.html">Guides</a></li>
+		<li> / </li>
+	
+		<li><a href="../recipes.html">recipes</a></li>
+		<li> / </li>
+	
+	
+	<li><a href="cta-bus-map.html">CTA Bus Map (Medium)</a></li>
+	
+	<li class="breadcrumb-dropdown-separator"> / </li>
+	<li class="breadcrumb-dropdown">
+		<a> On this page</a>
+		<ul class="on-this-page"></ul>
+	</li>
+	<div class="nav-toggle" title="Back to top"></div>
+</div>
+
+
+    </div>
+    <div class="bottom">
+      <article>
+  <section class="title">
+	<div class="page-type">
+		<h1>CTA Bus Map (Medium)</h1>
+			<ul class="title-social">
+				
+				
+				<li>
+					<a class="button-link" href="//github.com/canjs/canjs/edit/master/docs/can-guides/commitment/recipes/cta-bus-map/cta-bus-map.md">Edit on GitHub</a>
+				</li>
+				
+			</ul>
+	</div>
+	<div class="clear-both"></div>
+	
+  
+	<section class="description">
+    <p>This guide walks you through showing Chicago Transit Authority (CTA) bus locations on a Google Map.</p>
+
+</section>
+
+  
+	
+</section>
+<section class="on-this-page-table">
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <section class="body">
+    <p>In this guide you will learn how to:</p>
+<ul>
+<li>Use <code>fetch</code> to request data.</li>
+<li>Create a custom element that wraps a google map.</li>
+<li>Add markers to the google map.</li>
+</ul>
+<p>The final widget looks like:</p>
+<p><a class="jsbin-embed" href="https://jsbin.com/zewenov/4/embed?output&height=600px">JS Bin on jsbin.com</a></p>
+<p>To use the widget:</p>
+<ol>
+<li><strong>Click</strong> a <em>Bus Route</em>.</li>
+<li><strong>Explore</strong> the markers added to the Google Map showing the bus locations for that route.</li>
+<li><strong>Click</strong> the <em>route name overlay</em> to refresh the bus locations.</li>
+</ol>
+<p>The following sections are broken down the following parts:</p>
+<ul>
+<li><strong>The problem</strong> — A description of what the section is trying to accomplish.</li>
+<li><strong>What you need to know</strong> — Information about CanJS that is useful for solving the problem.</li>
+<li><strong>How to verify it works</strong> - How to make sure the solution works if it's not obvious.</li>
+<li><strong>The solution</strong> — The solution to the problem.</li>
+</ul>
+<h2>Setup</h2>
+<p><strong>START THIS TUTORIAL BY CLONING THE FOLLOWING JS Bin</strong>:</p>
+<blockquote>
+<p>Click the <code>JS Bin</code> button.  The JSBin will open in a new window. In that new window, under <code>File</code>, click <code>Clone</code>.</p>
+</blockquote>
+<p><a class="jsbin-embed" href="https://jsbin.com/xumeboy/embed?html,js,output">CanJS Bus Demo on jsbin.com</a></p>
+<p>This JS Bin has initial prototype HTML and CSS which is useful for
+getting the application to look right.</p>
+<h3>What you need to know</h3>
+<p>There's nothing to do in this step. The JSBin is already setup with:</p>
+<ul>
+<li>A <em>basic</em> CanJS setup.</li>
+<li>A promise that resolves when the Google Maps has loaded.</li>
+<li>Some variables useful to make requests to get bus routes and locations.</li>
+</ul>
+<p>Please read on to understand the setup.</p>
+<p><strong>A Basic CanJS Setup</strong></p>
+<ul>
+<li><p>A basic CanJS setup uses instances of a ViewModel to manage the
+behavior of a View.  A ViewModel type is defined, an instance of it
+is created and passed to a View as follows:</p>
+<pre><code class="language-js">// Define the ViewModel type
+var MyViewModel = can.DefineMap.extend(&quot;MyViewModel&quot;,{
+ ...      
+})
+// Create an instance of the ViewModel
+var viewModel = new MyViewModel();
+// Get a View
+var view = can.stache.from(&quot;my-view&quot;);
+// Render the View with the ViewModel instance
+var frag = view(viewModel);
+document.body.appendChild(frag);
+</code></pre></li>
+<li><p>CanJS uses <a href="../../can-stache.html" title="Live binding Mustache and Handlebars-compatible templates.">can-stache</a> to render data in a template
+and keep it live.  Templates can be authored in <code>&lt;script&gt;</code> tags like:</p>
+<pre><code class="language-html">&lt;script type=&quot;text/stache&quot; id=&quot;app-view&quot;&gt;
+  TEMPLATE CONTENT
+&lt;/script&gt;
+</code></pre>
+<p>A <a href="../../can-stache.html" title="Live binding Mustache and Handlebars-compatible templates.">can-stache</a> template uses
+<a href="../../can-stache.tags.escaped.html" title="Insert the value of the expression into the output of the template.">{{key}}</a> &quot;magic tags&quot; to insert data into
+the HTML output like:</p>
+<pre><code class="language-html">&lt;script type=&quot;text/stache&quot; id=&quot;app-view&quot;&gt;
+  {{something.name}}
+&lt;/script&gt;
+</code></pre></li>
+<li><p>Load a template from a <code>&lt;script&gt;</code> tag with <a href="../../can-stache.from.html" title="Return a template loaded from an element.">can.stache.from</a> like:</p>
+<pre><code class="language-js">var template = can.stache.from(SCRIPT_ID);
+</code></pre></li>
+<li><p>Render the template with data into a documentFragment like:</p>
+<pre><code class="language-js">var frag = template({
+  something: {name: &quot;Derek Brunson&quot;}
+});
+</code></pre></li>
+<li><p>Insert a fragment into the page with:</p>
+<pre><code class="language-js">document.body.appendChild(frag);
+</code></pre></li>
+</ul>
+<p><strong>Loading Google Maps API</strong></p>
+<p>The following loads <a href="https://developers.google.com/maps/documentation/javascript/">Google Maps API</a>:</p>
+<pre><code>&lt;script&gt;
+  window.googleAPI = new Promise(function(resolve){
+    const script = document.createElement(&quot;script&quot;);
+    script.src = &quot;https://maps.googleapis.com/maps/api/js?key=AIzaSyD7POAQA-i16Vws48h4yRFVGBZzIExOAJI&quot;;
+    document.body.appendChild( script );
+    script.onload = resolve;
+  });
+&lt;/script&gt;
+</code></pre>
+<p>It creates a global <code>googleAPI</code> promise that resolves when Google Maps is ready.  You can use it like:</p>
+<pre><code class="language-js">googleAPI.then(function(){
+    new google.maps.Map( ... );
+})
+</code></pre>
+<p><strong>Loading CTA Bus Data</strong></p>
+<p>This app needs to make requests to the <a href="http://www.ctabustracker.com/">http://www.ctabustracker.com/</a> API.  The
+<code>ctabustracker</code> API is hosted at:</p>
+<pre><code class="language-js">var apiRoot = &quot;http://www.ctabustracker.com/bustime/api/v2/&quot;
+</code></pre>
+<p>The API needs a token as part of the request:</p>
+<pre><code class="language-js">var token = &quot;?key=piRYHjJ5D2Am39C9MxduHgRZc&amp;format=json&quot;;
+</code></pre>
+<p>However, the API does <strong>not</strong> support cross origin requests.  Therefore, we will request data using
+a proxy hosted at:</p>
+<pre><code class="language-js">var proxyUrl = &quot;https://can-cors.herokuapp.com/&quot;
+</code></pre>
+<p>With that proxy, the requests for this app will look like:</p>
+<pre><code class="language-js">fetch(&quot;https://can-cors.herokuapp.com/&quot;+
+    &quot;http://www.ctabustracker.com/bustime/api/v2/&quot;+
+    &quot;getroutes&quot;+
+    &quot;?key=piRYHjJ5D2Am39C9MxduHgRZc&amp;format=json&quot;)
+</code></pre>
+<h2>Change the app title</h2>
+<h3>The problem</h3>
+<p>In this section, we will:</p>
+<ul>
+<li>Explore the relationship between ViewModel and View.</li>
+<li>Make it so the title of the page changes from <code>&lt;h1&gt;YOUR TITLE HERE&lt;/h1&gt;</code>
+to <code>&lt;h1&gt;CHICAGO CTA BUS TRACKER&lt;/h1&gt;</code>.</li>
+<li>Let us adjust the title simply by changing the viewModel like:
+<pre><code class="language-js">viewModel.title = &quot;TITLE UPDATED&quot;
+</code></pre></li>
+</ul>
+<p><img src="../../../docs/can-guides/commitment/recipes/cta-bus-map/1-app-title.png" alt="YOUR TITLE HERE" /></p>
+<h3>What you need to know</h3>
+<ul>
+<li><p>A <a href="../../can-stache.html" title="Live binding Mustache and Handlebars-compatible templates.">can-stache</a> template uses
+<a href="../../can-stache.tags.escaped.html" title="Insert the value of the expression into the output of the template.">{{key}}</a> magic tags to insert data into
+the HTML output like:</p>
+<pre><code class="language-html">{{someValue}}
+</code></pre>
+<p>These values come from a ViewModel or Model.</p></li>
+<li><p>The <a href="../../can-define.types.value.html" title="Returns the default value for instances of the defined type.  The default value is defined on demand, when the property
+is read for the first time.">value</a> property definition can return the initial value of a property like:</p>
+<pre><code class="language-js">var AppViewModel = can.DefineMap.extend({
+  someValue: {
+    value: &quot;This string&quot;
+  }  
+});
+new AppViewModel().someValue //-&gt; &quot;This string&quot;
+</code></pre></li>
+</ul>
+<h3>How to verify it works</h3>
+<p>Run the folowing in the <code>Console</code> tab:</p>
+<pre><code class="language-js">viewModel.title = &quot;TITLE UPDATED&quot;
+</code></pre>
+<p>You should see the title update.</p>
+<h3>The solution</h3>
+<p>Update the <code>view</code> in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;div class=&quot;top&quot;&gt;
+  &lt;div class=&quot;header&quot;&gt;
+    &lt;h1&gt;{{title}}&lt;/h1&gt;
+    &lt;p&gt;Loading routes…&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;ul class=&quot;routes-list&quot;&gt;
+    &lt;li&gt;
+      &lt;span class=&quot;route-number&quot;&gt;1&lt;/span&gt;
+      &lt;span class=&quot;route-name&quot;&gt;Bronzeville/Union Station&lt;/span&gt;
+      &lt;span class=&quot;check&quot;&gt;✔&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;active&quot;&gt;
+      &lt;span class=&quot;route-number&quot;&gt;2&lt;/span&gt;
+      &lt;span class=&quot;route-name&quot;&gt;Hyde Park Express&lt;/span&gt;
+      &lt;span class=&quot;check&quot;&gt;✔&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;bottom&quot;&gt;
+  &lt;div class=&quot;route-selected&quot;&gt;
+    &lt;small&gt;Route 2:&lt;/small&gt; Hyde Park Express
+    &lt;div class=&quot;error-message&quot;&gt;No vehicles available for this route&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class='gmap'&gt;Google map will go here.&lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+<p><span line-highlight='3,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var proxyUrl = &quot;https://can-cors.herokuapp.com/&quot;;
+var token = &quot;?key=piRYHjJ5D2Am39C9MxduHgRZc&amp;format=json&quot;;
+var apiRoot = &quot;http://www.ctabustracker.com/bustime/api/v2/&quot;
+var getRoutesEnpoint = apiRoot + &quot;getroutes&quot; + token;
+var getVehiclesEndpoint = apiRoot + &quot;getvehicles&quot; + token;
+
+var BusTrackerVM = can.DefineMap.extend({
+  title: {
+    value: &quot;Chicago CTA Bus Tracker&quot;
+  }
+});
+
+var viewModel = new BusTrackerVM();
+
+var view = can.stache.from(&quot;app-view&quot;);
+var frag = view(viewModel);
+document.body.appendChild(frag);
+
+</code></pre>
+<p><span line-highlight='8-10,only'></span></p>
+<h2>List bus routes</h2>
+<h3>The problem</h3>
+<p>In this section, we will:</p>
+<ul>
+<li>Load and list bus routes.</li>
+<li>Show <code>&lt;p&gt;Loading routes…&lt;/p&gt;</code> while loading routes.</li>
+</ul>
+<p><img src="../../../docs/can-guides/commitment/recipes/cta-bus-map/2-list-routes.png" alt="List Bus Routes" /></p>
+<p>We will do this by:</p>
+<ul>
+<li>Store the promise of bus routes in a <code>routesPromise</code> property.</li>
+<li><code>routesPromise</code> will resolve to an <code>Array</code> of the routes.</li>
+<li>Loop through each route and add an <code>&lt;li&gt;</code> to the page.</li>
+<li>Show the loading message while <code>routesPromise</code> is pending.</li>
+</ul>
+<h3>What you need to know</h3>
+<ul>
+<li><p>The <a href="../../can-define.types.value.html" title="Returns the default value for instances of the defined type.  The default value is defined on demand, when the property
+is read for the first time.">value</a> property definition can return the initial value of a property like:</p>
+<pre><code class="language-js">var AppViewModel = can.DefineMap.extend({
+  myProperty: {
+    value: function(){
+      return new Promise( .... );
+    }
+  }  
+});
+new AppViewModel().myProperty //-&gt; Promise
+</code></pre></li>
+<li><p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">fetch API</a> is an easy way to make requests
+to a URL and get back JSON.  Use it like:</p>
+<pre><code class="language-js">fetch(url).then(function(response){
+    return response.json();
+}).then(function(data){
+
+});
+</code></pre>
+<p>You'll want to use the <code>proxyUrl</code> and <code>getRoutesEnpoint</code> variables to make a request for
+CTA bus routes. The routes service returns data like:</p>
+<pre><code class="language-js">{
+  &quot;bustime-response&quot;: {
+      &quot;routes&quot;: [
+          {
+              &quot;rt&quot;: &quot;1&quot;,
+              &quot;rtnm&quot;: &quot;Bronzeville/Union Station&quot;,
+              &quot;rtclr&quot;: &quot;#336633&quot;,
+              &quot;rtdd&quot;: &quot;1&quot;
+          },
+          ...
+      ]
+  }
+}
+</code></pre>
+<p>Make sure that <code>routesPromise</code> will be a Promise that resolves to an array of routes.</p></li>
+<li><p>Promises can transform data by returning new values.  For example if <code>outerPromise</code>
+resolves to <code>{innerData: {name: &quot;inner&quot;}}</code>, <code>resultPromise</code> will resolve to
+<code>{name: &quot;inner&quot;}</code>:</p>
+<pre><code class="language-js">var resultPromise = outerPromise.then(function(data){
+    return data.innerData;
+});
+</code></pre></li>
+<li><p>Use <a href="../../can-stache.helpers.if.html" title="can-stache.helpers.if">{{#if(value)}}</a> to do <code>if/else</code> branching in <code>can-stache</code>.</p></li>
+<li><p>Use <a href="../../can-stache.helpers.each.html" title="">{{#each(value)}}</a> to do looping in <code>can-stache</code>.</p></li>
+<li><p><code>Promise</code>s are observable in <a href="../../can-stache.html" title="Live binding Mustache and Handlebars-compatible templates.">can-stache</a>.  Given a promise <code>somePromise</code>, you can:</p>
+<ul>
+<li>Check if the promise is loading like: <code>{{#if(somePromise.isPending)}}</code>.</li>
+<li>Loop through the resolved value of the promise like: <code>{{#each(somePromise.value)}}</code>.</li>
+</ul></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <code>view</code> in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;div class=&quot;top&quot;&gt;
+  &lt;div class=&quot;header&quot;&gt;
+    &lt;h1&gt;{{title}}&lt;/h1&gt;
+    {{#if(routesPromise.isPending)}}&lt;p&gt;Loading routes…&lt;/p&gt;{{/if}}
+  &lt;/div&gt;
+  &lt;ul class=&quot;routes-list&quot;&gt;
+    {{#each(routesPromise.value)}}
+      &lt;li&gt;
+        &lt;span class=&quot;route-number&quot;&gt;{{this.rt}}&lt;/span&gt;
+        &lt;span class=&quot;route-name&quot;&gt;{{this.rtnm}}&lt;/span&gt;
+        &lt;span class=&quot;check&quot;&gt;✔&lt;/span&gt;
+      &lt;/li&gt;
+    {{/each}}
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;bottom&quot;&gt;
+  &lt;div class=&quot;route-selected&quot;&gt;
+    &lt;small&gt;Route 2:&lt;/small&gt; Hyde Park Express
+    &lt;div class=&quot;error-message&quot;&gt;No vehicles available for this route&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class='gmap'&gt;Google map will go here.&lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+<p><span line-highlight='4,7-13,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var proxyUrl = &quot;https://can-cors.herokuapp.com/&quot;;
+var token = &quot;?key=piRYHjJ5D2Am39C9MxduHgRZc&amp;format=json&quot;;
+var apiRoot = &quot;http://www.ctabustracker.com/bustime/api/v2/&quot;
+var getRoutesEnpoint = apiRoot + &quot;getroutes&quot; + token;
+var getVehiclesEndpoint = apiRoot + &quot;getvehicles&quot; + token;
+
+var BusTrackerVM = can.DefineMap.extend({
+  title: {
+    value: &quot;Chicago CTA Bus Tracker&quot;
+  },
+  routesPromise: {
+    value() {
+      return fetch(proxyUrl + getRoutesEnpoint)
+        .then(response =&gt; response.json())
+        .then(data =&gt; data[&quot;bustime-response&quot;].routes);
+    }
+  }
+});
+
+var viewModel = new BusTrackerVM();
+
+var view = can.stache.from(&quot;app-view&quot;);
+var frag = view(viewModel);
+document.body.appendChild(frag);
+
+</code></pre>
+<p><span line-highlight='11-17,only'></span></p>
+<h2>Pick a route and log bus locations</h2>
+<h3>The problem</h3>
+<p>In this section, we will:</p>
+<ul>
+<li>Highlight the selected bus route after a user clicks it.</li>
+<li>Log the bus (vehicle) locations for the selected route.</li>
+</ul>
+<p><img src="../../../docs/can-guides/commitment/recipes/cta-bus-map/3-pick-route.png" width="857px"/></p>
+<p>We will do this by:</p>
+<ul>
+<li>Listening to when a user clicks one of the bus routes.</li>
+<li>Adding <code>active</code> to the class name of that route's <code>&lt;li&gt;</code> like: <code>&lt;li class=&quot;active&quot;&gt;</code>.</li>
+<li>Making the request for the vehicle locations of the selected route.</li>
+</ul>
+<h3>What you need to know</h3>
+<ul>
+<li><p>Use <a href="../../can-stache-bindings.event.html" title="Respond to events on elements or component ViewModels.">on:event</a> to listen to an event on an element and call a method in <code>can-stache</code>.  For example, the following calls <code>doSomething()</code> when the <code>&lt;div&gt;</code> is clicked:</p>
+<pre><code class="language-html">&lt;div on:click=&quot;doSomething()&quot;&gt; ... &lt;/div&gt;
+</code></pre></li>
+<li><p>Use the <code>&quot;any&quot;</code> type to define a property of indeterminate type:</p>
+<pre><code class="language-js">var AppViewModel = can.DefineMap.extend({
+  myProperty: &quot;any&quot;  
+});
+var viewModel = new AppViewModel({});
+viewModel.myProperty = ANYTHING;
+</code></pre>
+<p>You'll want to store the selected bus route as <code>route</code>.</p></li>
+<li><p>Use <code>fetch(proxyUrl + getVehiclesEndpoint + &quot;&amp;rt=&quot; + route.rt)</code>
+to get the vehicles for a particular route. If there is route data, it comes
+back like:</p>
+<pre><code class="language-js">{
+  &quot;bustime-response&quot;: {
+      &quot;vehicle&quot;: [
+          {
+              &quot;vid&quot;: &quot;8026&quot;,
+              &quot;tmstmp&quot;: &quot;20171004 09:18&quot;,
+              &quot;lat&quot;: &quot;41.73921241760254&quot;,
+              &quot;lon&quot;: &quot;-87.66306991577149&quot;,
+              &quot;hdg&quot;: &quot;359&quot;,
+              &quot;pid&quot;: 3637,
+              &quot;rt&quot;: &quot;9&quot;,
+              &quot;des&quot;: &quot;74th&quot;,
+              &quot;pdist&quot;: 6997,
+              &quot;dly&quot;: false,
+              &quot;tatripid&quot;: &quot;10002232&quot;,
+              &quot;tablockid&quot;: &quot;X9  -607&quot;,
+              &quot;zone&quot;: &quot;&quot;
+          },
+          ...
+      ]
+  }
+}
+</code></pre>
+<p>If there is an error or no busses, the response looks like:</p>
+<pre><code class="language-js">{
+  &quot;bustime-response&quot;: {
+      &quot;error&quot;: [
+          {
+              &quot;rt&quot;: &quot;5&quot;,
+              &quot;msg&quot;: &quot;No data found for parameter&quot;
+          }
+      ]
+  }
+}
+</code></pre></li>
+</ul>
+<h3>How to verify it works</h3>
+<p>In the <code>Console</code> tab, when you click a bus route (like <code>Cottage Grove</code>), you should see
+an array of bus routes.</p>
+<h3>The solution</h3>
+<p>Update the <code>view</code> in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;div class=&quot;top&quot;&gt;
+  &lt;div class=&quot;header&quot;&gt;
+    &lt;h1&gt;{{title}}&lt;/h1&gt;
+    {{#if(routesPromise.isPending)}}&lt;p&gt;Loading routes…&lt;/p&gt;{{/if}}
+  &lt;/div&gt;
+  &lt;ul class=&quot;routes-list&quot;&gt;
+    {{#each(routesPromise.value)}}
+      &lt;li on:click=&quot;pickRoute(this)&quot; {{#eq(this, route)}}class=&quot;active&quot;{{/eq}}&gt;
+        &lt;span class=&quot;route-number&quot;&gt;{{this.rt}}&lt;/span&gt;
+        &lt;span class=&quot;route-name&quot;&gt;{{this.rtnm}}&lt;/span&gt;
+        &lt;span class=&quot;check&quot;&gt;✔&lt;/span&gt;
+      &lt;/li&gt;
+    {{/each}}
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;bottom&quot;&gt;
+  {{#if(route)}}
+    &lt;div class=&quot;route-selected&quot;&gt;
+      &lt;small&gt;Route {{route.rt}}:&lt;/small&gt; {{route.rtnm}}
+      &lt;div class=&quot;error-message&quot;&gt;No vehicles available for this route&lt;/div&gt;
+    &lt;/div&gt;
+  {{/if}}
+  &lt;div class='gmap'&gt;Google map will go here.&lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+<p><span line-highlight='8,17-22,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var proxyUrl = &quot;https://can-cors.herokuapp.com/&quot;;
+var token = &quot;?key=piRYHjJ5D2Am39C9MxduHgRZc&amp;format=json&quot;;
+var apiRoot = &quot;http://www.ctabustracker.com/bustime/api/v2/&quot;
+var getRoutesEnpoint = apiRoot + &quot;getroutes&quot; + token;
+var getVehiclesEndpoint = apiRoot + &quot;getvehicles&quot; + token;
+
+var BusTrackerVM = can.DefineMap.extend({
+  title: {
+    value: &quot;Chicago CTA Bus Tracker&quot;
+  },
+  routesPromise: {
+    value() {
+      return fetch(proxyUrl + getRoutesEnpoint)
+        .then(response =&gt; response.json())
+        .then(data =&gt; data[&quot;bustime-response&quot;].routes);
+    }
+  },
+  route: 'any',
+  pickRoute(route) {
+    this.route = route;
+    fetch(proxyUrl + getVehiclesEndpoint + &quot;&amp;rt=&quot; + route.rt)
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        if (data[&quot;bustime-response&quot;].error) {
+          console.log(data[&quot;bustime-response&quot;].error);
+        } else {
+          console.log( data[&quot;bustime-response&quot;].vehicle );
+        }
+      });
+  }
+});
+
+var viewModel = new BusTrackerVM();
+
+var view = can.stache.from(&quot;app-view&quot;);
+var frag = view(viewModel);
+document.body.appendChild(frag);
+
+</code></pre>
+<p><span line-highlight='18-30,only'></span></p>
+<h2>Show when busses are loading and the number of buses</h2>
+<h3>The problem</h3>
+<p>In this section, we will:</p>
+<ul>
+<li>Show <code>&lt;p&gt;Loading vehicles…&lt;/p&gt;</code> while bus data is being loaded.</li>
+<li>Show <code>&lt;div class=&quot;error-message&quot;&gt;No vehicles available for this route&lt;/div&gt;</code> in the overlay
+if the request for bus data failed.</li>
+<li>Show the number of busses inside the <code>&lt;div class='gmap'&gt;</code> like: <code>Bus count: 20</code>.</li>
+</ul>
+<p><img src="../../../docs/can-guides/commitment/recipes/cta-bus-map/3b-bus-loading.png" width="427px"/></p>
+<p>We will do this by:</p>
+<ul>
+<li>Defining and setting a <code>vehiclesPromise</code> property.</li>
+</ul>
+<h3>What you need to know</h3>
+<ul>
+<li>In stache, you can check if a promise was rejected like:
+<pre><code class="language-html">{{#if(somePromise.isRejected)}}&lt;p&gt;...&lt;/p&gt;{{/if}}
+</code></pre></li>
+<li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject">Promise.reject</a> method returns a rejected promise with the provided <code>reason</code>:
+<pre><code class="language-js">var rejectedPromise = Promise.reject({message: &quot;something went wrong&quot;});
+</code></pre></li>
+<li>Promises can transform data by returning new promises.  For example if <code>outerPromise</code>
+resolves to <code>{innerData: {name: &quot;inner&quot;}}</code>, <code>resultPromise</code> will be a rejected promise
+with the <code>reason</code> as <code>{name: &quot;inner&quot;}</code>:
+<pre><code class="language-js">var resultPromise = outerPromise.then(function(data){
+    return Promise.reject(data.innerData);
+});
+resultPromise.catch(function(reason){
+    reason.name //-&gt; &quot;inner&quot;
+});
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <code>view</code> in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;div class=&quot;top&quot;&gt;
+  &lt;div class=&quot;header&quot;&gt;
+    &lt;h1&gt;{{title}}&lt;/h1&gt;
+    {{#if(routesPromise.isPending)}}&lt;p&gt;Loading routes…&lt;/p&gt;{{/if}}
+    {{#if(vehiclesPromise.isPending)}}&lt;p&gt;Loading vehicles…&lt;/p&gt;{{/if}}
+  &lt;/div&gt;
+  &lt;ul class=&quot;routes-list&quot;&gt;
+    {{#each(routesPromise.value)}}
+      &lt;li on:click=&quot;pickRoute(this)&quot; {{#eq(this, route)}}class=&quot;active&quot;{{/eq}}&gt;
+        &lt;span class=&quot;route-number&quot;&gt;{{this.rt}}&lt;/span&gt;
+        &lt;span class=&quot;route-name&quot;&gt;{{this.rtnm}}&lt;/span&gt;
+        &lt;span class=&quot;check&quot;&gt;✔&lt;/span&gt;
+      &lt;/li&gt;
+    {{/each}}
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;bottom&quot;&gt;
+  {{#if(route)}}
+    &lt;div class=&quot;route-selected&quot;&gt;
+      &lt;small&gt;Route {{route.rt}}:&lt;/small&gt; {{route.rtnm}}
+      {{#if(vehiclesPromise.isRejected)}}
+        &lt;div class=&quot;error-message&quot;&gt;No vehicles available for this route&lt;/div&gt;
+      {{/if}}
+    &lt;/div&gt;
+  {{/if}}
+  &lt;div class='gmap'&gt;Bus count: {{vehiclesPromise.value.length}}&lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+<p><span line-highlight='5,21-23,26,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var proxyUrl = &quot;https://can-cors.herokuapp.com/&quot;;
+var token = &quot;?key=piRYHjJ5D2Am39C9MxduHgRZc&amp;format=json&quot;;
+var apiRoot = &quot;http://www.ctabustracker.com/bustime/api/v2/&quot;
+var getRoutesEnpoint = apiRoot + &quot;getroutes&quot; + token;
+var getVehiclesEndpoint = apiRoot + &quot;getvehicles&quot; + token;
+
+var BusTrackerVM = can.DefineMap.extend({
+  title: {
+    value: &quot;Chicago CTA Bus Tracker&quot;
+  },
+  routesPromise: {
+    value() {
+      return fetch(proxyUrl + getRoutesEnpoint)
+        .then(response =&gt; response.json())
+        .then(data =&gt; data[&quot;bustime-response&quot;].routes);
+    }
+  },
+  route: 'any',
+  vehiclesPromise: 'any',
+  pickRoute(route) {
+    this.route = route;
+    this.vehiclesPromise = fetch(proxyUrl + getVehiclesEndpoint + &quot;&amp;rt=&quot; + route.rt)
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        if (data[&quot;bustime-response&quot;].error) {
+          return Promise.reject(data[&quot;bustime-response&quot;].error[0]);
+        } else {
+          return data[&quot;bustime-response&quot;].vehicle;
+        }
+      });
+  }
+});
+
+var viewModel = new BusTrackerVM();
+
+var view = can.stache.from(&quot;app-view&quot;);
+var frag = view(viewModel);
+document.body.appendChild(frag);
+
+</code></pre>
+<p><span line-highlight='19,22,26,28,only'></span></p>
+<h2>Initialize Google Maps to show Chicago</h2>
+<h3>The problem</h3>
+<p>In this section, we will:</p>
+<ul>
+<li>Create a custom <code>&lt;google-map-view/&gt;</code> element that adds a google
+map.</li>
+<li>The google map should be added to a <code>&lt;div class='gmap'/&gt;</code> element.</li>
+<li>The google map should be centered on Chicago (latitude: <code>41.881</code>, longitude <code>-87.623</code>).</li>
+</ul>
+<p><img src="../../../docs/can-guides/commitment/recipes/cta-bus-map/4-init-gmaps.png" width="428px"/></p>
+<p>We will do this by:</p>
+<ul>
+<li>Creating a custom <a href="../../can-component.html" title="Create a custom element that can be used to manage widgets or application logic.">can-component</a> element that adds the <code>&lt;div class='gmap'/&gt;</code> to its HTML.</li>
+<li>Listens to when the element is in the page and creates a new google map.</li>
+</ul>
+<h3>What you need to know</h3>
+<ul>
+<li><p>Use <a href="../../can-component.html" title="Create a custom element that can be used to manage widgets or application logic.">can-component</a> to create custom elements.  Start by <a href="../../can-component.extend.html" title="Define the behavior of a custom element.">extending</a>
+<code>Component</code> with the <code>tag</code> of the element:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: &quot;google-map-view&quot;
+});
+</code></pre>
+<p>Next, provide the HTML <a href="../../can-stache.html" title="Live binding Mustache and Handlebars-compatible templates.">can-stache</a> template with the content you want to insert within
+the element.</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: &quot;google-map-view&quot;,
+  view: stache(`&lt;div class='gmap'/&gt;`)
+});
+</code></pre>
+<p>Any values you want the custom element to hold must be defined on the <code>ViewModel</code>. If the <code>ViewModel</code>
+is a plain <code>Object</code>, that object will be used to extend <a href="../../can-define/map/map.html" title="Create observable objects.">DefineMap</a> and create a new
+type.  The following specifies a <code>map</code> property that can be any value:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: &quot;google-map-view&quot;,
+  view: stache(`&lt;div class='gmap'/&gt;`),
+  ViewModel: {
+    map: &quot;any&quot;
+  }
+});
+</code></pre>
+<p>A component's <a href="../../can-component.prototype.events.html" title="Listen to events on elements and observables.">events</a> object can be used to listen to events on the
+<code>ViewModel</code> or the <code>element</code>.  If you want to know when the custom element is <a href="../../can-util/dom/events/inserted/inserted.html" title="This event fires when the bound element is added to the DOM.">inserted</a>, you can do it as follows:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: &quot;google-map-view&quot;,
+  view: stache(`&lt;div class='gmap'/&gt;`),
+  ViewModel: {
+    map: &quot;any&quot;
+  },
+  events: {
+    &quot;{element} inserted&quot;: function(){
+      this.viewModel //-&gt; the ViewModel instance
+      this.element //-&gt; the &lt;google-map-view&gt; element
+    }
+  }
+});
+</code></pre></li>
+<li><p>To create a google map, use <a href="https://developers.google.com/maps/documentation/javascript/reference">new google.map.Map(...)</a> once the
+<code>googleAPI</code> has completed loading:</p>
+<pre><code class="language-js">new google.maps.Map(gmapDiv, {
+    zoom: 10,
+    center: {
+        lat: 41.881,
+        lng: -87.623
+    }
+})
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <code>view</code> in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;div class=&quot;top&quot;&gt;
+  &lt;div class=&quot;header&quot;&gt;
+    &lt;h1&gt;{{title}}&lt;/h1&gt;
+    {{#if(routesPromise.isPending)}}&lt;p&gt;Loading routes…&lt;/p&gt;{{/if}}
+    {{#if(vehiclesPromise.isPending)}}&lt;p&gt;Loading vehicles…&lt;/p&gt;{{/if}}
+  &lt;/div&gt;
+  &lt;ul class=&quot;routes-list&quot;&gt;
+    {{#each(routesPromise.value)}}
+      &lt;li on:click=&quot;pickRoute(this)&quot; {{#eq(this, route)}}class=&quot;active&quot;{{/eq}}&gt;
+        &lt;span class=&quot;route-number&quot;&gt;{{this.rt}}&lt;/span&gt;
+        &lt;span class=&quot;route-name&quot;&gt;{{this.rtnm}}&lt;/span&gt;
+        &lt;span class=&quot;check&quot;&gt;✔&lt;/span&gt;
+      &lt;/li&gt;
+    {{/each}}
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;bottom&quot;&gt;
+  {{#if(route)}}
+    &lt;div class=&quot;route-selected&quot;&gt;
+      &lt;small&gt;Route {{route.rt}}:&lt;/small&gt; {{route.rtnm}}
+      {{#if(vehiclesPromise.isRejected)}}
+        &lt;div class=&quot;error-message&quot;&gt;No vehicles available for this route&lt;/div&gt;
+      {{/if}}
+    &lt;/div&gt;
+  {{/if}}
+  &lt;google-map-view/&gt;
+&lt;/div&gt;
+
+</code></pre>
+<p><span line-highlight='26,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var proxyUrl = &quot;https://can-cors.herokuapp.com/&quot;;
+var token = &quot;?key=piRYHjJ5D2Am39C9MxduHgRZc&amp;format=json&quot;;
+var apiRoot = &quot;http://www.ctabustracker.com/bustime/api/v2/&quot;
+var getRoutesEnpoint = apiRoot + &quot;getroutes&quot; + token;
+var getVehiclesEndpoint = apiRoot + &quot;getvehicles&quot; + token;
+
+var BusTrackerVM = can.DefineMap.extend({
+  title: {
+    value: &quot;Chicago CTA Bus Tracker&quot;
+  },
+  routesPromise: {
+    value() {
+      return fetch(proxyUrl + getRoutesEnpoint)
+        .then(response =&gt; response.json())
+        .then(data =&gt; data[&quot;bustime-response&quot;].routes);
+    }
+  },
+  route: 'any',
+  vehiclesPromise: 'any',
+  pickRoute(route) {
+    this.route = route;
+    this.vehiclesPromise = fetch(proxyUrl + getVehiclesEndpoint + &quot;&amp;rt=&quot; + route.rt)
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        if (data[&quot;bustime-response&quot;].error) {
+          return Promise.reject(data[&quot;bustime-response&quot;].error[0]);
+        } else {
+          return data[&quot;bustime-response&quot;].vehicle;
+        }
+      });
+  }
+});
+
+can.Component.extend({
+  tag: &quot;google-map-view&quot;,
+  view: can.stache(`&lt;div class='gmap'&gt;&lt;/div&gt;`),
+  ViewModel: {
+    map: 'any'
+  },
+  events: {
+    &quot;{element} inserted&quot;: function() {
+      googleAPI.then(() =&gt; {
+        this.viewModel.map = new google.maps.Map(this.element.firstChild, {
+          zoom: 10,
+          center: {
+            lat: 41.881,
+            lng: -87.623
+          }
+        });
+      });
+    }
+  }
+});
+
+var viewModel = new BusTrackerVM();
+
+var view = can.stache.from(&quot;app-view&quot;);
+var frag = view(viewModel);
+document.body.appendChild(frag);
+
+</code></pre>
+<p><span line-highlight='34-53,only'></span></p>
+<h2>Set markers for vehicle locations</h2>
+<h3>The problem</h3>
+<p>In this section, we will:</p>
+<ul>
+<li>Show markers at bus locations when the user clicks a route.</li>
+</ul>
+<p>We will do this by:</p>
+<ul>
+<li>Passing the <code>vehicles</code> from <code>vehiclePromise</code> to <code>&lt;google-map-view&gt;</code>.</li>
+<li>Listening when <code>vehicles</code> changes and creating google map <code>Marker</code>s.</li>
+</ul>
+<h3>What you need to know</h3>
+<ul>
+<li><p><a href="../../can-stache-bindings.toChild.html" title="One-way bind a value in the parent scope to the ViewModel or element.">childProp:from</a> can set a component's ViewModel from another value:</p>
+<pre><code class="language-js">&lt;google-map-view viewModelProp:from=&quot;scopeValue&quot;/&gt;
+</code></pre></li>
+<li><p>The <a href="../../can-component.prototype.events.html" title="Listen to events on elements and observables.">events</a> can listen to changes in the <code>ViewModel</code> instance with:
+<code>&quot;{viewModel} propertyName&quot;</code> like:</p>
+<pre><code class="language-js">can.Component.extend({
+  ...
+  events: {
+    &quot;{viewModel} vehicles&quot;: function(viewModel, event, newVehicles) {
+        // do stuff with the newVehicles
+    }      
+  }
+})
+</code></pre></li>
+<li><p>Use <a href="https://developers.google.com/maps/documentation/javascript/reference#Marker">new google.maps.Marker</a> to
+add a marker to a map like:</p>
+<pre><code class="language-js">new google.maps.Marker({
+  position: {
+    lat: parseFloat(vehicle.lat),
+    lng: parseFloat(vehicle.lon)
+  },
+  map: this.viewModel.map
+});
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <code>view</code> in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;div class=&quot;top&quot;&gt;
+  &lt;div class=&quot;header&quot;&gt;
+    &lt;h1&gt;{{title}}&lt;/h1&gt;
+    {{#if(routesPromise.isPending)}}&lt;p&gt;Loading routes…&lt;/p&gt;{{/if}}
+    {{#if(vehiclesPromise.isPending)}}&lt;p&gt;Loading vehicles…&lt;/p&gt;{{/if}}
+  &lt;/div&gt;
+  &lt;ul class=&quot;routes-list&quot;&gt;
+    {{#each(routesPromise.value)}}
+      &lt;li on:click=&quot;pickRoute(this)&quot; {{#eq(this, route)}}class=&quot;active&quot;{{/eq}}&gt;
+        &lt;span class=&quot;route-number&quot;&gt;{{this.rt}}&lt;/span&gt;
+        &lt;span class=&quot;route-name&quot;&gt;{{this.rtnm}}&lt;/span&gt;
+        &lt;span class=&quot;check&quot;&gt;✔&lt;/span&gt;
+      &lt;/li&gt;
+    {{/each}}
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;bottom&quot;&gt;
+  {{#if(route)}}
+    &lt;div class=&quot;route-selected&quot;&gt;
+      &lt;small&gt;Route {{route.rt}}:&lt;/small&gt; {{route.rtnm}}
+      {{#if(vehiclesPromise.isRejected)}}
+        &lt;div class=&quot;error-message&quot;&gt;No vehicles available for this route&lt;/div&gt;
+      {{/if}}
+    &lt;/div&gt;
+  {{/if}}
+  &lt;google-map-view vehicles:from=&quot;vehiclesPromise.value&quot;/&gt;
+&lt;/div&gt;
+
+</code></pre>
+<p><span line-highlight='26,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var proxyUrl = &quot;https://can-cors.herokuapp.com/&quot;;
+var token = &quot;?key=piRYHjJ5D2Am39C9MxduHgRZc&amp;format=json&quot;;
+var apiRoot = &quot;http://www.ctabustracker.com/bustime/api/v2/&quot;
+var getRoutesEnpoint = apiRoot + &quot;getroutes&quot; + token;
+var getVehiclesEndpoint = apiRoot + &quot;getvehicles&quot; + token;
+
+var BusTrackerVM = can.DefineMap.extend({
+  title: {
+    value: &quot;Chicago CTA Bus Tracker&quot;
+  },
+  routesPromise: {
+    value() {
+      return fetch(proxyUrl + getRoutesEnpoint)
+        .then(response =&gt; response.json())
+        .then(data =&gt; data[&quot;bustime-response&quot;].routes);
+    }
+  },
+  route: 'any',
+  vehiclesPromise: 'any',
+  pickRoute(route) {
+    this.route = route;
+    this.vehiclesPromise = fetch(proxyUrl + getVehiclesEndpoint + &quot;&amp;rt=&quot; + route.rt)
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        if (data[&quot;bustime-response&quot;].error) {
+          return Promise.reject(data[&quot;bustime-response&quot;].error[0]);
+        } else {
+          return data[&quot;bustime-response&quot;].vehicle;
+        }
+      });
+  }
+});
+
+can.Component.extend({
+  tag: &quot;google-map-view&quot;,
+  view: can.stache(`&lt;div class='gmap'&gt;&lt;/div&gt;`),
+  ViewModel: {
+    map: 'any',
+    vehicles: 'any'
+  },
+  events: {
+    &quot;{viewModel} vehicles&quot;: function(vm, ev, newVehicles) {
+      if ( newVehicles ) {
+        newVehicles.map(vehicle =&gt; {
+          return new google.maps.Marker({
+            position: {
+              lat: parseFloat(vehicle.lat),
+              lng: parseFloat(vehicle.lon)
+            },
+            map: this.viewModel.map
+          });
+        });
+      }
+    },
+    &quot;{element} inserted&quot;: function() {
+      googleAPI.then(() =&gt; {
+        this.viewModel.map = new google.maps.Map(this.element.firstChild, {
+          zoom: 10,
+          center: {
+            lat: 41.881,
+            lng: -87.623
+          }
+        });
+      });
+    }
+  }
+});
+
+var viewModel = new BusTrackerVM();
+
+var view = can.stache.from(&quot;app-view&quot;);
+var frag = view(viewModel);
+document.body.appendChild(frag);
+
+</code></pre>
+<p><span line-highlight='39,42-54,only'></span></p>
+<h2>Clean up markers when locations change</h2>
+<h3>The problem</h3>
+<p>In this section we will:</p>
+<ul>
+<li>Remove markers from previous routes.</li>
+<li>Update marker locations when the user clicks the overlay.</li>
+</ul>
+<p>We will do this by:</p>
+<ul>
+<li>Storing the active list of markers on the <code>ViewModel</code></li>
+<li>Clearing the old active markers when the list of vehicles is updated.</li>
+<li>Calling <code>pickRoute</code> when someone clicks on the <code>route-selected</code> overlay.</li>
+</ul>
+<h3>What you need to know</h3>
+<ul>
+<li>Use <code>marker.setMap(null)</code> to remove a marker from a map.</li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <code>view</code> in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;div class=&quot;top&quot;&gt;
+  &lt;div class=&quot;header&quot;&gt;
+    &lt;h1&gt;{{title}}&lt;/h1&gt;
+    {{#if(routesPromise.isPending)}}&lt;p&gt;Loading routes…&lt;/p&gt;{{/if}}
+    {{#if(vehiclesPromise.isPending)}}&lt;p&gt;Loading vehicles…&lt;/p&gt;{{/if}}
+  &lt;/div&gt;
+  &lt;ul class=&quot;routes-list&quot;&gt;
+    {{#each(routesPromise.value)}}
+      &lt;li on:click=&quot;pickRoute(this)&quot; {{#eq(this, route)}}class=&quot;active&quot;{{/eq}}&gt;
+        &lt;span class=&quot;route-number&quot;&gt;{{this.rt}}&lt;/span&gt;
+        &lt;span class=&quot;route-name&quot;&gt;{{this.rtnm}}&lt;/span&gt;
+        &lt;span class=&quot;check&quot;&gt;✔&lt;/span&gt;
+      &lt;/li&gt;
+    {{/each}}
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;bottom&quot;&gt;
+  {{#if(route)}}
+    &lt;div class=&quot;route-selected&quot; on:click=&quot;pickRoute(route)&quot;&gt;
+      &lt;small&gt;Route {{route.rt}}:&lt;/small&gt; {{route.rtnm}}
+      {{#if(vehiclesPromise.isRejected)}}
+        &lt;div class=&quot;error-message&quot;&gt;No vehicles available for this route&lt;/div&gt;
+      {{/if}}
+    &lt;/div&gt;
+  {{/if}}
+  &lt;google-map-view vehicles:from=&quot;vehiclesPromise.value&quot;/&gt;
+&lt;/div&gt;
+
+</code></pre>
+<p><span line-highlight='19,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var proxyUrl = &quot;https://can-cors.herokuapp.com/&quot;;
+var token = &quot;?key=piRYHjJ5D2Am39C9MxduHgRZc&amp;format=json&quot;;
+var apiRoot = &quot;http://www.ctabustracker.com/bustime/api/v2/&quot;
+var getRoutesEnpoint = apiRoot + &quot;getroutes&quot; + token;
+var getVehiclesEndpoint = apiRoot + &quot;getvehicles&quot; + token;
+
+var BusTrackerVM = can.DefineMap.extend({
+  title: {
+    value: &quot;Chicago CTA Bus Tracker&quot;
+  },
+  routesPromise: {
+    value() {
+      return fetch(proxyUrl + getRoutesEnpoint)
+        .then(response =&gt; response.json())
+        .then(data =&gt; data[&quot;bustime-response&quot;].routes);
+    }
+  },
+  route: 'any',
+  vehiclesPromise: 'any',
+  pickRoute(route) {
+    this.route = route;
+    this.vehiclesPromise = fetch(proxyUrl + getVehiclesEndpoint + &quot;&amp;rt=&quot; + route.rt)
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        if (data[&quot;bustime-response&quot;].error) {
+          return Promise.reject(data[&quot;bustime-response&quot;].error[0]);
+        } else {
+          return data[&quot;bustime-response&quot;].vehicle;
+        }
+      });
+  }
+});
+
+can.Component.extend({
+  tag: &quot;google-map-view&quot;,
+  view: can.stache(`&lt;div class='gmap'&gt;&lt;/div&gt;`),
+  ViewModel: {
+    map: 'any',
+    vehicles: 'any',
+    markers: 'any'
+  },
+  events: {
+    &quot;{viewModel} vehicles&quot;: function(vm, ev, newVehicles) {
+      if (Array.isArray(this.markers)) {
+        this.markers.forEach(marker =&gt; {
+          marker.setMap(null);
+        });
+        this.markers = null;
+      }
+      if ( newVehicles ) {
+        this.markers = newVehicles.map(vehicle =&gt; {
+          return new google.maps.Marker({
+            position: {
+              lat: parseFloat(vehicle.lat),
+              lng: parseFloat(vehicle.lon)
+            },
+            map: this.viewModel.map
+          });
+        });
+      }
+    },
+    &quot;{element} inserted&quot;: function() {
+      googleAPI.then(() =&gt; {
+        this.viewModel.map = new google.maps.Map(this.element.firstChild, {
+          zoom: 10,
+          center: {
+            lat: 41.881,
+            lng: -87.623
+          }
+        });
+      });
+    }
+  }
+});
+
+var viewModel = new BusTrackerVM();
+
+var view = can.stache.from(&quot;app-view&quot;);
+var frag = view(viewModel);
+document.body.appendChild(frag);
+
+</code></pre>
+<p><span line-highlight='40,44-49,51,only'></span></p>
+<script src="//static.jsbin.com/js/embed.min.js?4.0.4"></script>
+
+</section>
+
+  
+
+
+<script type="text/javascript">
+  window.docObject = {"src":{"path":"docs/can-guides/commitment/recipes/cta-bus-map/cta-bus-map.md"},"description":"This guide walks you through showing Chicago Transit Authority (CTA) bus locations on a Google Map.   \n\n","name":"guides/recipes/cta-bus-map","title":"CTA Bus Map (Medium)","type":"page","parent":"guides/recipes","comment":" ","pathToRoot":"../../.."};
+</script>
+</article>
+      
+        <footer><p>CanJS is part of <a href="https://donejs.com" target="_blank">DoneJS</a>. Created and maintained by the core <a href="https://donejs.com/About.html#team" target="_blank">DoneJS team</a> and <a href="https://www.bitovi.com" target="_blank">Bitovi</a>. <strong>Currently 3.12.1.</strong></p>
+</footer>
+      
+    </div>
+  </div>
+</div>
+<survey-ad>
+  <button aria-label="Close" class="close" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <a href="https://donejs.com/survey.html" target="_blank">
+    Help us improve CanJS by taking our community survey
+  </a>
+</survey-ad>
+
+
+		
+			<script>
+				steal = {
+				  	instantiated: {
+				    	"bundles/bit-docs-site/static.css!$css" : null
+				  	}
+			  	};
+			</script>
+			<script type='text/javascript' data-main="bit-docs-site/static" src="../../static/steal.production.js"></script>
+		
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<!-- root-level elements with attributes necessary for the app -->
+		<div path-prefix="../.."></div>
+
+	</body>
+</html>

@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: docs/can-guides/commitment/recipes/credit-card-advanced/credit-card-advanced.md
+	@page guides/recipes/credit-card-advanced
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CanJS - Credit Card Guide (Advanced)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+		<link rel="stylesheet" type="text/css" href="../../static/bundles/bit-docs-site/static.css">
+		<link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/docs/images/canjs_favicon.ico">
+		<link rel="apple-touch-icon" sizes="57x57" href="../../../docs/images/canjs_favicon_57x57.png">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="../../../docs/images/canjs_favicon_57x57.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="../../../docs/images/canjs_favicon_72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="../../../docs/images/canjs_favicon_114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="../../../docs/images/canjs_favicon_128x128.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="../../../docs/images/canjs_favicon_144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="../../../docs/images/canjs_favicon_152x152.png">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+	  	<meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
+	
+	
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-2302003-11', 'auto');
+			ga('send', 'pageview');
+		</script>
+	
+</head>
+	<body>
+		<input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+		<label for="nav-trigger">Menu</label>
+	  	<div id="everything">
+  <div id="left" class="column">
+    <div class="top-left">
+      
+          <div class="brand">
+	<div class="logo">
+		<a href="../../../index.html" alt="CanJS"></a>
+		<div class="dropdown project-dropdown">
+			<a href="https://donejs.com/">DoneJS</a>
+			<a href="https://stealjs.com/">StealJS</a>
+			<a href="https://jquerypp.com/">jQuery++</a>
+			<a href="https://funcunit.com/">FuncUnit</a>
+			<a href="https://documentjs.com/">DocumentJS</a>
+		</div>
+	</div>
+	<div class="version">
+		<div class="version-number">
+			3.12.1
+		</div>
+		<div class="dropdown version-dropdown">
+			
+				<a href="https://v2.canjs.com">2.3.33</a>
+			
+		</div>
+	</div>
+</div>
+<div class="search-bar">
+	<div class="search-wrap" style="display:none;">
+		<span class="search-icon"></span>
+		<input
+			type="text"
+			size="6"
+			class="search"
+			placeholder="Search"
+			autocomplete="off"
+			autocorrect="off"
+			autocapitalize="none"
+			spellcheck="false"/>
+			<span class="search-icon-cancel"></span>
+	</div>
+</div>
+
+
+      
+    </div>
+    <div class="bottom">
+      <div class="nav-menu">
+        <div class="social-side-container">
+          <ul class="social-side">
+  <li>
+    <a class="header-mobile github" href="https://github.com/canjs/canjs" target="_blank"><img class="social-icon-small" src="../../../docs/images/github.png">Github</a>
+  </li>
+  <li>
+    <a class="header-mobile twitter" href="https://twitter.com/canjs" target="_blank"><img class="social-icon-small" src="../../../docs/images/twitter.png">Twitter</a>
+  </li>
+</ul>
+<ul class="social-side">
+  <li>
+    <a class="header-mobile" href="https://gitter.im/canjs/canjs" target="_blank">Chat</a>
+  </li>
+  <li>
+    <a class="header-mobile" href="http://forums.donejs.com/c/canjs" target="_blank">Forum</a>
+  </li>
+</ul>
+
+        </div>
+        
+            
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../about.html"
+							title="Learn about CanJS’s mission, technical highlights, who uses CanJS, and our future roadmap.">
+							About
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						parent
+           						expanded">
+						<a class="page"
+							href="../../guides.html"
+							title="Welcome to CanJS! These guides are here to help you develop and improve your relationship with CanJS. After all, picking a JavaScript framework is a commitment.  We want CanJS to be the framework you marry.  This page helps you know how to advance through the different stages of this relationship:">
+							Guides
+						</a>
+						
+	<ul>
+		
+			
+				
+					<li>
+						<span>experiment</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../chat.html"
+							title="This guide will walk you through building a real-time chat application with CanJS’s Core libraries.  It takes about 30 minutes to complete.">
+							Chat Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../todomvc.html"
+							title="This guide will walk you through building a slightly modified version of TodoMVC with CanJS’s Core libraries and can-fixture. It takes about 1 hour to complete.">
+							TodoMVC Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../atm.html"
+							title="This guide will walk you through building and testing an Automated Teller Machine (ATM) application with CanJS’s
+Core libraries.  You’ll learn how to do test driven development (TDD)
+and manage complex state.  It takes about 2 hours to complete.">
+							ATM Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						parent
+           						expanded">
+						<a class="page"
+							href="../recipes.html"
+							title="A listing of small examples that are useful for learning CanJS.">
+							recipes
+						</a>
+						
+	<ul>
+		
+			
+				
+					<li class="current
+           						
+           						expanded">
+						<a class="page"
+							href="credit-card-advanced.html"
+							title="This guide walks through building a simple credit card payment form with validations. It doesn&#x27;t use
+can-define. Instead it uses Kefir.js streams to make a ViewModel.
+can-kefir is used to make the Kefir streams observable to can-stache.">
+							Credit Card Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="credit-card-simple.html"
+							title="This guide walks through building a very simple credit card payment form.  It uses Stripe.js v2 API to create a token
+which can be used to create a charge.  It also performs
+simple validation on the payment form values.">
+							Credit Card Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="cta-bus-map.html"
+							title="This guide walks you through showing Chicago Transit Authority (CTA) bus locations on a Google Map.">
+							CTA Bus Map (Medium)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="file-navigator-advanced.html"
+							title="This guide walks you through building a file navigation widget.  It takes about 45 minutes to complete.  It was written with
+CanJS 3.10. Check out the file-navigator-simple
+for an easier example that produces similar functionality.">
+							File Navigator Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="file-navigator-simple.html"
+							title="This guide walks you through building a simple file navigation widget.  It takes about 25 minutes to complete.  It was written with
+CanJS 3.10. Check out the file-navigator-advanced
+for an example that makes AJAX requests for its data and uses can-component.">
+							File Navigator Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="playlist-editor.html"
+							title="Learn how to use YouTube&#x27;s API to search for videos and make a playlist.  This makes authenticated requests with OAuth2. It uses jQuery++ for
+drag/drop events. It shows using custom attributes and custom events.  This guide takes
+an hour to complete.">
+							Playlist Editor (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="signup-simple.html"
+							title="This guide walks through building simple signup, login forms and a logout button.">
+							Signup and Login (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="todomvc-with-steal.html"
+							title="This guide walks through building TodoMVC with StealJS.">
+							TodoMVC with StealJS
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="weather-report-advanced.html"
+							title="This guides you through extending the Simple Weather Report Guide to remove imperative code and automatically look up the user’s location using the
+browser’s geolocation API.  Both of these will be done with event streams.
+This guide continues where the Simple Weather Report Guide left off.  It takes about 25 minutes to complete.  It was written with CanJS 3.8.">
+							Weather Report Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="weather-report-simple.html"
+							title="This guide walks you through building a simple weather report widget.  It takes about 25 minutes to complete.  It was written with
+CanJS 3.5.">
+							Weather Report Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li>
+						<span>getting started</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../setup.html"
+							title="Get started with CanJS by installing it with npm, using a JS&amp;nbsp;Bin, or just adding it to an HTML page with a &lt;script&gt; tag.">
+							Setting up CanJS
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../api.html"
+							title="This page walks through how to use and understand CanJS’s API documentation.">
+							Reading the Docs (API Guide)
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li>
+						<span>upgrade</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../migrate-3.html"
+							title="This guide walks you through the step-by-step process to upgrade a 2.x app to CanJS 3.">
+							Migrating to CanJS 3
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../upgrade/using-codemods.html"
+							title="Learn how to migrate your app to CanJS 3 using can-migrate.">
+							Using Codemods
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../api.html"
+							title="Welcome to the CanJS API documentation! Learn about all the packages that make-up CanJS and how they work together to help you build amazing applications!">
+							API Docs
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../community.html"
+							title="Get involved with one of the most inviting communities on the internet!">
+							Community
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../contribute.html"
+							title="Learn how to contribute to CanJS!">
+							Contributing
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+        
+      </div>
+      <div class="search-results-container">
+	<div class="search-results-wrap"></div>
+</div>
+
+    </div>
+  </div>
+  <div id="right" class="column">
+    <div class="top-right">
+      <div class="top-right-top">
+	<ul class="top-right-bitovi">
+	  	<li class="dropdown">
+	    	<a href="https://www.bitovi.com" class="bitovi icon-bits">Bitovi</a>
+	    	<ul class="dropdown-menu">
+	      		<li><a href="https://www.bitovi.com/">Bitovi.com</a></li>
+	      		<li><a href="https://www.bitovi.com/blog">Blog</a></li>
+	      		<li><a href="https://www.bitovi.com/design">Design</a></li>
+	      		<li><a href="https://www.bitovi.com/development">Development</a></li>
+	      		<li><a href="https://www.bitovi.com/training">Training</a></li>
+	      		<li><a href="https://www.bitovi.com/open-source">Open Source</a></li>
+	      		<li><a href="https://www.bitovi.com/about">About</a></li>
+	      		<li><a href="https://www.bitovi.com/contact">Contact Us</a></li>
+	    	</ul>
+	  	</li>
+	</ul>
+	<div class="brand">
+		<div class="logo">
+			<a href="../../../index.html" alt="CanJS"></a>
+		</div>
+	</div>
+	<ul class="top-right-links">
+  <li>
+    <a href="https://gitter.im/canjs/canjs">Chat</a>
+  </li>
+  <li>
+    <a href="http://forums.donejs.com/c/canjs">Forum</a>
+  </li>
+  <li>
+    <a class="github-button nav-social" href="https://github.com/canjs/canjs" data-count-href="/canjs/canjs/stargazers" data-show-count="true">Star</a>
+  </li>
+  <li>
+    <a href="https://twitter.com/canjs" class="twitter-follow-button nav-social" data-show-count="true" data-show-screen-name="false">Follow @canjs</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </li>
+</ul>
+</div>
+<div class="breadcrumb">
+	
+		<li><a href="../../../index.html">CanJS</a></li>
+		<li> / </li>
+	
+		<li><a href="../../guides.html">Guides</a></li>
+		<li> / </li>
+	
+		<li><a href="../recipes.html">recipes</a></li>
+		<li> / </li>
+	
+	
+	<li><a href="credit-card-advanced.html">Credit Card Guide (Advanced)</a></li>
+	
+	<li class="breadcrumb-dropdown-separator"> / </li>
+	<li class="breadcrumb-dropdown">
+		<a> On this page</a>
+		<ul class="on-this-page"></ul>
+	</li>
+	<div class="nav-toggle" title="Back to top"></div>
+</div>
+
+
+    </div>
+    <div class="bottom">
+      <article>
+  <section class="title">
+	<div class="page-type">
+		<h1>Credit Card Guide (Advanced)</h1>
+			<ul class="title-social">
+				
+				
+				<li>
+					<a class="button-link" href="//github.com/canjs/canjs/edit/master/docs/can-guides/commitment/recipes/credit-card-advanced/credit-card-advanced.md">Edit on GitHub</a>
+				</li>
+				
+			</ul>
+	</div>
+	<div class="clear-both"></div>
+	
+  
+	<section class="description">
+    <p>This guide walks through building a simple credit card payment form with validations. It doesn't use
+<a href="../../can-define.html" title="Exports the define method that defines observable properties and their behavior on a prototype object.">can-define</a>. Instead it uses <code>Kefir.js</code> streams to make a ViewModel.
+<a href="../../can-kefir.html" title="Integrate KefirJS streams directly within can-stache and other parts of CanJS.">can-kefir</a> is used to make the Kefir streams observable to <a href="../../can-stache.html" title="Live binding Mustache and Handlebars-compatible templates.">can-stache</a>.</p>
+
+</section>
+
+  
+	
+</section>
+<section class="on-this-page-table">
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <section class="body">
+    <p>In this guide you will learn how to:</p>
+<ul>
+<li>Use Kefir streams.</li>
+<li>Use the event-reducer pattern.</li>
+<li>Handle promises (and side-effects) with streams.</li>
+</ul>
+<p>The final widget looks like:</p>
+<p><a class="jsbin-embed" href="https://jsbin.com/riyuzuh/1/embed?output">JS Bin on jsbin.com</a></p>
+<p>To use the widget:</p>
+<ol>
+<li><strong>Enter</strong> a <em>Card Number</em>, <em>Expiration Date</em>, and <em>CVC</em>.</li>
+<li><strong>Click</strong> on the form so those inputs lose focus.  The
+<em>Pay</em> button should become enabled.</li>
+<li><strong>Click</strong> the <em>Pay</em> button to see the <strong>Pay</strong> button disabled for 2 seconds.</li>
+<li><strong>Change</strong> the inputs to invalid values.  An error message should appear,
+the invalid inputs should be highlighted red, and the <em>Pay</em>
+button should become disabled.</li>
+</ol>
+<p><strong>START THIS TUTORIAL BY CLONING THE FOLLOWING JS Bin</strong>:</p>
+<p><a class="jsbin-embed" href="https://jsbin.com/socozi/2/embed?output">JS Bin on jsbin.com</a></p>
+<p>This JS Bin has initial prototype HTML and CSS which is useful for
+getting the application to look right.</p>
+<p>The following sections are broken down into:</p>
+<ul>
+<li><strong>The problem</strong> — A description of what the section is trying to accomplish.</li>
+<li><strong>What you need to know</strong> — Information about CanJS that is useful for solving the problem.</li>
+<li><strong>The solution</strong> — The solution to the problem.</li>
+</ul>
+<p>The following video walks through the entire guide:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UA4606-W3Sg" frameborder="0" allowfullscreen></iframe>
+<h2>Setup</h2>
+<h3>The problem</h3>
+<p>We are going to try an alternate form of the basic CanJS setup.  We
+will still have a <a href="../../can-stache.html" title="Live binding Mustache and Handlebars-compatible templates.">can-stache</a> <code>payment-view</code> and render it with a
+<code>viewModel</code>.  But the <code>viewModel</code> should be a plain JavaScript object
+whose properties are all <a href="https://rpominov.github.io/kefir/">Kefir.js</a>
+streams.</p>
+<p>We will render the static content in a template, but use a
+constant stream to hold the <code>amount</code> value.</p>
+<h3>What you need to know</h3>
+<ul>
+<li><p><a href="https://rpominov.github.io/kefir/">Kefir.js</a> allows you to create streams
+of events and transform those streams into other streams. For example,
+the following <code>numbers</code> stream produces three numbers with interval of 100 milliseconds:</p>
+<pre><code class="language-js">var numbers = Kefir.sequentially(100, [1, 2, 3]);
+</code></pre>
+<p>Now let's create another stream based on the first one. As you might guess, it will produce 2, 4, and 6.</p>
+<pre><code class="language-js">var numbers2 = numbers.map(x =&gt; x * 2);
+</code></pre></li>
+<li><p>Kefir supports both streams and properties.  It's worth reading <a href="https://rpominov.github.io/kefir/#about-observables">Kefir's documentation on the difference between streams and properties</a>.  In short:</p>
+<ul>
+<li>Properties retain their value</li>
+<li>Streams do not</li>
+</ul></li>
+<li><p><a href="https://rpominov.github.io/kefir/#constant">Kefir.constant</a> creates a property with the specified value:</p>
+<pre><code>var property = Kefir.constant(1);
+</code></pre></li>
+<li><p><a href="../../can-kefir.html" title="Integrate KefirJS streams directly within can-stache and other parts of CanJS.">can-kefir</a> integrates streams into CanJS, including <a href="../../can-stache.html" title="Live binding Mustache and Handlebars-compatible templates.">can-stache</a>
+templates.  Output the value of a stream like:</p>
+<pre><code>{{stream.value}}
+</code></pre>
+<p>Or the error like:</p>
+<pre><code>{{stream.error}}
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Credit Card Form&quot;&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script type='text/stache' id=&quot;app-view&quot;&gt;
+&lt;form&gt;
+
+  &lt;input type='text' name='number' placeholder='Card Number'/&gt;
+
+  &lt;input type='text' name='expiry' placeholder='MM-YY'/&gt;
+
+  &lt;input type='text' name='cvc' placeholder='CVC'/&gt;
+
+  &lt;button&gt;Pay ${{amount.value}}&lt;/button&gt;
+
+&lt;/form&gt;
+&lt;/script&gt;
+
+&lt;script src=&quot;https://rpominov.github.io/kefir/dist/kefir.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/can/dist/global/can.all.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://js.stripe.com/v2/&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<p><span line-highlight='10-22,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var viewModel = {
+    amount: Kefir.constant(1000)
+};
+
+var view = can.stache.from(&quot;app-view&quot;);
+
+document.body.appendChild( view(viewModel) );
+
+</code></pre>
+<p><span line-highlight='1-7,only'></span></p>
+<h2>Read the card number</h2>
+<h3>The problem</h3>
+<p>Users will be able to enter a card number like <code>1234-1234-1234-1234</code>.</p>
+<p>Lets read the card number entered by the user, print it back,
+and also print back the cleaned card number (the entered number with no dashes).</p>
+<h3>What you need to know</h3>
+<ul>
+<li><p><a href="../../can-kefir.html" title="Integrate KefirJS streams directly within can-stache and other parts of CanJS.">can-kefir</a> adds a <a href="../../can-kefir/emitterProperty.html" title=".emitterProperty()">emitterProperty</a> method that returns a
+Kefir property, but also adds an <code>emitter</code> object with with <code>.value()</code> and <code>.error()</code> methods. The end result is a single object that has methods of a stream and property access to its emitter methods.</p>
+<pre><code class="language-js">var Kefir = require(&quot;can-kefir&quot;);
+
+var age = Kefir.emitterProperty();
+
+age.onValue(function(age){
+  console.log(age)
+});
+
+age.emitter.value(20) //-&gt; logs 20
+
+age.emitter.value(30) //-&gt; logs 30
+</code></pre>
+<p><code>emitterProperty</code> property streams are useful data sinks when getting
+user data.</p></li>
+<li><p>Kefir streams and properties have a <a href="https://rpominov.github.io/kefir/#map">map</a> method
+that maps values on one stream to values in a new stream:</p>
+<pre><code class="language-js">var source = Kefir.sequentially(100, [1, 2, 3]);
+var result = source.map(x =&gt; x + 1);
+// source: ---1---2---3X
+// result: ---2---3---4X
+</code></pre></li>
+<li><p><code>&lt;input on:input:value:to=&quot;KEY&quot;/&gt;</code> Listens to the <code>input</code> events produced
+by the <code>&lt;input&gt;</code> element and writes the <code>&lt;input&gt;</code>'s value to <code>KEY</code>.</p></li>
+<li><p><a href="../../can-kefir.html" title="Integrate KefirJS streams directly within can-stache and other parts of CanJS.">can-kefir</a> allows you to write to a <code>emitterProperty</code>'s with:</p>
+<pre><code>&lt;input value:to=&quot;emitterProperty.value&quot;/&gt;
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the view in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;script type='text/stache' id='app-view'&gt;
+&lt;form&gt;
+
+  User Entered: {{userCardNumber.value}},
+  Card Number: {{cardNumber.value}}
+
+  &lt;input type='text' name='number' placeholder='Card Number'
+    on:input:value:to=&quot;userCardNumber.value&quot;/&gt;
+
+  &lt;input type='text' name='expiry' placeholder='MM-YY'/&gt;
+
+  &lt;input type='text' name='cvc' placeholder='CVC'/&gt;
+
+  &lt;button&gt;Pay ${{amount.value}}&lt;/button&gt;
+
+&lt;/form&gt;
+&lt;/script&gt;
+
+</code></pre>
+<p><span line-highlight='4-8,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var viewModel = {
+    amount: Kefir.constant(1000),
+
+    userCardNumber: Kefir.emitterProperty()
+};
+
+viewModel.cardNumber = viewModel.userCardNumber.map((card) =&gt; {
+    if (card) {
+        return card.replace(/[\s-]/g, &quot;&quot;);
+    }
+});
+
+var view = can.stache.from(&quot;app-view&quot;);
+
+document.body.appendChild( view(viewModel) );
+
+</code></pre>
+<p><span line-highlight='4,7-11,only'></span></p>
+<h2>Output the card error</h2>
+<h3>The problem</h3>
+<p>As someone types a card number, lets show the user a warning message
+about what they need to enter for the card number. It should go away
+if the card number is 16 characters.</p>
+<h3>What you need to know</h3>
+<ul>
+<li><p>Add the <code>cardError</code> message above the input like:</p>
+<pre><code class="language-html">&lt;div class=&quot;message&quot;&gt;{{cardError.value}}&lt;/div&gt;
+</code></pre></li>
+<li><p>Validate a card with:</p>
+<pre><code class="language-js">function validateCard(card) {
+  if (!card) {
+      return &quot;There is no card&quot;
+  }
+  if (card.length !== 16) {
+      return &quot;There should be 16 characters in a card&quot;;
+  }
+}
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the view in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;script type='text/stache' id='app-view'&gt;
+&lt;form&gt;
+
+  &lt;div class=&quot;message&quot;&gt;{{cardError.value}}&lt;/div&gt;
+
+  &lt;input type='text' name='number' placeholder='Card Number'
+    on:input:value:to=&quot;userCardNumber.value&quot;/&gt;
+
+  &lt;input type='text' name='expiry' placeholder='MM-YY'/&gt;
+
+  &lt;input type='text' name='cvc' placeholder='CVC'/&gt;
+
+  &lt;button&gt;Pay ${{amount.value}}&lt;/button&gt;
+
+&lt;/form&gt;
+&lt;/script&gt;
+
+</code></pre>
+<p><span line-highlight='4,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var viewModel = {
+    amount: Kefir.constant(1000),
+
+    userCardNumber: Kefir.emitterProperty()
+};
+
+viewModel.cardNumber = viewModel.userCardNumber.map((card) =&gt; {
+    if (card) {
+        return card.replace(/[\s-]/g, &quot;&quot;);
+    }
+});
+viewModel.cardError = viewModel.cardNumber.map(validateCard);
+
+var view = can.stache.from(&quot;app-view&quot;);
+
+document.body.appendChild( view(viewModel) );
+
+// HELPER FUNCTIONS
+function validateCard(card) {
+    if (!card) {
+        return &quot;There is no card&quot;
+    }
+    if (card.length !== 16) {
+        return &quot;There should be 16 characters in a card&quot;;
+    }
+}
+
+</code></pre>
+<p><span line-highlight='12,19-26,only'></span></p>
+<h2>Only show the card error when blurred</h2>
+<h3>The problem</h3>
+<p>Lets only show the cardNumber error if the user blurs the
+card number input. Once the user blurs, we will update the card number error,
+if there is one, on every keystroke.</p>
+<p>We should also add <code>class='is-error'</code> to the input when it has an error.</p>
+<p>For this to work, we will need to track if the user has blurred
+the input in a <code>userCardNumberBlurred</code> <code>emitterProperty</code>.</p>
+<h3>What you need to know</h3>
+<ul>
+<li><p>We can call an <code>emitterProperty</code>'s value in the template when something happens like:</p>
+<pre><code class="language-html">&lt;div on:click=&quot;emitterProperty.emitter.value(true)&quot;&gt;
+</code></pre></li>
+<li><p>One of the most useful patterns in constructing streams is the event-reducer
+pattern. On a high-level it involves making streams events, and using those
+events to update a stateful object.</p>
+<p>For example, we might have a <code>first</code> and a <code>last</code> stream:</p>
+<pre><code class="language-js">var first = Kefir.sequentially(100, [&quot;Justin&quot;, &quot;Ramiya&quot;])
+var last = Kefir.sequentially(100, [&quot;Shah&quot;, &quot;Meyer&quot;]).delay(50);
+// first: ---Justin---RamiyaX
+// last:  ------Shah__---Meyer_X
+</code></pre>
+<p>We can promote these to event-like objects with <code>.map</code>:</p>
+<pre><code class="language-js">var firstEvents = first.map( (first) =&gt; {
+    return {type: &quot;first&quot;, value: first}
+})
+var lastEvents = first.map( (last) =&gt; {
+    return {type: &quot;last&quot;, value: last}
+})
+// firstEvents: ---{t:&quot;f&quot;}---{t:&quot;f&quot;}X
+// lastEvents:  ------{t:&quot;l&quot;}---{t:&quot;l&quot;}X
+</code></pre>
+<p>Next, we can merge these into a single stream:</p>
+<pre><code class="language-js">var merged = Kefir.merge([firstEvents,lastEvents])
+// merged: ---{t:&quot;f&quot;}-{t:&quot;l&quot;}-{t:&quot;f&quot;}-{t:&quot;l&quot;}X
+</code></pre>
+<p>We can &quot;reduce&quot; (or <code>.scan</code>) these events based on a previous
+state. The following copies the old state and updates it using the event
+data:</p>
+<pre><code class="language-js">var state = merged.scan((previous, event) =&gt; {
+  var copy = Object.assign({}, previous);
+  copy[event.type] = event.value;
+   return copy;
+}, {first: &quot;&quot;, last: &quot;&quot;});
+// state: ---{first:&quot;Justin&quot;, last:&quot;&quot;}
+//          -{first:&quot;Justin&quot;, last:&quot;Shah&quot;}
+//          -{first:&quot;Ramiya&quot;, last:&quot;Shah&quot;}
+//          -{first:&quot;Ramiya&quot;, last:&quot;Meyer&quot;}X
+</code></pre>
+<p>The following is a more common structure for the reducer pattern:</p>
+<pre><code class="language-js">var state = merged.scan((previous, event) =&gt; {
+    switch( event.type ) {
+      case &quot;first&quot;:
+        return Object.assign({}, previous,{
+          first: event.value
+        });
+      case &quot;last&quot;:
+        return Object.assign({}, previous,{
+          last: event.value
+        });
+      default:
+        return previous;
+    }
+}, {first: &quot;&quot;, last: &quot;&quot;})
+</code></pre>
+<p>Finally, we can map this state to another value:</p>
+<pre><code class="language-js">var fullName = state.map( (state) =&gt; state.first +&quot; &quot;+ state.last );
+// fullName: ---Justin
+//             -Justin Shah
+//             -Ramiya Shah
+//             -Ramiya MeyerX
+</code></pre>
+<blockquote>
+<p>NOTE: <code>fullName</code> can be derived more simply from <code>Kefir.combine</code>. The reducer
+pattern is used here for illustrative purposes. It is able to support a larger
+set of stream transformations than <code>Kefir.combine</code>.</p>
+</blockquote></li>
+<li><p>On any stream, you can call <code>stream.toProperty()</code> to return a property that
+will retain its values. This can be useful if you want a stream's immediate value.</p></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the view in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;script type='text/stache' id='app-view'&gt;
+&lt;form&gt;
+
+  {{#if(showCardError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{cardError.value}}&lt;/div&gt;
+  {{/if}}
+
+  &lt;input type='text' name='number' placeholder='Card Number'
+    on:input:value:to=&quot;userCardNumber.value&quot;
+    on:blur=&quot;userCardNumberBlurred.emitter.value(true)&quot;
+    {{#if(showCardError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;input type='text' name='expiry' placeholder='MM-YY'/&gt;
+
+  &lt;input type='text' name='cvc' placeholder='CVC'/&gt;
+
+  &lt;button&gt;Pay ${{amount.value}}&lt;/button&gt;
+
+&lt;/form&gt;
+&lt;/script&gt;
+
+</code></pre>
+<p><span line-highlight='4-11,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var viewModel = {
+    amount: Kefir.constant(1000),
+
+    userCardNumber: Kefir.emitterProperty(),
+    userCardNumberBlurred: Kefir.emitterProperty()
+};
+
+viewModel.cardNumber = viewModel.userCardNumber.map((card) =&gt; {
+    if (card) {
+        return card.replace(/[\s-]/g, &quot;&quot;);
+    }
+});
+viewModel.cardError = viewModel.cardNumber.map(validateCard).toProperty();
+viewModel.showCardError = showOnlyWhenBlurredOnce(viewModel.cardError, viewModel.userCardNumberBlurred);
+
+var view = can.stache.from(&quot;app-view&quot;);
+
+document.body.appendChild( view(viewModel) );
+
+// HELPER FUNCTIONS
+function validateCard(card) {
+    if (!card) {
+        return &quot;There is no card&quot;
+    }
+    if (card.length !== 16) {
+        return &quot;There should be 16 characters in a card&quot;;
+    }
+}
+
+function showOnlyWhenBlurredOnce(errorStream, blurredStream) {
+    var errorEvent = errorStream.map((error) =&gt; {
+        if (!error) {
+            return {
+                type: &quot;valid&quot;
+            }
+        } else {
+            return {
+                type: &quot;invalid&quot;,
+                message: error
+            }
+        }
+    });
+
+    var focusEvents = blurredStream.map((isBlurred) =&gt; {
+        if (isBlurred === undefined) {
+            return {};
+        }
+        return isBlurred ? {
+            type: &quot;blurred&quot;
+        } : {
+            type: &quot;focused&quot;
+        };
+    });
+
+    return Kefir.merge([errorEvent, focusEvents])
+        .scan((previous, event) =&gt; {
+            switch (event.type) {
+                case &quot;valid&quot;:
+                    return Object.assign({}, previous, {
+                        isValid: true,
+                        showCardError: false
+                    });
+                case &quot;invalid&quot;:
+                    return Object.assign({}, previous, {
+                        isValid: false,
+                        showCardError: previous.hasBeenBlurred
+                    });
+                case &quot;blurred&quot;:
+                    return Object.assign({}, previous, {
+                        hasBeenBlurred: true,
+                        showCardError: !previous.isValid
+                    });
+                default:
+                    return previous;
+            }
+        }, {
+            hasBeenBlurred: false,
+            showCardError: false,
+            isValid: false
+        }).map((state) =&gt; {
+            return state.showCardError
+        });
+}
+
+</code></pre>
+<p><span line-highlight='5,13-14,30-83,only'></span></p>
+<h2>Read, validate, and show the error of the expiry</h2>
+<h3>The problem</h3>
+<p>Lets make the <code>expiry</code> input element just like the <code>cardNumber</code>
+element.  The expiry should be entered like <code>12-17</code> and be stored as an
+array like <code>[&quot;12&quot;,&quot;16&quot;]</code>.  Make sure to:</p>
+<ul>
+<li>validate the expiry</li>
+<li>show a warning validation message in a <code>&lt;div class=&quot;message&quot;&gt;</code> element</li>
+<li>add <code>class='is-error'</code> to the element if we should show the <code>expiry</code> error.</li>
+</ul>
+<h3>What you need to know</h3>
+<ul>
+<li>Use <code>expiry.split(&quot;-&quot;)</code> to convert what a user typed into an array of numbers.</li>
+<li>To validate the expiry use:
+<pre><code class="language-js">function validateExpiry(expiry) {
+  if (!expiry) {
+      return &quot;There is no expiry. Format  MM-YY&quot;;
+  }
+  if (expiry.length !== 2 || expiry[0].length !== 2 || expiry[1].length !== 2) {
+      return &quot;Expirty must be formatted like MM-YY&quot;;
+  }
+}
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the view in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;script type='text/stache' id='app-view'&gt;
+&lt;form&gt;
+
+  {{#if(showCardError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{cardError.value}}&lt;/div&gt;
+  {{/if}}
+
+  {{#if(showExpiryError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{expiryError.value}}&lt;/div&gt;
+  {{/if}}
+
+  &lt;input type='text' name='number' placeholder='Card Number'
+    on:input:value:to=&quot;userCardNumber.value&quot;
+    on:blur=&quot;userCardNumberBlurred.emitter.value(true)&quot;
+    {{#if(showCardError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;input type='text' name='expiry' placeholder='MM-YY'
+    on:input:value:to=&quot;userExpiry.value&quot;
+    on:blur=&quot;userExpiryBlurred.emitter.value(true)&quot;
+    {{#if(showExpiryError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;input type='text' name='cvc' placeholder='CVC'/&gt;
+
+  &lt;button&gt;Pay ${{amount.value}}&lt;/button&gt;
+
+&lt;/form&gt;
+&lt;/script&gt;
+
+</code></pre>
+<p><span line-highlight='8-10,17-20,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var viewModel = {
+    amount: Kefir.constant(1000),
+
+    userCardNumber: Kefir.emitterProperty(),
+    userCardNumberBlurred: Kefir.emitterProperty(),
+
+    userExpiry: Kefir.emitterProperty(),
+    userExpiryBlurred: Kefir.emitterProperty()
+};
+
+viewModel.cardNumber = viewModel.userCardNumber.map((card) =&gt; {
+    if (card) {
+        return card.replace(/[\s-]/g, &quot;&quot;);
+    }
+});
+viewModel.cardError = viewModel.cardNumber.map(validateCard).toProperty();
+viewModel.showCardError = showOnlyWhenBlurredOnce(viewModel.cardError, viewModel.userCardNumberBlurred);
+
+// EXPIRY
+viewModel.expiry = viewModel.userExpiry.map((expiry) =&gt; {
+    if (expiry) {
+        return expiry.split(&quot;-&quot;)
+    }
+});
+viewModel.expiryError = viewModel.expiry.map(validateExpiry).toProperty();
+viewModel.showExpiryError = showOnlyWhenBlurredOnce(viewModel.expiryError, viewModel.userExpiryBlurred);
+
+var view = can.stache.from(&quot;app-view&quot;);
+
+document.body.appendChild( view(viewModel) );
+
+// HELPER FUNCTIONS
+function validateCard(card) {
+    if (!card) {
+        return &quot;There is no card&quot;
+    }
+    if (card.length !== 16) {
+        return &quot;There should be 16 characters in a card&quot;;
+    }
+}
+
+function validateExpiry(expiry) {
+    if (!expiry) {
+        return &quot;There is no expiry. Format  MM-YY&quot;;
+    }
+    if (expiry.length !== 2 || expiry[0].length !== 2 || expiry[1].length !== 2) {
+        return &quot;Expirty must be formatted like MM-YY&quot;;
+    }
+}
+
+function showOnlyWhenBlurredOnce(errorStream, blurredStream) {
+    var errorEvent = errorStream.map((error) =&gt; {
+        if (!error) {
+            return {
+                type: &quot;valid&quot;
+            }
+        } else {
+            return {
+                type: &quot;invalid&quot;,
+                message: error
+            }
+        }
+    });
+
+    var focusEvents = blurredStream.map((isBlurred) =&gt; {
+        if (isBlurred === undefined) {
+            return {};
+        }
+        return isBlurred ? {
+            type: &quot;blurred&quot;
+        } : {
+            type: &quot;focused&quot;
+        };
+    });
+
+    return Kefir.merge([errorEvent, focusEvents])
+        .scan((previous, event) =&gt; {
+            switch (event.type) {
+                case &quot;valid&quot;:
+                    return Object.assign({}, previous, {
+                        isValid: true,
+                        showCardError: false
+                    });
+                case &quot;invalid&quot;:
+                    return Object.assign({}, previous, {
+                        isValid: false,
+                        showCardError: previous.hasBeenBlurred
+                    });
+                case &quot;blurred&quot;:
+                    return Object.assign({}, previous, {
+                        hasBeenBlurred: true,
+                        showCardError: !previous.isValid
+                    });
+                default:
+                    return previous;
+            }
+        }, {
+            hasBeenBlurred: false,
+            showCardError: false,
+            isValid: false
+        }).map((state) =&gt; {
+            return state.showCardError
+        });
+}
+
+</code></pre>
+<p><span line-highlight='7-8,19-26,42-49,only'></span></p>
+<h2>Read, validate, and show the error of the CVC</h2>
+<h3>The problem</h3>
+<p>Lets make the <code>CVC</code> input element just like the <code>cardNumber</code> and <code>expiry</code>
+element.  Make sure to:</p>
+<ul>
+<li>validate the cvc</li>
+<li>show a warning validation message in a <code>&lt;div class=&quot;message&quot;&gt;</code> element</li>
+<li>add <code>class='is-error'</code> to the element if we should show the <code>CVC</code> error.</li>
+</ul>
+<h3>What you need to know</h3>
+<ul>
+<li>The <code>cvc</code> can be saved as whatever the user entered. No special processing necessary.</li>
+<li>To validate CVC:
+<pre><code class="language-js">function validateCVC(cvc) {
+  if (!cvc) {
+      return &quot;There is no CVC code&quot;;
+  }
+  if (cvc.length !== 3) {
+      return &quot;The CVC must be at least 3 numbers&quot;;
+  }
+  if (isNaN(parseInt(cvc))) {
+      return &quot;The CVC must be numbers&quot;;
+  }
+}
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the view in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;script type='text/stache' id='app-view'&gt;
+&lt;form&gt;
+
+  {{#if(showCardError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{cardError.value}}&lt;/div&gt;
+  {{/if}}
+
+  {{#if(showExpiryError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{expiryError.value}}&lt;/div&gt;
+  {{/if}}
+
+  {{#if(showCVCError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{cvcError.value}}&lt;/div&gt;
+  {{/if}}
+
+  &lt;input type='text' name='number' placeholder='Card Number'
+    on:input:value:to=&quot;userCardNumber.value&quot;
+    on:blur=&quot;userCardNumberBlurred.emitter.value(true)&quot;
+    {{#if(showCardError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;input type='text' name='expiry' placeholder='MM-YY'
+    on:input:value:to=&quot;userExpiry.value&quot;
+    on:blur=&quot;userExpiryBlurred.emitter.value(true)&quot;
+    {{#if(showExpiryError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;input type='text' name='cvc' placeholder='CVC'
+    on:input:value:to=&quot;userCVC.value&quot;
+    on:blur=&quot;userCVCBlurred.emitter.value(true)&quot;
+    {{#if(showCVCError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;button&gt;Pay ${{amount.value}}&lt;/button&gt;
+
+&lt;/form&gt;
+&lt;/script&gt;
+
+</code></pre>
+<p><span line-highlight='12-14,26-29,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var viewModel = {
+    amount: Kefir.constant(1000),
+
+    userCardNumber: Kefir.emitterProperty(),
+    userCardNumberBlurred: Kefir.emitterProperty(),
+
+    userExpiry: Kefir.emitterProperty(),
+    userExpiryBlurred: Kefir.emitterProperty(),
+
+    userCVC: Kefir.emitterProperty(),
+    userCVCBlurred: Kefir.emitterProperty()
+};
+
+viewModel.cardNumber = viewModel.userCardNumber.map((card) =&gt; {
+    if (card) {
+        return card.replace(/[\s-]/g, &quot;&quot;);
+    }
+});
+viewModel.cardError = viewModel.cardNumber.map(validateCard).toProperty();
+viewModel.showCardError = showOnlyWhenBlurredOnce(viewModel.cardError, viewModel.userCardNumberBlurred);
+
+// EXPIRY
+viewModel.expiry = viewModel.userExpiry.map((expiry) =&gt; {
+    if (expiry) {
+        return expiry.split(&quot;-&quot;)
+    }
+});
+viewModel.expiryError = viewModel.expiry.map(validateExpiry).toProperty();
+viewModel.showExpiryError = showOnlyWhenBlurredOnce(viewModel.expiryError, viewModel.userExpiryBlurred);
+
+// CVC
+viewModel.cvc = viewModel.userCVC;
+viewModel.cvcError = viewModel.cvc.map(validateCVC).toProperty();
+viewModel.showCVCError = showOnlyWhenBlurredOnce(viewModel.cvcError, viewModel.userCVCBlurred);
+
+var view = can.stache.from(&quot;app-view&quot;);
+
+document.body.appendChild( view(viewModel) );
+
+// HELPER FUNCTIONS
+function validateCard(card) {
+    if (!card) {
+        return &quot;There is no card&quot;
+    }
+    if (card.length !== 16) {
+        return &quot;There should be 16 characters in a card&quot;;
+    }
+}
+
+function validateExpiry(expiry) {
+    if (!expiry) {
+        return &quot;There is no expiry. Format  MM-YY&quot;;
+    }
+    if (expiry.length !== 2 || expiry[0].length !== 2 || expiry[1].length !== 2) {
+        return &quot;Expirty must be formatted like MM-YY&quot;;
+    }
+}
+
+function validateCVC(cvc) {
+    if (!cvc) {
+        return &quot;There is no CVC code&quot;;
+    }
+    if (cvc.length !== 3) {
+        return &quot;The CVC must be at least 3 numbers&quot;;
+    }
+    if (isNaN(parseInt(cvc))) {
+        return &quot;The CVC must be numbers&quot;;
+    }
+}
+
+function showOnlyWhenBlurredOnce(errorStream, blurredStream) {
+    var errorEvent = errorStream.map((error) =&gt; {
+        if (!error) {
+            return {
+                type: &quot;valid&quot;
+            }
+        } else {
+            return {
+                type: &quot;invalid&quot;,
+                message: error
+            }
+        }
+    });
+
+    var focusEvents = blurredStream.map((isBlurred) =&gt; {
+        if (isBlurred === undefined) {
+            return {};
+        }
+        return isBlurred ? {
+            type: &quot;blurred&quot;
+        } : {
+            type: &quot;focused&quot;
+        };
+    });
+
+    return Kefir.merge([errorEvent, focusEvents])
+        .scan((previous, event) =&gt; {
+            switch (event.type) {
+                case &quot;valid&quot;:
+                    return Object.assign({}, previous, {
+                        isValid: true,
+                        showCardError: false
+                    });
+                case &quot;invalid&quot;:
+                    return Object.assign({}, previous, {
+                        isValid: false,
+                        showCardError: previous.hasBeenBlurred
+                    });
+                case &quot;blurred&quot;:
+                    return Object.assign({}, previous, {
+                        hasBeenBlurred: true,
+                        showCardError: !previous.isValid
+                    });
+                default:
+                    return previous;
+            }
+        }, {
+            hasBeenBlurred: false,
+            showCardError: false,
+            isValid: false
+        }).map((state) =&gt; {
+            return state.showCardError
+        });
+}
+
+</code></pre>
+<p><span line-highlight='10-11,32-34,59-69,only'></span></p>
+<h2>Disable the pay button if any part of the card has an error</h2>
+<h3>The problem</h3>
+<p>Lets disable the <strong>Pay</strong> button until the card, exiry, and cvc are valid.</p>
+<h3>What you need to know</h3>
+<ul>
+<li><code>Kefir.combine</code> can combine several values into a single value:
+<pre><code class="language-js">var first = Kefir.sequentially(100, [&quot;Justin&quot;, &quot;Ramiya&quot;])
+var last = Kefir.sequentially(100, [&quot;Shah&quot;, &quot;Meyer&quot;]).delay(50);
+// first: ---Justin---RamiyaX
+// last:  ------Shah__---Meyer_X
+var fullName = Kefir.combine([first, last], (first, last) =&gt; { return first +&quot; &quot;+ last; })
+// fullName: ---Justin Shah
+//             -Ramiya Shah
+//             -Ramiya MeyerX
+</code></pre></li>
+<li><a href="../../can-stache-bindings.toChild.html" title="One-way bind a value in the parent scope to the ViewModel or element.">childProp:from</a> can set a property from another value:
+<pre><code class="language-js">&lt;input checked:from=&quot;someKey&quot;/&gt;
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the view in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;script type='text/stache' id='app-view'&gt;
+&lt;form&gt;
+
+  {{#if(showCardError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{cardError.value}}&lt;/div&gt;
+  {{/if}}
+
+  {{#if(showExpiryError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{expiryError.value}}&lt;/div&gt;
+  {{/if}}
+
+  {{#if(showCVCError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{cvcError.value}}&lt;/div&gt;
+  {{/if}}
+
+  &lt;input type='text' name='number' placeholder='Card Number'
+    on:input:value:to=&quot;userCardNumber.value&quot;
+    on:blur=&quot;userCardNumberBlurred.emitter.value(true)&quot;
+    {{#if(showCardError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;input type='text' name='expiry' placeholder='MM-YY'
+    on:input:value:to=&quot;userExpiry.value&quot;
+    on:blur=&quot;userExpiryBlurred.emitter.value(true)&quot;
+    {{#if(showExpiryError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;input type='text' name='cvc' placeholder='CVC'
+    on:input:value:to=&quot;userCVC.value&quot;
+    on:blur=&quot;userCVCBlurred.emitter.value(true)&quot;
+    {{#if(showCVCError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;button disabled:from=&quot;isCardInvalid.value&quot;&gt;
+    Pay ${{amount.value}}
+  &lt;/button&gt;
+
+&lt;/form&gt;
+&lt;/script&gt;
+
+</code></pre>
+<p><span line-highlight='31-33,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var viewModel = {
+    amount: Kefir.constant(1000),
+
+    userCardNumber: Kefir.emitterProperty(),
+    userCardNumberBlurred: Kefir.emitterProperty(),
+
+    userExpiry: Kefir.emitterProperty(),
+    userExpiryBlurred: Kefir.emitterProperty(),
+
+    userCVC: Kefir.emitterProperty(),
+    userCVCBlurred: Kefir.emitterProperty(),
+};
+
+viewModel.cardNumber = viewModel.userCardNumber.map((card) =&gt; {
+    if (card) {
+        return card.replace(/[\s-]/g, &quot;&quot;);
+    }
+});
+viewModel.cardError = viewModel.cardNumber.map(validateCard).toProperty();
+viewModel.showCardError = showOnlyWhenBlurredOnce(viewModel.cardError, viewModel.userCardNumberBlurred);
+
+// EXPIRY
+viewModel.expiry = viewModel.userExpiry.map((expiry) =&gt; {
+    if (expiry) {
+        return expiry.split(&quot;-&quot;)
+    }
+});
+viewModel.expiryError = viewModel.expiry.map(validateExpiry).toProperty();
+viewModel.showExpiryError = showOnlyWhenBlurredOnce(viewModel.expiryError, viewModel.userExpiryBlurred);
+
+// CVC
+viewModel.cvc = viewModel.userCVC;
+viewModel.cvcError = viewModel.cvc.map(validateCVC).toProperty();
+viewModel.showCVCError = showOnlyWhenBlurredOnce(viewModel.cvcError, viewModel.userCVCBlurred);
+
+viewModel.isCardInvalid = Kefir.combine([viewModel.cardError, viewModel.expiryError, viewModel.cvcError],
+    function(cardError, expiryError, cvcError) {
+        return !!(cardError || expiryError || cvcError)
+    });
+
+var view = can.stache.from(&quot;app-view&quot;);
+
+document.body.appendChild( view(viewModel) );
+
+// HELPER FUNCTIONS
+function validateCard(card) {
+    if (!card) {
+        return &quot;There is no card&quot;
+    }
+    if (card.length !== 16) {
+        return &quot;There should be 16 characters in a card&quot;;
+    }
+}
+
+function validateExpiry(expiry) {
+    if (!expiry) {
+        return &quot;There is no expiry. Format  MM-YY&quot;;
+    }
+    if (expiry.length !== 2 || expiry[0].length !== 2 || expiry[1].length !== 2) {
+        return &quot;Expirty must be formatted like MM-YY&quot;;
+    }
+}
+
+function validateCVC(cvc) {
+    if (!cvc) {
+        return &quot;There is no CVC code&quot;;
+    }
+    if (cvc.length !== 3) {
+        return &quot;The CVC must be at least 3 numbers&quot;;
+    }
+    if (isNaN(parseInt(cvc))) {
+        return &quot;The CVC must be numbers&quot;;
+    }
+}
+
+function showOnlyWhenBlurredOnce(errorStream, blurredStream) {
+    var errorEvent = errorStream.map((error) =&gt; {
+        if (!error) {
+            return {
+                type: &quot;valid&quot;
+            }
+        } else {
+            return {
+                type: &quot;invalid&quot;,
+                message: error
+            }
+        }
+    });
+
+    var focusEvents = blurredStream.map((isBlurred) =&gt; {
+        if (isBlurred === undefined) {
+            return {};
+        }
+        return isBlurred ? {
+            type: &quot;blurred&quot;
+        } : {
+            type: &quot;focused&quot;
+        };
+    });
+
+    return Kefir.merge([errorEvent, focusEvents])
+        .scan((previous, event) =&gt; {
+            switch (event.type) {
+                case &quot;valid&quot;:
+                    return Object.assign({}, previous, {
+                        isValid: true,
+                        showCardError: false
+                    });
+                case &quot;invalid&quot;:
+                    return Object.assign({}, previous, {
+                        isValid: false,
+                        showCardError: previous.hasBeenBlurred
+                    });
+                case &quot;blurred&quot;:
+                    return Object.assign({}, previous, {
+                        hasBeenBlurred: true,
+                        showCardError: !previous.isValid
+                    });
+                default:
+                    return previous;
+            }
+        }, {
+            hasBeenBlurred: false,
+            showCardError: false,
+            isValid: false
+        }).map((state) =&gt; {
+            return state.showCardError
+        });
+}
+
+</code></pre>
+<p><span line-highlight='36-39,only'></span></p>
+<h2>Implement the payment button</h2>
+<h3>The problem</h3>
+<p>When the user submits the form, lets simulate making a 2 second AJAX
+request to create a payment.  While the request is being made,
+we will change the <strong>Pay</strong> button to say <strong>Paying</strong>.</p>
+<h3>What you need to know</h3>
+<ul>
+<li><p>Use the following to create a Promise that takes 2 seconds to resolve:</p>
+<pre><code class="language-js">new Promise(function(resolve) {
+ setTimeout(function() {
+    resolve(1000);
+  }, 2000);
+});
+</code></pre></li>
+<li><p>Use <a href="../../can-stache-bindings.event.html" title="Respond to events on elements or component ViewModels.">on:event</a> to listen to an event on an element and call a method in <code>can-stache</code>.  For example, the following calls <code>doSomething()</code> when the <code>&lt;div&gt;</code> is clicked:</p>
+<pre><code class="language-html">&lt;div on:click=&quot;doSomething(%event)&quot;&gt; ... &lt;/div&gt;
+</code></pre>
+<p>Notice that it also passed the event object with <code>%event</code>.</p></li>
+<li><p>To prevent a form from submitting, call <code>event.preventDefault()</code>.</p></li>
+<li><p><a href="https://rpominov.github.io/kefir/#from-promise">Kefir.fromPromise</a> returns a stream from the resolved value of a promise.</p></li>
+<li><p><a href="https://rpominov.github.io/kefir/#combine">Kefir.combine</a> takes a list of passive streams
+where the combinator will not be called when the passive streams emit a value.</p></li>
+<li><p><code>Kefir.concat</code> concatenates streams so events are produced in order.</p>
+<pre><code class="language-js">var a = Kefir.sequentially(100, [0, 1, 2]);
+var b = Kefir.sequentially(100, [3, 4, 5]);
+var abc = Kefir.concat([a, b]);
+//a:    ---0---1---2X
+//b:                ---3---4---5X
+//abc:  ---0---1---2---3---4---5X
+</code></pre></li>
+<li><p><a href="https://rpominov.github.io/kefir/#flat-map">Kefir.flatMap</a> flattens a stream of
+streams to a single stream of values.</p>
+<pre><code class="language-js">var count = Kefir.sequentially(100, [1, 2, 3]);
+var streamOfStreams = count.map( (count) =&gt; {
+    return Kefir.interval(40, count).take(4)
+});
+var result = streamOfStreams.flatMap();
+// source:      ----------1---------2---------3X
+//
+// spawned 1:             ---1---1---1---1X
+// spawned 2:                       ---2---2---2---2X
+// spawned 3:                                 ---3---3---3---3X
+// result:      -------------1---1---1-2-1-2---2-3-2-3---3---3X
+</code></pre>
+<p>I think of this like promises' ability to resolve when an &quot;inner&quot; promise
+resolves.  For example, <code>resultPromise</code> below resolves with the <code>innerPromise</code>:</p>
+<pre><code class="language-js">var outerPromise = new Promise((resolve) =&gt; {
+    setTimeout(() =&gt; { resolve(&quot;outer&quot;) }, 100);
+});
+return innerPromise = new Promise((resolve) =&gt; {
+    setTimeout(() =&gt; { resolve(&quot;inner&quot;) }, 200);
+});
+var resultPromise = outerPromise.then(function(value){
+   // value -&gt; &quot;outer&quot;
+   return innerPromise;
+});
+resultPromise.then(function(value){
+   // value -&gt; &quot;inner&quot;
+})
+</code></pre>
+<p>In some ways, <code>outerPromise</code> is a promise of promises.  Promises flatten
+by default. With Kefir, you call <code>flatMap</code> to flatten streams.</p></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the view in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;script type='text/stache' id='app-view'&gt;
+&lt;form on:submit=&quot;pay(%event)&quot;&gt;
+
+  {{#if(showCardError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{cardError.value}}&lt;/div&gt;
+  {{/if}}
+
+  {{#if(showExpiryError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{expiryError.value}}&lt;/div&gt;
+  {{/if}}
+
+  {{#if(showCVCError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{cvcError.value}}&lt;/div&gt;
+  {{/if}}
+
+  &lt;input type='text' name='number' placeholder='Card Number'
+    on:input:value:to=&quot;userCardNumber.value&quot;
+    on:blur=&quot;userCardNumberBlurred.emitter.value(true)&quot;
+    {{#if(showCardError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;input type='text' name='expiry' placeholder='MM-YY'
+    on:input:value:to=&quot;userExpiry.value&quot;
+    on:blur=&quot;userExpiryBlurred.emitter.value(true)&quot;
+    {{#if(showExpiryError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;input type='text' name='cvc' placeholder='CVC'
+    on:input:value:to=&quot;userCVC.value&quot;
+    on:blur=&quot;userCVCBlurred.emitter.value(true)&quot;
+    {{#if(showCVCError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;button disabled:from=&quot;isCardInvalid.value&quot;&gt;
+    {{#eq(paymentStatus.value.status, &quot;pending&quot;)}}Paying{{else}}Pay{{/eq}} ${{amount.value}}
+  &lt;/button&gt;
+&lt;/form&gt;
+&lt;/script&gt;
+
+</code></pre>
+<p><span line-highlight='2,32,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var viewModel = {
+    amount: Kefir.constant(1000),
+
+    userCardNumber: Kefir.emitterProperty(),
+    userCardNumberBlurred: Kefir.emitterProperty(),
+
+    userExpiry: Kefir.emitterProperty(),
+    userExpiryBlurred: Kefir.emitterProperty(),
+
+    userCVC: Kefir.emitterProperty(),
+    userCVCBlurred: Kefir.emitterProperty(),
+
+    payClicked: Kefir.emitterProperty(),
+
+    pay: function(event) {
+        event.preventDefault();
+        this.payClicked.emitter.value(true)
+    }
+};
+
+viewModel.cardNumber = viewModel.userCardNumber.map((card) =&gt; {
+    if (card) {
+        return card.replace(/[\s-]/g, &quot;&quot;);
+    }
+});
+viewModel.cardError = viewModel.cardNumber.map(validateCard).toProperty(); // we’ll need this in the future
+viewModel.showCardError = showOnlyWhenBlurredOnce(viewModel.cardError, viewModel.userCardNumberBlurred);
+
+// EXPIRY
+viewModel.expiry = viewModel.userExpiry.map((expiry) =&gt; {
+    if (expiry) {
+        return expiry.split(&quot;-&quot;)
+    }
+});
+viewModel.expiryError = viewModel.expiry.map(validateExpiry).toProperty();
+viewModel.showExpiryError = showOnlyWhenBlurredOnce(viewModel.expiryError, viewModel.userExpiryBlurred);
+
+// CVC
+viewModel.cvc = viewModel.userCVC;
+viewModel.cvcError = viewModel.cvc.map(validateCVC).toProperty();
+viewModel.showCVCError = showOnlyWhenBlurredOnce(viewModel.cvcError, viewModel.userCVCBlurred);
+
+viewModel.isCardInvalid = Kefir.combine([viewModel.cardError, viewModel.expiryError, viewModel.cvcError],
+    function(cardError, expiryError, cvcError) {
+        return !!(cardError || expiryError || cvcError)
+    });
+
+viewModel.card = Kefir.combine([viewModel.cardNumber, viewModel.expiry, viewModel.cvc],
+    function(cardNumber, expiry, cvc) {
+        return {cardNumber , expiry , cvc};
+    });
+
+// STREAM&lt; Promise&lt;Number&gt; | undefined &gt;
+var paymentPromises = Kefir.combine([viewModel.payClicked], [viewModel.card], (payClicked, card) =&gt; {
+    if (payClicked) {
+        console.log(&quot;Asking for token with&quot;, card);
+        return new Promise(function(resolve) {
+            setTimeout(function() {
+                resolve(1000);
+            }, 2000);
+        })
+    }
+});
+
+// STREAM&lt; STREAM&lt;STATUS&gt; &gt;
+// This is a stream of streams of status objects.
+var paymentStatusStream = paymentPromises.map((promise) =&gt; {
+    if (promise) {
+        // STREAM&lt;STATUS&gt;
+        return Kefir.concat([
+            Kefir.constant({
+                status: &quot;pending&quot;
+            }),
+            Kefir.fromPromise(promise).map((value) =&gt; {
+                return {
+                    status: &quot;resolved&quot;,
+                    value: value
+                };
+            })
+        ]);
+    } else {
+        // STREAM
+        return Kefir.constant({
+            status: &quot;waiting&quot;
+        });
+    }
+});
+
+// STREAM&lt;STATUS&gt; //{status: &quot;waiting&quot;} | {status: &quot;resolved&quot;}
+viewModel.paymentStatus = paymentStatusStream.flatMap().toProperty();
+
+var view = can.stache.from(&quot;app-view&quot;);
+
+document.body.appendChild( view(viewModel) );
+
+// HELPER FUNCTIONS
+function validateCard(card) {
+    if (!card) {
+        return &quot;There is no card&quot;
+    }
+    if (card.length !== 16) {
+        return &quot;There should be 16 characters in a card&quot;;
+    }
+}
+
+function validateExpiry(expiry) {
+    if (!expiry) {
+        return &quot;There is no expiry. Format  MM-YY&quot;;
+    }
+    if (expiry.length !== 2 || expiry[0].length !== 2 || expiry[1].length !== 2) {
+        return &quot;Expirty must be formatted like MM-YY&quot;;
+    }
+}
+
+function validateCVC(cvc) {
+    if (!cvc) {
+        return &quot;There is no CVC code&quot;;
+    }
+    if (cvc.length !== 3) {
+        return &quot;The CVC must be at least 3 numbers&quot;;
+    }
+    if (isNaN(parseInt(cvc))) {
+        return &quot;The CVC must be numbers&quot;;
+    }
+}
+
+function showOnlyWhenBlurredOnce(errorStream, blurredStream) {
+    var errorEvent = errorStream.map((error) =&gt; {
+        if (!error) {
+            return {
+                type: &quot;valid&quot;
+            }
+        } else {
+            return {
+                type: &quot;invalid&quot;,
+                message: error
+            }
+        }
+    });
+
+    var focusEvents = blurredStream.map((isBlurred) =&gt; {
+        if (isBlurred === undefined) {
+            return {};
+        }
+        return isBlurred ? {
+            type: &quot;blurred&quot;
+        } : {
+            type: &quot;focused&quot;
+        };
+    });
+
+    return Kefir.merge([errorEvent, focusEvents])
+        .scan((previous, event) =&gt; {
+            switch (event.type) {
+                case &quot;valid&quot;:
+                    return Object.assign({}, previous, {
+                        isValid: true,
+                        showCardError: false
+                    });
+                case &quot;invalid&quot;:
+                    return Object.assign({}, previous, {
+                        isValid: false,
+                        showCardError: previous.hasBeenBlurred
+                    });
+                case &quot;blurred&quot;:
+                    return Object.assign({}, previous, {
+                        hasBeenBlurred: true,
+                        showCardError: !previous.isValid
+                    });
+                default:
+                    return previous;
+            }
+        }, {
+            hasBeenBlurred: false,
+            showCardError: false,
+            isValid: false
+        }).map((state) =&gt; {
+            return state.showCardError
+        });
+}
+
+</code></pre>
+<p><span line-highlight='13-18,48-90,only'></span></p>
+<h2>Disable the payment button while payments are pending</h2>
+<h3>The problem</h3>
+<p>Lets prevent the <strong>Pay</strong> button from being clicked while the payment is processing.</p>
+<h3>What you need to know</h3>
+<ul>
+<li>You know everything you need to know.</li>
+</ul>
+<h3>The solution</h3>
+<p>Update the view in the <strong>HTML</strong> tab to:</p>
+<pre><code class="language-html">&lt;script type='text/stache' id='app-view'&gt;
+&lt;form on:submit=&quot;pay(%event)&quot;&gt;
+
+  {{#if(showCardError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{cardError.value}}&lt;/div&gt;
+  {{/if}}
+
+  {{#if(showExpiryError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{expiryError.value}}&lt;/div&gt;
+  {{/if}}
+
+  {{#if(showCVCError.value)}}
+    &lt;div class=&quot;message&quot;&gt;{{cvcError.value}}&lt;/div&gt;
+  {{/if}}
+
+  &lt;input type='text' name='number' placeholder='Card Number'
+    on:input:value:to=&quot;userCardNumber.value&quot;
+    on:blur=&quot;userCardNumberBlurred.emitter.value(true)&quot;
+    {{#if(showCardError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;input type='text' name='expiry' placeholder='MM-YY'
+    on:input:value:to=&quot;userExpiry.value&quot;
+    on:blur=&quot;userExpiryBlurred.emitter.value(true)&quot;
+    {{#if(showExpiryError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;input type='text' name='cvc' placeholder='CVC'
+    on:input:value:to=&quot;userCVC.value&quot;
+    on:blur=&quot;userCVCBlurred.emitter.value(true)&quot;
+    {{#if(showCVCError.value)}}class='is-error'{{/if}}/&gt;
+
+  &lt;button disabled:from=&quot;disablePaymentButton.value&quot;&gt;
+    {{#eq(paymentStatus.value.status, &quot;pending&quot;)}}Paying{{else}}Pay{{/eq}} ${{amount.value}}
+  &lt;/button&gt;
+&lt;/form&gt;
+&lt;/script&gt;
+
+</code></pre>
+<p><span line-highlight='31,only'></span>
+Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">var viewModel = {
+    amount: Kefir.constant(1000),
+
+    userCardNumber: Kefir.emitterProperty(),
+    userCardNumberBlurred: Kefir.emitterProperty(),
+
+    userExpiry: Kefir.emitterProperty(),
+    userExpiryBlurred: Kefir.emitterProperty(),
+
+    userCVC: Kefir.emitterProperty(),
+    userCVCBlurred: Kefir.emitterProperty(),
+
+    payClicked: Kefir.emitterProperty(),
+
+    pay: function(event) {
+        event.preventDefault();
+        this.payClicked.emitter.value(true)
+    }
+};
+
+viewModel.cardNumber = viewModel.userCardNumber.map((card) =&gt; {
+    if (card) {
+        return card.replace(/[\s-]/g, &quot;&quot;);
+    }
+});
+viewModel.cardError = viewModel.cardNumber.map(validateCard).toProperty(); // we’ll need this in the future
+viewModel.showCardError = showOnlyWhenBlurredOnce(viewModel.cardError, viewModel.userCardNumberBlurred);
+
+// EXPIRY
+viewModel.expiry = viewModel.userExpiry.map((expiry) =&gt; {
+    if (expiry) {
+        return expiry.split(&quot;-&quot;)
+    }
+});
+viewModel.expiryError = viewModel.expiry.map(validateExpiry).toProperty();
+viewModel.showExpiryError = showOnlyWhenBlurredOnce(viewModel.expiryError, viewModel.userExpiryBlurred);
+
+// CVC
+viewModel.cvc = viewModel.userCVC;
+viewModel.cvcError = viewModel.cvc.map(validateCVC).toProperty();
+viewModel.showCVCError = showOnlyWhenBlurredOnce(viewModel.cvcError, viewModel.userCVCBlurred);
+
+viewModel.isCardInvalid = Kefir.combine([viewModel.cardError, viewModel.expiryError, viewModel.cvcError],
+    function(cardError, expiryError, cvcError) {
+        return !!(cardError || expiryError || cvcError)
+    });
+
+viewModel.card = Kefir.combine([viewModel.cardNumber, viewModel.expiry, viewModel.cvc],
+    function(cardNumber, expiry, cvc) {
+        return {cardNumber , expiry , cvc};
+    });
+
+// STREAM&lt; Promise&lt;Number&gt; | undefined &gt;
+var paymentPromises = Kefir.combine([viewModel.payClicked], [viewModel.card], (payClicked, card) =&gt; {
+    if (payClicked) {
+        console.log(&quot;Asking for token with&quot;, card);
+        return new Promise(function(resolve) {
+            setTimeout(function() {
+                resolve(1000);
+            }, 2000);
+        })
+    }
+});
+
+// STREAM&lt; STREAM&lt;STATUS&gt; &gt;
+// This is a stream of streams of status objects.
+var paymentStatusStream = paymentPromises.map((promise) =&gt; {
+    if (promise) {
+        // STREAM&lt;STATUS&gt;
+        return Kefir.concat([
+            Kefir.constant({
+                status: &quot;pending&quot;
+            }),
+            Kefir.fromPromise(promise).map((value) =&gt; {
+                return {
+                    status: &quot;resolved&quot;,
+                    value: value
+                };
+            })
+        ]);
+    } else {
+        // STREAM
+        return Kefir.constant({
+            status: &quot;waiting&quot;
+        });
+    }
+});
+
+// STREAM&lt;STATUS&gt; //{status: &quot;waiting&quot;} | {status: &quot;resolved&quot;}
+viewModel.paymentStatus = paymentStatusStream.flatMap().toProperty();
+
+viewModel.disablePaymentButton = Kefir.combine([viewModel.isCardInvalid, viewModel.paymentStatus],
+    function(isCardInvalid, paymentStatus) {
+        return (isCardInvalid === true) || !paymentStatus || paymentStatus.status === &quot;pending&quot;;
+    }).toProperty(function() {
+    return true;
+});
+
+var view = can.stache.from(&quot;app-view&quot;);
+
+document.body.appendChild( view(viewModel) );
+
+// HELPER FUNCTIONS
+function validateCard(card) {
+    if (!card) {
+        return &quot;There is no card&quot;
+    }
+    if (card.length !== 16) {
+        return &quot;There should be 16 characters in a card&quot;;
+    }
+}
+
+function validateExpiry(expiry) {
+    if (!expiry) {
+        return &quot;There is no expiry. Format  MM-YY&quot;;
+    }
+    if (expiry.length !== 2 || expiry[0].length !== 2 || expiry[1].length !== 2) {
+        return &quot;Expirty must be formatted like MM-YY&quot;;
+    }
+}
+
+function validateCVC(cvc) {
+    if (!cvc) {
+        return &quot;There is no CVC code&quot;;
+    }
+    if (cvc.length !== 3) {
+        return &quot;The CVC must be at least 3 numbers&quot;;
+    }
+    if (isNaN(parseInt(cvc))) {
+        return &quot;The CVC must be numbers&quot;;
+    }
+}
+
+function showOnlyWhenBlurredOnce(errorStream, blurredStream) {
+    var errorEvent = errorStream.map((error) =&gt; {
+        if (!error) {
+            return {
+                type: &quot;valid&quot;
+            }
+        } else {
+            return {
+                type: &quot;invalid&quot;,
+                message: error
+            }
+        }
+    });
+
+    var focusEvents = blurredStream.map((isBlurred) =&gt; {
+        if (isBlurred === undefined) {
+            return {};
+        }
+        return isBlurred ? {
+            type: &quot;blurred&quot;
+        } : {
+            type: &quot;focused&quot;
+        };
+    });
+
+    return Kefir.merge([errorEvent, focusEvents])
+        .scan((previous, event) =&gt; {
+            switch (event.type) {
+                case &quot;valid&quot;:
+                    return Object.assign({}, previous, {
+                        isValid: true,
+                        showCardError: false
+                    });
+                case &quot;invalid&quot;:
+                    return Object.assign({}, previous, {
+                        isValid: false,
+                        showCardError: previous.hasBeenBlurred
+                    });
+                case &quot;blurred&quot;:
+                    return Object.assign({}, previous, {
+                        hasBeenBlurred: true,
+                        showCardError: !previous.isValid
+                    });
+                default:
+                    return previous;
+            }
+        }, {
+            hasBeenBlurred: false,
+            showCardError: false,
+            isValid: false
+        }).map((state) =&gt; {
+            return state.showCardError
+        });
+}
+
+</code></pre>
+<p><span line-highlight='92-97,only'></span></p>
+<script src="https://static.jsbin.com/js/embed.min.js?4.0.4"></script>
+
+</section>
+
+  
+
+
+<script type="text/javascript">
+  window.docObject = {"src":{"path":"docs/can-guides/commitment/recipes/credit-card-advanced/credit-card-advanced.md"},"description":"This guide walks through building a simple credit card payment form with validations. It doesn't use\n[can-define]. Instead it uses `Kefir.js` streams to make a ViewModel.\n[can-kefir] is used to make the Kefir streams observable to [can-stache].\n\n\n","name":"guides/recipes/credit-card-advanced","title":"Credit Card Guide (Advanced)","type":"page","parent":"guides/recipes","comment":" ","pathToRoot":"../../.."};
+</script>
+</article>
+      
+        <footer><p>CanJS is part of <a href="https://donejs.com" target="_blank">DoneJS</a>. Created and maintained by the core <a href="https://donejs.com/About.html#team" target="_blank">DoneJS team</a> and <a href="https://www.bitovi.com" target="_blank">Bitovi</a>. <strong>Currently 3.12.1.</strong></p>
+</footer>
+      
+    </div>
+  </div>
+</div>
+<survey-ad>
+  <button aria-label="Close" class="close" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <a href="https://donejs.com/survey.html" target="_blank">
+    Help us improve CanJS by taking our community survey
+  </a>
+</survey-ad>
+
+
+		
+			<script>
+				steal = {
+				  	instantiated: {
+				    	"bundles/bit-docs-site/static.css!$css" : null
+				  	}
+			  	};
+			</script>
+			<script type='text/javascript' data-main="bit-docs-site/static" src="../../static/steal.production.js"></script>
+		
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<!-- root-level elements with attributes necessary for the app -->
+		<div path-prefix="../.."></div>
+
+	</body>
+</html>
